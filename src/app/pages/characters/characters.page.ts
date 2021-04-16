@@ -5,11 +5,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './characters.page.html',
   styleUrls: ['./characters.page.scss'],
 })
-export class CharactersPage implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+export class CharactersPage {
+  
+  themeToggle(event){
+    if(event.detail.checked){
+      document.body.setAttribute('color-theme','dark')
+    }else{
+      document.body.setAttribute('color-theme','light')
+    }
   }
-
 }

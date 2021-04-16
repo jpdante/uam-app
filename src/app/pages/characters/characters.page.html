@@ -1,11 +1,20 @@
 <ion-header>
-  <ion-toolbar color="secondary">
+  <ion-toolbar color="primary">
     <ion-title>Personagens</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="primary" class="ion-padding">
-  <ion-card color ="secondary">
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item lines="full" lines="none">
+      <ion-icon slot="start" name="moon"></ion-icon>
+      <ion-label>
+        Toggle Dark Theme
+      </ion-label>
+      <ion-toggle (ionChange)="themeToggle($event)" slot="end"></ion-toggle>
+    </ion-item>
+  </ion-list>
+  <ion-card>
     <ion-row class="ion-align-items-center">
       <ion-col size="auto">
         <ion-avatar class="avatar"><img src="https://pbs.twimg.com/media/EvopjzDU8AEVImn.jpg" /></ion-avatar>
@@ -19,7 +28,7 @@
       </ion-card-header>
     </ion-row>
   </ion-card>
-  <ion-card color ="secondary">
+  <ion-card>
     <ion-row class="ion-align-items-center">
       <ion-col size="auto">
         <ion-avatar class="avatar"><img src="https://pbs.twimg.com/media/EvopjzDU8AEVImn.jpg" /></ion-avatar>
@@ -33,7 +42,7 @@
       </ion-card-header>
     </ion-row>
   </ion-card>
-  <ion-card color ="secondary">
+  <ion-card>
     <ion-row class="ion-align-items-center">
       <ion-col size="auto">
         <ion-avatar class="avatar"><img src="https://pbs.twimg.com/media/EvopjzDU8AEVImn.jpg" /></ion-avatar>
@@ -47,7 +56,7 @@
       </ion-card-header>
     </ion-row>
   </ion-card>
-  <ion-card color ="secondary">
+  <ion-card>
     <ion-row class="ion-align-items-center">
       <ion-col size="auto">
         <ion-avatar class="avatar"><img src="https://pbs.twimg.com/media/EvopjzDU8AEVImn.jpg" /></ion-avatar>
@@ -61,7 +70,7 @@
       </ion-card-header>
     </ion-row>
   </ion-card>
-  <ion-card color ="secondary">
+  <ion-card>
     <ion-row class="ion-align-items-center">
       <ion-col size="auto">
         <ion-avatar class="avatar"><img src="https://pbs.twimg.com/media/EvopjzDU8AEVImn.jpg" /></ion-avatar>
@@ -75,7 +84,7 @@
       </ion-card-header>
     </ion-row>
   </ion-card>
-  <ion-card color ="secondary">
+  <ion-card>
     <ion-row class="ion-align-items-center">
       <ion-col size="auto">
         <ion-avatar class="avatar"><img src="https://pbs.twimg.com/media/EvopjzDU8AEVImn.jpg" /></ion-avatar>
