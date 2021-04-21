@@ -2,9 +2,6 @@
   <ion-toolbar color="primary">
     <ion-title>Personagens</ion-title>
   </ion-toolbar>
-</ion-header>
-
-<ion-content class="ion-padding">
   <ion-list>
     <ion-item lines="full" lines="none">
       <ion-icon slot="start" name="moon"></ion-icon>
@@ -14,7 +11,9 @@
       <ion-toggle (ionChange)="themeToggle($event)" slot="end"></ion-toggle>
     </ion-item>
   </ion-list>
+</ion-header>
 
+<ion-content class="ion-padding">
   <ion-list>
       <ion-card *ngFor="let character of characterList">
         <ion-row class="ion-align-items-center">

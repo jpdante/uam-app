@@ -1,9 +1,61 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>create-character</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title >Criação de Personagem</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <img [src]="newCharacter.img">
+
+      <ion-item>
+        <ion-label>
+          Link
+        </ion-label>
+        <ion-input (value)="newCharacter.img"></ion-input>
+        <ion-button>
+          <ion-icon slot="icon-only" name="arrow-forward-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Nome</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Raça</ion-label>
+        <ion-select placeholder="Selecione uma Raça">
+          <ion-select-option value="dwarf">Anão</ion-select-option>
+          <ion-select-option value="elf">Elfo</ion-select-option>
+          <ion-select-option value="halfling">Halfling</ion-select-option>
+          <ion-select-option value="human">Humano</ion-select-option>
+          <ion-select-option value="dragonborn">Draconato</ion-select-option>
+          <ion-select-option value="gnome">Gnomo</ion-select-option>
+          <ion-select-option value="halfelf">Meio-Elfo</ion-select-option>
+          <ion-select-option value="halforc">Meio-Orc</ion-select-option>
+          <ion-select-option value="tiefling">Tiefling</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Classe</ion-label>
+        <ion-select placeholder="Selecione uma Classe">
+          <ion-select-option value="barbarian">Barbáro</ion-select-option>
+          <ion-select-option value="bard">Bardo</ion-select-option>
+          <ion-select-option value="warlock">Bruxo</ion-select-option>
+          <ion-select-option value="cleric">Clérigo</ion-select-option>
+          <ion-select-option value="druid">Druida</ion-select-option>
+          <ion-select-option value="sorcerer">Feiticeiro</ion-select-option>
+          <ion-select-option value="fighter">guerreiro</ion-select-option>
+          <ion-select-option value="rogue">Ladino</ion-select-option>
+          <ion-select-option value="mage">Mago</ion-select-option>
+          <ion-select-option value="monk">Monge</ion-select-option>
+          <ion-select-option value="paladin">Paladino</ion-select-option>
+          <ion-select-option value="ranger">Patrulheiro</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+  </ion-row>
 
 </ion-content>
