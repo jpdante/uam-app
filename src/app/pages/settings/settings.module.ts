@@ -4,12 +4,15 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { BottomBarComponent } from './../../components/bottom-bar/bottom-bar.component';
+
 import { SettingsPageRoutingModule } from './settings-routing.module';
 
 import { SettingsPage } from './settings.page';
 
 @NgModule({
   imports: [
+    BottomBarComponent,
     CommonModule,
     FormsModule,
     IonicModule,
