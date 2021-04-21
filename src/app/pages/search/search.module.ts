@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { BottomBarComponent } from './../../components/bottom-bar/bottom-bar.component';
+
 import { SearchPageRoutingModule } from './search-routing.module';
 
 import { SearchPage } from './search.page';
@@ -15,6 +17,7 @@ import { SearchPage } from './search.page';
     IonicModule,
     SearchPageRoutingModule
   ],
-  declarations: [SearchPage]
+  declarations: [SearchPage, BottomBarComponent]
 })
 export class SearchPageModule {}
+
