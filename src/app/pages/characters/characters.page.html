@@ -14,7 +14,25 @@
       <ion-toggle (ionChange)="themeToggle($event)" slot="end"></ion-toggle>
     </ion-item>
   </ion-list>
-  <ion-card>
+
+  <ion-list>
+      <ion-card *ngFor="let character of characterList">
+        <ion-row class="ion-align-items-center">
+          <ion-col size="auto">
+            <ion-avatar class="avatar"><img [src]="character.image" /></ion-avatar>
+          </ion-col>
+          <ion-card-header>
+            <ion-col class="ion-no-padding titulos">
+              <ion-card-title>{{character.name}}</ion-card-title>
+              <ion-card-subtitle>{{character.class}} {{character.level}}º Nível</ion-card-subtitle>
+              <ion-card-subtitle>{{character.race}}</ion-card-subtitle>
+            </ion-col>
+          </ion-card-header>
+        </ion-row>
+      </ion-card>
+  </ion-list>
+  
+  <!-- <ion-card>
     <ion-row class="ion-align-items-center">
       <ion-col size="auto">
         <ion-avatar class="avatar"><img src="https://pbs.twimg.com/media/EvopjzDU8AEVImn.jpg" /></ion-avatar>
@@ -83,20 +101,6 @@
         </ion-col>
       </ion-card-header>
     </ion-row>
-  </ion-card>
-  <ion-card>
-    <ion-row class="ion-align-items-center">
-      <ion-col size="auto">
-        <ion-avatar class="avatar"><img src="https://pbs.twimg.com/media/EvopjzDU8AEVImn.jpg" /></ion-avatar>
-      </ion-col>
-      <ion-card-header>
-        <ion-col class="ion-no-padding titulos">
-          <ion-card-title>João Cleber</ion-card-title>
-          <ion-card-subtitle>Fighter 3º</ion-card-subtitle>
-          <ion-card-subtitle>Goblin</ion-card-subtitle>
-        </ion-col>
-      </ion-card-header>
-    </ion-row>
-  </ion-card>
+  </ion-card> -->
   
 </ion-content>
