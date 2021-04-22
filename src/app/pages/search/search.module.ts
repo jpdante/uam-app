@@ -20,4 +20,3 @@ import { SearchPage } from './search.page';
   declarations: [SearchPage, BottomBarComponent]
 })
 export class SearchPageModule {}
-
