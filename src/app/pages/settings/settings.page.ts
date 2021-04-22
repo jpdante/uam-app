@@ -12,4 +12,12 @@ export class SettingsPage implements OnInit {
   ngOnInit() {
   }
 
+  themeToggle(event){
+    if(event.detail.checked){
+      document.body.setAttribute('color-theme','dark')
+    }else{
+      document.body.setAttribute('color-theme','light')
+    }
+  }
+
 }
