@@ -12,8 +12,10 @@ export class CreateCharacterPage implements OnInit {
   ngOnInit() {
   }
 
+  public defaultImg = 'https://i.imgur.com/svtbHpw.jpg';
+
   public newCharacter = {
-    img : 'https://brejodocruz.pb.gov.br/wp-content/uploads/2021/01/360_F_346936114_RaxE6OQogebgAWTalE1myseY1Hbb5qPM.jpg',
+    img : this.defaultImg,
     name : 'Nome',
     class : '',
     race : '',
