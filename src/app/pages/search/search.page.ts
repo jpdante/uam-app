@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+//import { TextInput } from 'ionic-angular';
 
 @Component({
   selector: 'app-search',
@@ -12,4 +13,7 @@ export class SearchPage implements OnInit {
   ngOnInit() {
   }
 
+  /*onSearch(e: TextInput){
+    console.error(e.TextInput);
+  }*/
 }

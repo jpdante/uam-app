@@ -4,16 +4,18 @@
   </ion-toolbar>
 
   <ion-searchbar 
-  placeholder = ""
-  [(ngModel)] = "queryText" 
-  (ionInput) = "filterElements($event)"> 
+  placeholder = "Type here to search"
+  debounce = "500"
+  animated
+  (ionChange) = "onSearch($event);"
+  >
   </ion-searchbar>
+
 </ion-header>
 
 <ion-content>
   <ion-list>
     <ion-item>
-      <h1>{{element.name, element.description}}</h1>
     </ion-item>
   </ion-list>
 </ion-content>
