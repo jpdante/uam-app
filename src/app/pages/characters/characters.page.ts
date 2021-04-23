@@ -43,19 +43,5 @@ export class CharactersPage {
       level : 4,
       race : 'Tiefling',
     },
-    {
-      image : 'https://i.imgur.com/KFl2nRN.png',
-      name : 'Hemillion Rustybeard',
-      class : 'Barbarian',
-      level : 10,
-      race : 'Dwarf',
-    },
-    {
-      image : 'https://i.imgur.com/b9CVOhg.png',
-      name : 'Fireflute',
-      class : 'Bard',
-      level : 1,
-      race : 'Dragonborn',
-    }
   ];
 }
