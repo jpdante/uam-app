@@ -1,21 +1,21 @@
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="/characters">
+    <ion-tab-button [routerLink]="['/characters']" routerLinkActive="router-link-active" >
       <ion-icon name="accessibility"></ion-icon>
       <ion-label>Characters</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="/search">
+    <ion-tab-button [routerLink]="['/search']" routerLinkActive="router-link-active" >
       <ion-icon name="search"></ion-icon>
       <ion-label>Search</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="/rules">
+    <ion-tab-button [routerLink]="['/rules']" routerLinkActive="router-link-active" >
       <ion-icon name="book"></ion-icon>
       <ion-label>Rules</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="/settings">
+    <ion-tab-button [routerLink]="['/settings']" routerLinkActive="router-link-active" >
       <ion-icon name="settings"></ion-icon>
       <ion-label>Settings</ion-label>
     </ion-tab-button>
