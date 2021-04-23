@@ -14,7 +14,7 @@ interface Elements {
 export class SearchPage implements OnInit {
 
   constructor() { }
-
+  
   ngOnInit() {
   }
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CharactersPageModule } from '../characters/characters.module';
+import { CharactersPage } from '../characters/characters.page';
 
 @Component({
   selector: 'app-settings',
