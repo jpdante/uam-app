@@ -23,6 +23,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/rules/rules.module').then( m => m.RulesPageModule)
   },
   {
+    path: 'your-character',
+    loadChildren: () => import('./pages/your-character/your-character.module').then( m => m.YourCharacterPageModule)
+  },
+  {
     path: '',
     redirectTo: 'characters',
     pathMatch: 'full'
