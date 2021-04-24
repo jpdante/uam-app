@@ -20,11 +20,14 @@
         </ion-card-header>
       </ion-row>
     </ion-card>
-    <ion-button [routerLink]="['/create-character']" routerLinkActive="router-link-active"  expand="full">
-      Create new character
-    </ion-button>
   </ion-list>
   
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
   <!-- <ion-card>
     <ion-row class="ion-align-items-center">
       <ion-col size="auto">
