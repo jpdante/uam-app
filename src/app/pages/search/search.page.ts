@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-//import { TextInput } from 'ionic-angular';
+import { HttpClient } from '@angular/common/http';
+import { IonInput } from '@ionic/angular';
 
 interface Elements {
   name : string,
@@ -13,14 +14,14 @@ interface Elements {
 })
 export class SearchPage implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
   
   ngOnInit() {
   }
 
-  /*onSearch(e: TextInput){
-    console.error(e.TextInput);
-  }*/
+  onSearch(e: any){
+    console.error(e.target.value);
+  }
 
   public elementsList : Elements[] = [
     {
