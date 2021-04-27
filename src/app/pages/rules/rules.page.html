@@ -6,24 +6,13 @@
 
 <ion-content>
   <ion-list>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Rule I</ion-card-title>
-        <p>Don't punch your friends (very importatant).</p>
-      </ion-card-header>
-    </ion-card>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Rule II</ion-card-title>
-        <p>Eat potato! :)</p>
-      </ion-card-header>
-    </ion-card>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Rule III</ion-card-title>
-        <p>Just don't be dumb, ok?</p>
-      </ion-card-header>
-    </ion-card>
+    <ion-router-link *ngFor="let element of rules" href="/settings">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{element.name}}</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-router-link>
   </ion-list>
 </ion-content>
 

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { IonInput } from '@ionic/angular';
+import Net from 'axios';
 
 interface Elements {
-  name : string,
-  description: string
+  index: string;
+  type: string;
+  name: string;
 }
 
 @Component({
@@ -13,32 +13,31 @@ interface Elements {
   styleUrls: ['./search.page.scss'],
 })
 export class SearchPage implements OnInit {
+  constructor() {}
 
-  constructor(private http: HttpClient) { }
-  
-  ngOnInit() {
+  ngOnInit() {}
+
+  onSearch(e: any) {
+    console.log(e.target.value);
+    Net.get('https://www.dnd5eapi.co/api/spells?name=' + e.target.value)
+      .then((e: any) => {
+        console.log(e.data);
+        this.elementsList = [];
+        if (e.data) {
+          e.data.results.forEach(element => {
+            this.elementsList.push({
+              index: element.index,
+              type: "spell",
+              name: element.name,
+            });
+          });
+        }
+      })
+      .catch((e: any) => {
+        console.error(e);
+      });
   }
 
-  onSearch(e: any){
-    console.error(e.target.value);
-  }
-
-  public elementsList : Elements[] = [
-    {
-      name : "Healing Potion" ,
-      description : "1d6" 
-    },
-    {
-      name : "Duck" ,
-      description : "1d100" 
-    },
-    {
-      name : "Long Sword" ,
-      description : "1d8" 
-    },
-    {
-      name : "Mother-in-Law" ,
-      description : "1dbillion" 
-    },
+  public elementsList: Elements[] = [
   ];
 }
