@@ -6,7 +6,8 @@
 
 <ion-content class="ion-padding">
   <ion-list>
-    <ion-card *ngFor="let character of characterList">
+    <ion-router-link *ngFor="let character of characterList" href="/your-character">
+    <ion-card>
       <ion-row class="ion-align-items-center">
         <ion-col size="auto">
           <ion-avatar class="avatar"><img [src]="character.image" /></ion-avatar>
@@ -20,6 +21,7 @@
         </ion-card-header>
       </ion-row>
     </ion-card>
+  </ion-router-link>
   </ion-list>
 
   <ion-fab [routerLink]="['/create-character']" vertical="bottom" horizontal="end" slot="fixed" class="fab-margin">
