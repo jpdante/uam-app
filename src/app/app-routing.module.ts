@@ -31,6 +31,16 @@ const routes: Routes = [
     redirectTo: 'characters',
     pathMatch: 'full'
   },
+  {
+    path: 'element',
+    loadChildren: () => import('./pages/element/element.module').then( m => m.ElementPageModule)
+  },
+  {
+    path: 'text-rule',
+    loadChildren: () => import('./pages/text-rule/text-rule.module').then( m => m.TextRulePageModule)
+  },
+
+
 ];
 
 @NgModule({
