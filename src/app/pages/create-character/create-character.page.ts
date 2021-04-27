@@ -7,13 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateCharacterPage implements OnInit {
 
+  public defaultImg = 'https://i.imgur.com/svtbHpw.jpg';
+  public currentImageLink : string;
+
   constructor() { }
 
   ngOnInit() {
+    this.currentImageLink = this.defaultImg;
   }
-
-  public defaultImg = 'https://i.imgur.com/svtbHpw.jpg';
-  public currentImageLink : string;
   
   public newCharacter = {
     img : this.defaultImg,
@@ -22,11 +23,12 @@ export class CreateCharacterPage implements OnInit {
     race : '',
   }
 
-  public refreshImage (){
+  public updateImage(e: any) {
+    this.currentImageLink = e.target.value || this.defaultImg;
     this.newCharacter.img = this.currentImageLink;
   }
 
-  public resetImage(){
+  public resetImage() {
     this.newCharacter.img = this.defaultImg;
   }
 

@@ -17,13 +17,15 @@
         <ion-label>
           Link
         </ion-label>
-        <ion-input (value)="currentImageLink"></ion-input>
+        <ion-input (ionChange)="updateImage($event)"></ion-input>
+        <!--
         <ion-button (click)="refreshImage()">
           <ion-icon slot="icon-only" name="refresh"></ion-icon>
         </ion-button>
         <ion-button (click)="refreshImage()">
           <ion-icon slot="icon-only" name="arrow-forward-outline"></ion-icon>
         </ion-button>
+        -->
       </ion-item>
 
       <ion-item>
