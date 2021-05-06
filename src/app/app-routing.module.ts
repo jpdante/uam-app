@@ -23,10 +23,24 @@ const routes: Routes = [
     loadChildren: () => import('./pages/rules/rules.module').then( m => m.RulesPageModule)
   },
   {
+    path: 'your-character',
+    loadChildren: () => import('./pages/your-character/your-character.module').then( m => m.YourCharacterPageModule)
+  },
+  {
     path: '',
     redirectTo: 'characters',
     pathMatch: 'full'
   },
+  {
+    path: 'element',
+    loadChildren: () => import('./pages/element/element.module').then( m => m.ElementPageModule)
+  },
+  {
+    path: 'text-rule',
+    loadChildren: () => import('./pages/text-rule/text-rule.module').then( m => m.TextRulePageModule)
+  },
+
+
 ];
 
 @NgModule({

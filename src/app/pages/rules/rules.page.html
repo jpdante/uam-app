@@ -6,24 +6,13 @@
 
 <ion-content>
   <ion-list>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Regra</ion-card-title>
-        <p>Blah Blah Blah</p>
-      </ion-card-header>
-    </ion-card>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Regra</ion-card-title>
-        <p>Blah Blah Blah</p>
-      </ion-card-header>
-    </ion-card>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Regra</ion-card-title>
-        <p>Blah Blah Blah</p>
-      </ion-card-header>
-    </ion-card>
+    <ion-router-link *ngFor="let element of rules" href="/text-rule">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{element.name}}</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-router-link>
   </ion-list>
 </ion-content>
 

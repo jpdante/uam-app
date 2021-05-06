@@ -23,7 +23,7 @@ export class CharactersPage {
       race : 'Human',
     },
     {
-      image : 'https://i.imgur.com/ycL7BE4.jpg',
+      image : 'https://media.tenor.com/images/a01030b83985fc4743e04f3ad7f7d1b1/tenor.gif',
       name : 'Greenskin',
       class : 'Fighter',
       level : 3,
@@ -56,6 +56,27 @@ export class CharactersPage {
       class : 'Bard',
       level : 1,
       race : 'Dragonborn',
-    }
+    },
+    {
+      image : 'https://i.imgur.com/zv19ndH.jpg',
+      name : 'Doritos',
+      class : 'Mage',
+      level : 11,
+      race : 'Elf',
+    },
+    {
+      image : 'https://i.imgur.com/f56w2ez.gif',
+      name : 'Metalhead',
+      class : 'Bard',
+      level : 5,
+      race : 'Human',
+    },
+    {
+      image : 'https://media1.tenor.com/images/ce15c4ff31e7f18221a00ec55404f7c1/tenor.gif?itemid=15225693',
+      name : 'Laurício',
+      class : 'Demon',
+      level : 9999,
+      race : 'Cat',
+    }, 
   ];
 }

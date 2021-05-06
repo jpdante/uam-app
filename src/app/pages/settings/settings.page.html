@@ -8,13 +8,12 @@
       <ion-label>
         Dark Theme
       </ion-label>
-      <ion-toggle (ionChange)="themeToggle($event)" slot="end"></ion-toggle>
+      <ion-toggle [(ngModel)]="isDark" (ionChange)="themeToggle($event)" slot="end"></ion-toggle>
     </ion-item>
   </ion-list>
 </ion-header>
 
 <ion-content>
-
 </ion-content>
 
 <bottom-bar></bottom-bar>

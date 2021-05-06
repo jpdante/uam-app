@@ -2,11 +2,26 @@
   <ion-toolbar color="primary">
     <ion-title>Search</ion-title>
   </ion-toolbar>
+
+  <ion-searchbar
+    placeholder="Type here to search"
+    debounce="500"
+    animated
+    (ionChange)="onSearch($event);"
+  >
+  </ion-searchbar>
 </ion-header>
 
 <ion-content>
-    <ion-searchbar placeholder = ""> 
-    </ion-searchbar>
+  <ion-list>
+    <ion-router-link *ngFor="let element of elementsList" href="/element">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{element.name}}</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-router-link>
+  </ion-list>
 </ion-content>
 
 <bottom-bar></bottom-bar>
