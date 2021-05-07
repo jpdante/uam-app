@@ -14,6 +14,10 @@ interface Character {
 })
 export class CharactersPage {
 
+  constructor(private storage: Storage){
+    this.loadFromStorage()
+  }
+
   public characterList : Character[] = [
     {
       image : 'https://i.imgur.com/42paeQR.jpg',
@@ -79,4 +83,15 @@ export class CharactersPage {
       race : 'Cat',
     }, 
   ];
+
+  private async loadFromStorage(){
+    const loadedCharacter: Character[] | null = await this.storage.get('character')
+    if(loadedCharacter){
+      this.characterList.push(...loadedCharacter)
+    }
+  }
+
+  private saveAtStorage(){
+    this.storage.set('character', this.characterList)
+  }
 }
