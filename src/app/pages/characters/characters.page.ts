@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from "../../services/storage-service";
 
 interface Character {
   image : string;
@@ -13,9 +14,8 @@ interface Character {
   styleUrls: ['./characters.page.scss'],
 })
 export class CharactersPage {
+  constructor(public storageService: StorageService) {
 
-  constructor(private storage: Storage){
-    this.loadFromStorage()
   }
 
   public characterList : Character[] = [
@@ -84,14 +84,21 @@ export class CharactersPage {
     }, 
   ];
 
-  private async loadFromStorage(){
-    const loadedCharacter: Character[] | null = await this.storage.get('character')
-    if(loadedCharacter){
+  async ngOnInit() {
+    await this.loadFromStorage();
+  }
+
+  private async loadFromStorage() {
+    const loadedCharacter: Character[] | null = await this.storageService.get('character')
+    if (loadedCharacter) {
+      this.characterList.length = 0;
       this.characterList.push(...loadedCharacter)
+    } else {
+      await this.saveAtStorage();
     }
   }
 
-  private saveAtStorage(){
-    this.storage.set('character', this.characterList)
+  private async saveAtStorage() {
+    await this.storageService.set('character', this.characterList)
   }
 }
