@@ -88,17 +88,22 @@ export class CharactersPage {
     await this.loadFromStorage();
   }
 
+  async ionViewWillEnter() {
+    await this.loadFromStorage();
+  }
+
   private async loadFromStorage() {
-    const loadedCharacter: Character[] | null = await this.storageService.get('character')
+    const loadedCharacter: Character[] | null = await this.storageService.get('characters');
     if (loadedCharacter) {
       this.characterList.length = 0;
-      this.characterList.push(...loadedCharacter)
+      this.characterList.push(...loadedCharacter);
+      console.info(loadedCharacter);
     } else {
       await this.saveAtStorage();
     }
   }
 
   private async saveAtStorage() {
-    await this.storageService.set('character', this.characterList)
+    await this.storageService.set('characters', this.characterList);
   }
 }
