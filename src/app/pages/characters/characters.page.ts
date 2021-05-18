@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { StorageService } from "../../services/storage-service";
 
 interface Character {
@@ -14,7 +15,7 @@ interface Character {
   styleUrls: ['./characters.page.scss'],
 })
 export class CharactersPage {
-  constructor(public storageService: StorageService) {
+  constructor(public storageService: StorageService, private router: Router) {
 
   }
 
@@ -90,6 +91,10 @@ export class CharactersPage {
 
   async ionViewWillEnter() {
     await this.loadFromStorage();
+  }
+
+  public redirectToCharacter(id: any) {
+    this.router.navigate(['/your-character', id]);
   }
 
   private async loadFromStorage() {
