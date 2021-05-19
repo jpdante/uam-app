@@ -30,14 +30,14 @@
   </ion-card>
 
 <ion-card>
-  <ion-row class="ion-align-items-center">
-    <ion-col size="auto" style="padding-left: 21%;">
+  <ion-row class="ion-align-items-center" style="padding-left: 21%;">
+    <ion-col size="auto" >
       <h1>Level</h1>
     </ion-col>
     <ion-col size="auto">
       <ion-button (click)="levelUp()"><ion-icon name="caret-up-outline" slot="icon-only"></ion-icon></ion-button>
     </ion-col>
-    <ion-col size="auto">
+    <ion-col size="auto" >
       <ion-button (click)="levelDown()"><ion-icon name="caret-down-outline" slot="icon-only"></ion-icon></ion-button>
     </ion-col>
   </ion-row>
@@ -78,12 +78,62 @@
       <ion-card-header>
         <ion-col class="ion-no-padding titulos">
           <ion-card-title>Abilities</ion-card-title>
-          <ion-card-subtitle>Strength: <b>16(+3)</b></ion-card-subtitle>
-          <ion-card-subtitle>Dexterity: <b>11(0)</b></ion-card-subtitle>
-          <ion-card-subtitle>Constitution: <b>15(+2)</b></ion-card-subtitle>
-          <ion-card-subtitle>Intelligence: <b>14(+2)</b></ion-card-subtitle>
-          <ion-card-subtitle>Wisdom: <b>9(-1)</b></ion-card-subtitle>
-          <ion-card-subtitle>Charisma: <b>13(+1)</b></ion-card-subtitle>
+          <ion-row>
+            <ion-col>
+              Strength:
+            </ion-col>
+            <ion-col>
+              {{character.atrib.strength}} ({{ calculateMod(character.atrib.strength) }})
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              Dexterity:
+            </ion-col>
+            <ion-col>
+              {{character.atrib.dexterity}} ({{ calculateMod(character.atrib.dexterity) }})
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              Constitution:
+            </ion-col>
+            <ion-col>
+              {{character.atrib.constitution}} ({{ calculateMod(character.atrib.constitution) }})
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              Intelligence:
+            </ion-col>
+            <ion-col>
+              {{character.atrib.intelligence}} ({{ calculateMod(character.atrib.intelligence) }})
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              Wisdom:
+            </ion-col>
+            <ion-col>
+              {{character.atrib.wisdom}} ({{ calculateMod(character.atrib.wisdom) }})
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              Charisma:
+            </ion-col>
+            <ion-col>
+              {{character.atrib.charisma}} ({{ calculateMod(character.atrib.charisma) }})
+            </ion-col>
+          </ion-row>
+          <!--
+          <ion-card-subtitle>Strength: <b>{{character.atrib.strength}} ({{ calculateMod(character.atrib.strength) }})</b></ion-card-subtitle>
+          <ion-card-subtitle>Dexterity: <b>{{character.atrib.dexterity}} ({{calculateMod(character.atrib.dexterity)}})</b></ion-card-subtitle>
+          <ion-card-subtitle>Constitution: <b>{{character.atrib.constitution}} ({{calculateMod(character.atrib.constitution)}})</b></ion-card-subtitle>
+          <ion-card-subtitle>Intelligence: <b>{{character.atrib.intelligence}} ({{calculateMod(character.atrib.intelligence)}})</b></ion-card-subtitle>
+          <ion-card-subtitle>Wisdom: <b>{{character.atrib.wisdom}} ({{calculateMod(character.atrib.wisdom)}})</b></ion-card-subtitle>
+          <ion-card-subtitle>Charisma: <b>{{character.atrib.charisma}} ({{calculateMod(character.atrib.charisma)}})</b></ion-card-subtitle>
+        -->
         </ion-col>
       </ion-card-header>
     </ion-row>

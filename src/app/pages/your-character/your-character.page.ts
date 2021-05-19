@@ -2,6 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { StorageService } from 'src/app/services/storage-service';
 
+interface Atrib {
+  strength : number;
+  dexterity : number;
+  constitution : number;
+  intelligence : number;
+  wisdom : number;
+  charisma : number;
+}
 @Component({
   selector: 'app-your-character',
   templateUrl: './your-character.page.html',
@@ -10,6 +18,16 @@ import { StorageService } from 'src/app/services/storage-service';
 export class YourCharacterPage implements OnInit {
   public id: '';
   public character;
+
+  public defaultAtribs = {
+    strength : 17,
+    dexterity : 10,
+    constitution : 10,
+    intelligence : 10,
+    wisdom : 10,
+    charisma : 10
+  }
+
 
   constructor(private route: ActivatedRoute, public storageService: StorageService) {
     this.route.params.subscribe((params) => {
@@ -21,6 +39,7 @@ export class YourCharacterPage implements OnInit {
       class : 'None',
       level : 1,
       race : 'None',
+      atrib : this.defaultAtribs
     };
   }
 
@@ -38,5 +57,9 @@ export class YourCharacterPage implements OnInit {
   public levelDown (){
     if(this.character.level > 1)
     this.character.level -= 1;
+  }
+
+  public calculateMod (ability: number){
+    return Math.floor((ability - 10)/2)
   }
 }
