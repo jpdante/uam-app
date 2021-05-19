@@ -36,6 +36,7 @@ export class YourCharacterPage implements OnInit {
     this.character = {
       image : 'https://1.bp.blogspot.com/-sjbGDcBYNcs/WVMeIaFQARI/AAAAAAAA90Y/BUy7yGOFduEtbZlslht9PFccIAbwBKNkgCLcBGAs/s1600/iron-maiden-comics-2.jpg',
       name : 'None',
+      gender : 'None',
       class : 'None',
       level : 1,
       race : 'None',
