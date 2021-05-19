@@ -30,4 +30,13 @@ export class YourCharacterPage implements OnInit {
     let characters = await this.storageService.get('characters');
     this.character = characters[parseInt(this.id)];
   }
+
+  public levelUp (){
+    if(this.character.level < 20)
+    this.character.level += 1;
+  }
+  public levelDown (){
+    if(this.character.level > 1)
+    this.character.level -= 1;
+  }
 }

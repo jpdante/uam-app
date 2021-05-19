@@ -18,9 +18,9 @@
           <ion-col>
             <ion-card-title>Character Description:</ion-card-title>
             <ion-card-subtitle
-              >Level: <b>2°</b><br />
+              >Level: <b>{{character.level}}°</b><br />
               Class: <b>{{character.class}}</b><br />
-              Race: <b>Undead</b><br />
+              Race: <b>{{character.race}}</b><br />
               Gender: <b>Male</b><br />
             </ion-card-subtitle>
           </ion-col>
@@ -28,6 +28,20 @@
       </ion-grid>
     </ion-card-content>
   </ion-card>
+
+<ion-card>
+  <ion-row class="ion-align-items-center">
+    <ion-col size="auto" style="padding-left: 21%;">
+      <h1>Level</h1>
+    </ion-col>
+    <ion-col size="auto">
+      <ion-button (click)="levelUp()"><ion-icon name="caret-up-outline" slot="icon-only"></ion-icon></ion-button>
+    </ion-col>
+    <ion-col size="auto">
+      <ion-button (click)="levelDown()"><ion-icon name="caret-down-outline" slot="icon-only"></ion-icon></ion-button>
+    </ion-col>
+  </ion-row>
+</ion-card>
 
   <ion-card>
     <ion-row class="ion-align-items-center">
