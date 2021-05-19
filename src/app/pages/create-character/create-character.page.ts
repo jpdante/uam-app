@@ -48,7 +48,12 @@ export class CreateCharacterPage implements OnInit {
     img: this.defaultImg,
     name: '',
     class: '',
+    level : 1,
     race: '',
+    gender: '',
+    story : '',
+    itensList: '',
+  spellsList : '',
     atrib: this.defaultAtribs
   };
 

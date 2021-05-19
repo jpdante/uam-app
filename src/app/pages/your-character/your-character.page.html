@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="characters"></ion-back-button>
     </ion-buttons>
-    <ion-title>Eddie (Iron Maiden)</ion-title>
+    <ion-title>{{character.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,12 +16,11 @@
             <img [src]="character.image">
           </ion-col>
           <ion-col>
-            <ion-card-title>Character Description:</ion-card-title>
-            <ion-card-subtitle
-              >Level: <b>{{character.level}}°</b><br />
-              Class: <b>{{character.class}}</b><br />
-              Race: <b>{{character.race}}</b><br />
-              Gender: <b>Male</b><br />
+            <ion-card-subtitle style="font-size: medium;">
+              Level: <b>{{character.level}}°</b><br/>
+              Class: <b>{{character.class}}</b><br/>
+              Race: <b>{{character.race}}</b><br/>
+              Gender: <b>{{character.gender}}</b><br/>
             </ion-card-subtitle>
           </ion-col>
         </ion-row>
@@ -48,24 +47,10 @@
       <ion-col size="auto"> </ion-col>
       <ion-card-header>
         <ion-col class="ion-no-padding titulos">
-          <ion-card-title>Character History:</ion-card-title>
+          <ion-card-title>Character Story:</ion-card-title>
           <ion-card-subtitle>
-            Eddie (also known as Eddie the Head) is the mascot for the English
-            heavy metal band Iron Maiden. He is a perennial fixture of the
-            group's artwork, appearing in all of their album covers (as well as
-            most of their singles) and in their merchandise, which includes
-            T-shirts, posters and action figures. On top of this, Eddie features
-            in all of the band's concerts, as well as in the first-person
-            shooter video game, Ed Hunter, the mobile game, Iron Maiden: Legacy
-            of the Beast and a pinball game with the same name in 2018.
-            Originally a papier-mâché mask used in Iron Maiden's stage backdrop,
-            the band transferred the name "Eddie" from the mask to an
-            illustration by Derek Riggs, which was used as the band's debut
-            album cover. Although he is occasionally described as "zombie-like"
-            in the press, Eddie assumes a different guise relating to the themes
-            of individual albums and their corresponding world tours, and has
-            appeared as a cyborg, an Egyptian mummy and a lobotomised mental
-            patient amongst others.</ion-card-subtitle
+            Put here your character description!
+          </ion-card-subtitle
           >
         </ion-col>
       </ion-card-header>

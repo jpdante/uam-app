@@ -16,7 +16,11 @@ interface Character {
   class : string;
   level : number;
   race : string;
+  gender: string;
+  story : string;
   atrib : Atrib;
+  itensList: string;
+  spellsList : string;
 }
 
 
@@ -39,6 +43,12 @@ export class CharactersPage {
     charisma : 10
   }
 
+  public defaultStory = 'Put your description here';
+
+  public defaultItens = '';
+
+  public defaultSpells = '';
+
   public characterList : Character[] = [
     {
       image : 'https://i.imgur.com/42paeQR.jpg',
@@ -46,6 +56,10 @@ export class CharactersPage {
       class : 'Rogue',
       level : 2,
       race : 'Human',
+      gender: 'male',
+      story: this.defaultStory,
+      itensList: this.defaultItens,
+      spellsList: this.defaultSpells,
       atrib : {
         strength : 9,
         dexterity : 18,
@@ -61,6 +75,10 @@ export class CharactersPage {
       class : 'Fighter',
       level : 3,
       race : 'Goblin',
+      gender: 'male',
+      story: this.defaultStory,
+      itensList: this.defaultItens,
+      spellsList: this.defaultSpells,
       atrib : this.defaultAtribs
     },
     {
@@ -69,6 +87,10 @@ export class CharactersPage {
       class : 'Druid',
       level : 7,
       race : 'High elf',
+      gender: 'male',
+      story: this.defaultStory,
+      itensList: this.defaultItens,
+      spellsList: this.defaultSpells,
       atrib : this.defaultAtribs
     },
     {
@@ -77,6 +99,10 @@ export class CharactersPage {
       class : 'Warlock',
       level : 4,
       race : 'Tiefling',
+      gender: 'male',
+      story: this.defaultStory,
+      itensList: this.defaultItens,
+      spellsList: this.defaultSpells,
       atrib : this.defaultAtribs
     },
     {
@@ -85,6 +111,10 @@ export class CharactersPage {
       class : 'Barbarian',
       level : 10,
       race : 'Dwarf',
+      gender: 'male',
+      story: this.defaultStory,
+      itensList: this.defaultItens,
+      spellsList: this.defaultSpells,
       atrib : this.defaultAtribs
     },
     {
@@ -93,6 +123,10 @@ export class CharactersPage {
       class : 'Bard',
       level : 1,
       race : 'Dragonborn',
+      gender: 'female',
+      story: this.defaultStory,
+      itensList: this.defaultItens,
+      spellsList: this.defaultSpells,
       atrib : this.defaultAtribs
     },
     {
@@ -101,6 +135,10 @@ export class CharactersPage {
       class : 'Mage',
       level : 11,
       race : 'Elf',
+      gender: 'female',
+      story: this.defaultStory,
+      itensList: this.defaultItens,
+      spellsList: this.defaultSpells,
       atrib : this.defaultAtribs
     },
     {
@@ -109,6 +147,10 @@ export class CharactersPage {
       class : 'Bard',
       level : 5,
       race : 'Human',
+      gender: 'male',
+      story: this.defaultStory,
+      itensList: this.defaultItens,
+      spellsList: this.defaultSpells,
       atrib : this.defaultAtribs
     },
     {
@@ -117,6 +159,10 @@ export class CharactersPage {
       class : 'Demon',
       level : 9999,
       race : 'Cat',
+      gender: 'furry cat',
+      story: this.defaultStory,
+      itensList: this.defaultItens,
+      spellsList: this.defaultSpells,
       atrib : this.defaultAtribs
     }, 
   ];
