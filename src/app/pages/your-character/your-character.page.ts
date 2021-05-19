@@ -38,6 +38,8 @@ export class YourCharacterPage implements OnInit {
       name : 'None',
       gender : 'None',
       class : 'None',
+      spellsList : 'None',
+      itensList : 'None',
       level : 1,
       race : 'None',
       atrib : this.defaultAtribs

@@ -50,11 +50,11 @@
           <ion-card-title>Character Story:</ion-card-title>
           <ion-card-subtitle>
             Put here your character description!
-          </ion-card-subtitle
-          >
+          </ion-card-subtitle>
         </ion-col>
       </ion-card-header>
     </ion-row>
+    <ion-button expand="block"> Edit </ion-button>
   </ion-card>
 
   <ion-card>
@@ -70,6 +70,7 @@
             <ion-col>
               {{character.atrib.strength}} ({{ calculateMod(character.atrib.strength) }})
             </ion-col>
+            
           </ion-row>
           <ion-row>
             <ion-col>
@@ -78,6 +79,7 @@
             <ion-col>
               {{character.atrib.dexterity}} ({{ calculateMod(character.atrib.dexterity) }})
             </ion-col>
+            
           </ion-row>
           <ion-row>
             <ion-col>
@@ -86,6 +88,7 @@
             <ion-col>
               {{character.atrib.constitution}} ({{ calculateMod(character.atrib.constitution) }})
             </ion-col>
+            
           </ion-row>
           <ion-row>
             <ion-col>
@@ -94,6 +97,7 @@
             <ion-col>
               {{character.atrib.intelligence}} ({{ calculateMod(character.atrib.intelligence) }})
             </ion-col>
+            
           </ion-row>
           <ion-row>
             <ion-col>
@@ -102,6 +106,7 @@
             <ion-col>
               {{character.atrib.wisdom}} ({{ calculateMod(character.atrib.wisdom) }})
             </ion-col>
+            
           </ion-row>
           <ion-row>
             <ion-col>
@@ -110,6 +115,7 @@
             <ion-col>
               {{character.atrib.charisma}} ({{ calculateMod(character.atrib.charisma) }})
             </ion-col>
+            
           </ion-row>
           <!--
           <ion-card-subtitle>Strength: <b>{{character.atrib.strength}} ({{ calculateMod(character.atrib.strength) }})</b></ion-card-subtitle>
@@ -130,14 +136,13 @@
       <ion-card-header>
         <ion-col class="ion-no-padding titulos">
           <ion-card-title>Itens</ion-card-title>
-          <ion-card-subtitle>Long Sword: <b>d8</b></ion-card-subtitle>
-          <ion-card-subtitle>Healing Potion: <b>d6 + 2</b></ion-card-subtitle>
-          <ion-card-subtitle><b>13 gold coins</b></ion-card-subtitle>
-          <ion-card-subtitle><b>34 silver coins</b></ion-card-subtitle>
-          <ion-card-subtitle><b>3 breads</b></ion-card-subtitle>
+          <ion-card-subtitle>
+            {{character.itensList}}
+          </ion-card-subtitle>
         </ion-col>
       </ion-card-header>
     </ion-row>
+    <ion-button expand="block"> Edit </ion-button>
   </ion-card>
 
   <ion-card>
@@ -146,10 +151,12 @@
       <ion-card-header>
         <ion-col class="ion-no-padding titulos">
           <ion-card-title>Spells</ion-card-title>
-          <ion-card-subtitle>Time Travel</ion-card-subtitle>
-          <ion-card-subtitle>Live from the Dead</ion-card-subtitle>
+          <ion-card-subtitle>{{character.spellsList}}</ion-card-subtitle>
         </ion-col>
       </ion-card-header>
     </ion-row>
+    <ion-button expand="block"> Edit </ion-button>
   </ion-card>
+
+
 </ion-content>
