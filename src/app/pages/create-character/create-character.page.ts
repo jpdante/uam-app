@@ -51,9 +51,9 @@ export class CreateCharacterPage implements OnInit {
     level : 1,
     race: '',
     gender: '',
-    story : '',
-    itensList: '',
-  spellsList : '',
+    story : 'Put your description here',
+    itensList: 'Put your description here',
+    spellsList : 'Put your description here',
     atrib: this.defaultAtribs
   };
 

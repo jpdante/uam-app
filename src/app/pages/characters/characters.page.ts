@@ -45,9 +45,9 @@ export class CharactersPage {
 
   public defaultStory = 'Put your description here';
 
-  public defaultItens = '';
+  public defaultItens = 'Put your description here';
 
-  public defaultSpells = '';
+  public defaultSpells = 'Put your description here';
 
   public characterList : Character[] = [
     {
