@@ -9,14 +9,50 @@
 
 <ion-content>
   <ion-card>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <img [src]="character.image">
+          </ion-col>
+          <ion-col>
+            <ion-card-title>Character Description:</ion-card-title>
+            <ion-card-subtitle
+              >Level: <b>2°</b><br />
+              Class: <b>{{character.class}}</b><br />
+              Race: <b>Undead</b><br />
+              Gender: <b>Male</b><br />
+            </ion-card-subtitle>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
     <ion-row class="ion-align-items-center">
-      <ion-col size="auto">
-      </ion-col>
+      <ion-col size="auto"> </ion-col>
       <ion-card-header>
         <ion-col class="ion-no-padding titulos">
-          <ion-card-title>Character Description:</ion-card-title>
-          <ion-card-subtitle> Eddie (also known as Eddie the Head) is the mascot for the English heavy metal band Iron Maiden. He is a perennial fixture of the group's artwork, appearing in all of their album covers (as well as most of their singles) and in their merchandise, which includes T-shirts, posters and action figures. On top of this, Eddie features in all of the band's concerts, as well as in the first-person shooter video game, Ed Hunter, the mobile game, Iron Maiden: Legacy of the Beast and a pinball game with the same name in 2018.
-            Originally a papier-mâché mask used in Iron Maiden's stage backdrop, the band transferred the name "Eddie" from the mask to an illustration by Derek Riggs, which was used as the band's debut album cover. Although he is occasionally described as "zombie-like" in the press, Eddie assumes a different guise relating to the themes of individual albums and their corresponding world tours, and has appeared as a cyborg, an Egyptian mummy and a lobotomised mental patient amongst others.</ion-card-subtitle>
+          <ion-card-title>Character History:</ion-card-title>
+          <ion-card-subtitle>
+            Eddie (also known as Eddie the Head) is the mascot for the English
+            heavy metal band Iron Maiden. He is a perennial fixture of the
+            group's artwork, appearing in all of their album covers (as well as
+            most of their singles) and in their merchandise, which includes
+            T-shirts, posters and action figures. On top of this, Eddie features
+            in all of the band's concerts, as well as in the first-person
+            shooter video game, Ed Hunter, the mobile game, Iron Maiden: Legacy
+            of the Beast and a pinball game with the same name in 2018.
+            Originally a papier-mâché mask used in Iron Maiden's stage backdrop,
+            the band transferred the name "Eddie" from the mask to an
+            illustration by Derek Riggs, which was used as the band's debut
+            album cover. Although he is occasionally described as "zombie-like"
+            in the press, Eddie assumes a different guise relating to the themes
+            of individual albums and their corresponding world tours, and has
+            appeared as a cyborg, an Egyptian mummy and a lobotomised mental
+            patient amongst others.</ion-card-subtitle
+          >
         </ion-col>
       </ion-card-header>
     </ion-row>
@@ -24,17 +60,16 @@
 
   <ion-card>
     <ion-row class="ion-align-items-center">
-      <ion-col size="auto">
-      </ion-col>
+      <ion-col size="auto"> </ion-col>
       <ion-card-header>
         <ion-col class="ion-no-padding titulos">
           <ion-card-title>Abilities</ion-card-title>
-          <ion-card-subtitle>Strength: 16(+3)</ion-card-subtitle>
-          <ion-card-subtitle>Dexterity: 11(0)</ion-card-subtitle>
-          <ion-card-subtitle>Constitution: 15(+2)</ion-card-subtitle>
-          <ion-card-subtitle>Intelligence: 14(+2)</ion-card-subtitle>
-          <ion-card-subtitle>Wisdom: 9(-1)</ion-card-subtitle>
-          <ion-card-subtitle>Charisma: 13(+1)</ion-card-subtitle>
+          <ion-card-subtitle>Strength: <b>16(+3)</b></ion-card-subtitle>
+          <ion-card-subtitle>Dexterity: <b>11(0)</b></ion-card-subtitle>
+          <ion-card-subtitle>Constitution: <b>15(+2)</b></ion-card-subtitle>
+          <ion-card-subtitle>Intelligence: <b>14(+2)</b></ion-card-subtitle>
+          <ion-card-subtitle>Wisdom: <b>9(-1)</b></ion-card-subtitle>
+          <ion-card-subtitle>Charisma: <b>13(+1)</b></ion-card-subtitle>
         </ion-col>
       </ion-card-header>
     </ion-row>
@@ -42,16 +77,15 @@
 
   <ion-card>
     <ion-row class="ion-align-items-center">
-      <ion-col size="auto">
-      </ion-col>
+      <ion-col size="auto"> </ion-col>
       <ion-card-header>
         <ion-col class="ion-no-padding titulos">
           <ion-card-title>Itens</ion-card-title>
-          <ion-card-subtitle>Long Sword: d8</ion-card-subtitle>
-          <ion-card-subtitle>Healing Potion: d6 + 2</ion-card-subtitle>
-          <ion-card-subtitle>13 gold coins</ion-card-subtitle>
-          <ion-card-subtitle>34 silver coins</ion-card-subtitle>
-          <ion-card-subtitle>3 breads</ion-card-subtitle>
+          <ion-card-subtitle>Long Sword: <b>d8</b></ion-card-subtitle>
+          <ion-card-subtitle>Healing Potion: <b>d6 + 2</b></ion-card-subtitle>
+          <ion-card-subtitle><b>13 gold coins</b></ion-card-subtitle>
+          <ion-card-subtitle><b>34 silver coins</b></ion-card-subtitle>
+          <ion-card-subtitle><b>3 breads</b></ion-card-subtitle>
         </ion-col>
       </ion-card-header>
     </ion-row>
@@ -59,8 +93,7 @@
 
   <ion-card>
     <ion-row class="ion-align-items-center">
-      <ion-col size="auto">
-      </ion-col>
+      <ion-col size="auto"> </ion-col>
       <ion-card-header>
         <ion-col class="ion-no-padding titulos">
           <ion-card-title>Spells</ion-card-title>

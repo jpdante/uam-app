@@ -9,24 +9,25 @@ import { StorageService } from 'src/app/services/storage-service';
 })
 export class YourCharacterPage implements OnInit {
   public id: '';
-  public character: {
-    image : '',
-    name : '',
-    class : '',
-    level : 1,
-    race : '',
-  };
+  public character;
 
   constructor(private route: ActivatedRoute, public storageService: StorageService) {
     this.route.params.subscribe((params) => {
       this.id = params['id'];
     });
+    this.character = {
+      image : 'https://1.bp.blogspot.com/-sjbGDcBYNcs/WVMeIaFQARI/AAAAAAAA90Y/BUy7yGOFduEtbZlslht9PFccIAbwBKNkgCLcBGAs/s1600/iron-maiden-comics-2.jpg',
+      name : 'None',
+      class : 'None',
+      level : 1,
+      race : 'None',
+    };
   }
 
   ngOnInit() {}
 
   async ionViewWillEnter() {
-    let characters = this.storageService.get('characters');
+    let characters = await this.storageService.get('characters');
     this.character = characters[parseInt(this.id)];
   }
 }
