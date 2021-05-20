@@ -53,13 +53,20 @@ export class YourCharacterPage implements OnInit {
     this.character = characters[parseInt(this.id)];
   }
 
-  public levelUp (){
+  public async levelUp (){
     if(this.character.level < 20)
-    this.character.level += 1;
+    this.character.level += 1; 
+    let characters = await this.storageService.get ('characters');
+    characters[this.id] = this.character;
+    await this.storageService.set('characters', characters);
   }
-  public levelDown (){
+  
+  public async levelDown (){
     if(this.character.level > 1)
     this.character.level -= 1;
+    let characters = await this.storageService.get ('characters');
+    characters[this.id] = this.character;
+    await this.storageService.set('characters', characters);
   }
 
   public calculateMod (ability: number){
