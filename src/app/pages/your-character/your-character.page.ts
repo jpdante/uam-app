@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { StorageService } from 'src/app/services/storage-service';
+import { StorageService } from 'src/app/services/storage-service.service';
 
 interface Atrib {
   strength : number;

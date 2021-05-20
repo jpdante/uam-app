@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { StorageService } from "../../services/storage-service";
+import { StorageService } from "../../services/storage-service.service";
 
 interface Atrib {
   strength : number;
