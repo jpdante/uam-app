@@ -10,3 +10,10 @@
 ion-list {
   background-color: transparent !important;
 }
+
+.text-fix {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}

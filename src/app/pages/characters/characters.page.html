@@ -6,102 +6,50 @@
 
 <ion-content class="ion-padding">
   <ion-list>
-    <a *ngFor="let character of characterList | keyvalue" (click)="redirectToCharacter(character.key)">
-    <ion-card>
-      <ion-row class="ion-align-items-center">
-        <ion-col size="auto">
-          <ion-avatar class="avatar"><img [src]="character.value.image" /></ion-avatar>
-        </ion-col>
-        <ion-card-header>
-          <ion-col class="ion-no-padding titulos">
-            <ion-card-title>{{character.value.name}}</ion-card-title>
-            <ion-card-subtitle>{{character.value.class}} {{character.value.level}}º Level</ion-card-subtitle>
-            <ion-card-subtitle>{{character.value.gender}}</ion-card-subtitle>
-            <ion-card-subtitle>{{character.value.race}}</ion-card-subtitle>
+    <a
+      *ngFor="let character of characterList | keyvalue"
+      (click)="redirectToCharacter(character.key)"
+    >
+      <ion-card>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="3">
+            <ion-avatar class="avatar"
+              ><img [src]="character.value.image"
+            /></ion-avatar>
           </ion-col>
-        </ion-card-header>
-      </ion-row>
-    </ion-card>
-  </a>
+          <ion-col class="ion-no-padding titulos" size="9">
+            <ion-card-header>
+              <ion-card-title class="text-fix"
+                >{{character.value.name}}</ion-card-title
+              >
+              <ion-card-subtitle class="text-fix"
+                >{{character.value.class}} {{character.value.level}}º
+                Level</ion-card-subtitle
+              >
+              <ion-card-subtitle class="text-fix"
+                >{{character.value.gender}}</ion-card-subtitle
+              >
+              <ion-card-subtitle class="text-fix"
+                >{{character.value.race}}</ion-card-subtitle
+              >
+            </ion-card-header>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </a>
   </ion-list>
 
-  <ion-fab [routerLink]="['/create-character']" vertical="bottom" horizontal="end" slot="fixed" class="fab-margin">
+  <ion-fab
+    [routerLink]="['/create-character']"
+    vertical="bottom"
+    horizontal="end"
+    slot="fixed"
+    class="fab-margin"
+  >
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  
-  <!-- <ion-card>
-    <ion-row class="ion-align-items-center">
-      <ion-col size="auto">
-        <ion-avatar class="avatar"><img src="https://pbs.twimg.com/media/EvopjzDU8AEVImn.jpg" /></ion-avatar>
-      </ion-col>
-      <ion-card-header>
-        <ion-col class="ion-no-padding titulos">
-          <ion-card-title>João Cleber</ion-card-title>
-          <ion-card-subtitle>Fighter 3º</ion-card-subtitle>
-          <ion-card-subtitle>Goblin</ion-card-subtitle>
-        </ion-col>
-      </ion-card-header>
-    </ion-row>
-  </ion-card>
-  <ion-card>
-    <ion-row class="ion-align-items-center">
-      <ion-col size="auto">
-        <ion-avatar class="avatar"><img src="https://pbs.twimg.com/media/EvopjzDU8AEVImn.jpg" /></ion-avatar>
-      </ion-col>
-      <ion-card-header>
-        <ion-col class="ion-no-padding titulos">
-          <ion-card-title>João Cleber</ion-card-title>
-          <ion-card-subtitle>Fighter 3º</ion-card-subtitle>
-          <ion-card-subtitle>Goblin</ion-card-subtitle>
-        </ion-col>
-      </ion-card-header>
-    </ion-row>
-  </ion-card>
-  <ion-card>
-    <ion-row class="ion-align-items-center">
-      <ion-col size="auto">
-        <ion-avatar class="avatar"><img src="https://pbs.twimg.com/media/EvopjzDU8AEVImn.jpg" /></ion-avatar>
-      </ion-col>
-      <ion-card-header>
-        <ion-col class="ion-no-padding titulos">
-          <ion-card-title>João Cleber</ion-card-title>
-          <ion-card-subtitle>Fighter 3º</ion-card-subtitle>
-          <ion-card-subtitle>Goblin</ion-card-subtitle>
-        </ion-col>
-      </ion-card-header>
-    </ion-row>
-  </ion-card>
-  <ion-card>
-    <ion-row class="ion-align-items-center">
-      <ion-col size="auto">
-        <ion-avatar class="avatar"><img src="https://pbs.twimg.com/media/EvopjzDU8AEVImn.jpg" /></ion-avatar>
-      </ion-col>
-      <ion-card-header>
-        <ion-col class="ion-no-padding titulos">
-          <ion-card-title>João Cleber</ion-card-title>
-          <ion-card-subtitle>Fighter 3º</ion-card-subtitle>
-          <ion-card-subtitle>Goblin</ion-card-subtitle>
-        </ion-col>
-      </ion-card-header>
-    </ion-row>
-  </ion-card>
-  <ion-card>
-    <ion-row class="ion-align-items-center">
-      <ion-col size="auto">
-        <ion-avatar class="avatar"><img src="https://pbs.twimg.com/media/EvopjzDU8AEVImn.jpg" /></ion-avatar>
-      </ion-col>
-      <ion-card-header>
-        <ion-col class="ion-no-padding titulos">
-          <ion-card-title>João Cleber</ion-card-title>
-          <ion-card-subtitle>Fighter 3º</ion-card-subtitle>
-          <ion-card-subtitle>Goblin</ion-card-subtitle>
-        </ion-col>
-      </ion-card-header>
-    </ion-row>
-  </ion-card> -->
-  
 </ion-content>
 
 <bottom-bar></bottom-bar>

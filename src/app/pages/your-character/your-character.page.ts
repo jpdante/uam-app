@@ -34,14 +34,14 @@ export class YourCharacterPage implements OnInit {
       this.id = params['id'];
     });
     this.character = {
-      image : 'https://1.bp.blogspot.com/-sjbGDcBYNcs/WVMeIaFQARI/AAAAAAAA90Y/BUy7yGOFduEtbZlslht9PFccIAbwBKNkgCLcBGAs/s1600/iron-maiden-comics-2.jpg',
-      name : 'None',
-      gender : 'None',
-      class : 'None',
-      spellsList : 'None',
-      itensList : 'None',
+      image : '',
+      name : '',
+      gender : '',
+      class : '',
+      spellsList : '',
+      itensList : '',
       level : 1,
-      race : 'None',
+      race : '',
       atrib : this.defaultAtribs
     };
   }

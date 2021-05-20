@@ -11,16 +11,18 @@
   <ion-card>
     <ion-card-content>
       <ion-grid>
-        <ion-row>
+        <ion-row class="ion-align-items-center">
           <ion-col>
-            <img [src]="character.image" dis >
+            <ion-avatar class="avatar">
+              <img [src]="character.image" />
+            </ion-avatar>
           </ion-col>
           <ion-col>
-            <ion-card-subtitle style="font-size: 16px; padding-top: 16%;">
-              Level: <b>{{character.level}}°</b><br/>
-              Class: <b>{{character.class}}</b><br/>
-              Race: <b>{{character.race}}</b><br/>
-              Gender: <b>{{character.gender}}</b><br/>
+            <ion-card-subtitle>
+              Level: <b>{{character.level}}°</b><br />
+              Class: <b>{{character.class}}</b><br />
+              Race: <b>{{character.race}}</b><br />
+              Gender: <b>{{character.gender}}</b><br />
             </ion-card-subtitle>
           </ion-col>
         </ion-row>
@@ -28,135 +30,101 @@
     </ion-card-content>
   </ion-card>
 
-<ion-card>
-  <ion-row class="ion-align-items-center" style="padding-left: 21%;">
-    <ion-col size="auto" >
-      <h1>Level</h1>
-    </ion-col>
-    <ion-col size="auto">
-      <ion-button (click)="levelUp()"><ion-icon name="caret-up-outline" slot="icon-only"></ion-icon></ion-button>
-    </ion-col>
-    <ion-col size="auto" >
-      <ion-button (click)="levelDown()"><ion-icon name="caret-down-outline" slot="icon-only"></ion-icon></ion-button>
-    </ion-col>
-  </ion-row>
-</ion-card>
-
   <ion-card>
     <ion-row class="ion-align-items-center">
-      <ion-col size="auto"> </ion-col>
-      <ion-card-header>
-        <ion-col class="ion-no-padding titulos">
-          <ion-card-title>Character Story:</ion-card-title>
-          <ion-card-subtitle>
-            Put here your character description!
-          </ion-card-subtitle>
-        </ion-col>
-      </ion-card-header>
-    </ion-row>
-    <ion-button expand="block"> Edit </ion-button>
-  </ion-card>
-
-  <ion-card>
-    <ion-row class="ion-align-items-center">
-      <ion-col size="auto"> </ion-col>
-      <ion-card-header>
-        <ion-col class="ion-no-padding titulos">
-          <ion-card-title>Abilities</ion-card-title>
-          <ion-row>
-            <ion-col>
-              Strength:
-            </ion-col>
-            <ion-col>
-              {{character.atrib.strength}} ({{ calculateMod(character.atrib.strength) }})
-            </ion-col>
-            
-          </ion-row>
-          <ion-row>
-            <ion-col>
-              Dexterity:
-            </ion-col>
-            <ion-col>
-              {{character.atrib.dexterity}} ({{ calculateMod(character.atrib.dexterity) }})
-            </ion-col>
-            
-          </ion-row>
-          <ion-row>
-            <ion-col>
-              Constitution:
-            </ion-col>
-            <ion-col>
-              {{character.atrib.constitution}} ({{ calculateMod(character.atrib.constitution) }})
-            </ion-col>
-            
-          </ion-row>
-          <ion-row>
-            <ion-col>
-              Intelligence:
-            </ion-col>
-            <ion-col>
-              {{character.atrib.intelligence}} ({{ calculateMod(character.atrib.intelligence) }})
-            </ion-col>
-            
-          </ion-row>
-          <ion-row>
-            <ion-col>
-              Wisdom:
-            </ion-col>
-            <ion-col>
-              {{character.atrib.wisdom}} ({{ calculateMod(character.atrib.wisdom) }})
-            </ion-col>
-            
-          </ion-row>
-          <ion-row>
-            <ion-col>
-              Charisma:
-            </ion-col>
-            <ion-col>
-              {{character.atrib.charisma}} ({{ calculateMod(character.atrib.charisma) }})
-            </ion-col>
-            
-          </ion-row>
-          <!--
-          <ion-card-subtitle>Strength: <b>{{character.atrib.strength}} ({{ calculateMod(character.atrib.strength) }})</b></ion-card-subtitle>
-          <ion-card-subtitle>Dexterity: <b>{{character.atrib.dexterity}} ({{calculateMod(character.atrib.dexterity)}})</b></ion-card-subtitle>
-          <ion-card-subtitle>Constitution: <b>{{character.atrib.constitution}} ({{calculateMod(character.atrib.constitution)}})</b></ion-card-subtitle>
-          <ion-card-subtitle>Intelligence: <b>{{character.atrib.intelligence}} ({{calculateMod(character.atrib.intelligence)}})</b></ion-card-subtitle>
-          <ion-card-subtitle>Wisdom: <b>{{character.atrib.wisdom}} ({{calculateMod(character.atrib.wisdom)}})</b></ion-card-subtitle>
-          <ion-card-subtitle>Charisma: <b>{{character.atrib.charisma}} ({{calculateMod(character.atrib.charisma)}})</b></ion-card-subtitle>
-        -->
-        </ion-col>
-      </ion-card-header>
+      <ion-col class="text-right" size="4">
+        <h1>Level</h1>
+      </ion-col>
+      <ion-col class="text-center" size="4">
+        <ion-button (click)="levelUp()"
+          ><ion-icon name="caret-up-outline" slot="icon-only"></ion-icon
+        ></ion-button>
+      </ion-col>
+      <ion-col class="text-left" size="4">
+        <ion-button (click)="levelDown()"
+          ><ion-icon name="caret-down-outline" slot="icon-only"></ion-icon
+        ></ion-button>
+      </ion-col>
     </ion-row>
   </ion-card>
 
   <ion-card>
-    <ion-row class="ion-align-items-center">
-      <ion-col size="auto"> </ion-col>
-      <ion-card-header>
-        <ion-col class="ion-no-padding titulos">
-          <ion-card-title>Itens</ion-card-title>
-          <ion-card-subtitle>
-            {{character.itensList}}
-          </ion-card-subtitle>
-        </ion-col>
-      </ion-card-header>
-    </ion-row>
-    <ion-button expand="block"> Edit </ion-button>
+    <ion-card-header>
+      <ion-col class="ion-no-padding titulos">
+        <ion-card-title>Character Story:</ion-card-title>
+        <ion-card-subtitle>
+          Put here your character description!
+        </ion-card-subtitle>
+      </ion-col>
+    </ion-card-header>
+    <ion-button class="edit-btn" expand="block">Edit</ion-button>
   </ion-card>
 
   <ion-card>
-    <ion-row class="ion-align-items-center">
-      <ion-col size="auto"> </ion-col>
-      <ion-card-header>
-        <ion-col class="ion-no-padding titulos">
-          <ion-card-title>Spells</ion-card-title>
-          <ion-card-subtitle>{{character.spellsList}}</ion-card-subtitle>
+    <ion-card-header>
+      <ion-card-title>Abilities</ion-card-title>
+      <ion-row>
+        <ion-col size="6"> Strength: </ion-col>
+        <ion-col size="6">
+          {{character.atrib.strength}} ({{
+          calculateMod(character.atrib.strength) }})
         </ion-col>
-      </ion-card-header>
-    </ion-row>
-    <ion-button expand="block"> Edit </ion-button>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">Dexterity:</ion-col>
+        <ion-col size="6">
+          {{character.atrib.dexterity}} ({{
+          calculateMod(character.atrib.dexterity) }})
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"> Constitution: </ion-col>
+        <ion-col size="6">
+          {{character.atrib.constitution}} ({{
+          calculateMod(character.atrib.constitution) }})
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"> Intelligence: </ion-col>
+        <ion-col size="6">
+          {{character.atrib.intelligence}} ({{
+          calculateMod(character.atrib.intelligence) }})
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"> Wisdom: </ion-col>
+        <ion-col size="6">
+          {{character.atrib.wisdom}} ({{ calculateMod(character.atrib.wisdom)
+          }})
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"> Charisma: </ion-col>
+        <ion-col size="6">
+          {{character.atrib.charisma}} ({{
+          calculateMod(character.atrib.charisma) }})
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
   </ion-card>
 
+  <ion-card>
+    <ion-card-header>
+      <ion-col class="ion-no-padding titulos">
+        <ion-card-title>Itens</ion-card-title>
+        <ion-card-subtitle> {{character.itensList}} </ion-card-subtitle>
+      </ion-col>
+    </ion-card-header>
+    <ion-button class="edit-btn" expand="block">Edit</ion-button>
+  </ion-card>
 
+  <ion-card>
+    <ion-card-header>
+      <ion-col class="ion-no-padding titulos">
+        <ion-card-title>Spells</ion-card-title>
+        <ion-card-subtitle>{{character.spellsList}}</ion-card-subtitle>
+      </ion-col>
+    </ion-card-header>
+    <ion-button class="edit-btn" expand="block">Edit</ion-button>
+  </ion-card>
 </ion-content>

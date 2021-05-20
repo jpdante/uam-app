@@ -3,22 +3,25 @@ import { Router } from '@angular/router';
 import { StorageService } from 'src/app/services/storage-service';
 
 interface Atrib {
-  strength : number;
-  dexterity : number;
-  constitution : number;
-  intelligence : number;
-  wisdom : number;
-  charisma : number;
+  strength: number;
+  dexterity: number;
+  constitution: number;
+  intelligence: number;
+  wisdom: number;
+  charisma: number;
 }
 interface Character {
-  image : string;
-  name : string;
-  class : string;
-  level : number;
-  race : string;
-  atrib : Atrib;
+  image: string;
+  name: string;
+  class: string;
+  level: number;
+  race: string;
+  gender: string;
+  story: string,
+  itensList: string,
+  spellsList: string,
+  atrib: Atrib,
 }
-
 
 @Component({
   selector: 'app-create-character',
@@ -35,50 +38,43 @@ export class CreateCharacterPage implements OnInit {
     this.currentImageLink = this.defaultImg;
   }
 
-  public defaultAtribs = {
-    strength : 10,
-    dexterity : 10,
-    constitution : 10,
-    intelligence : 10,
-    wisdom : 10,
-    charisma : 10
-  }
+  public defaultAtribs: Atrib = {
+    strength: 10,
+    dexterity: 10,
+    constitution: 10,
+    intelligence: 10,
+    wisdom: 10,
+    charisma: 10,
+  };
 
-  public newCharacter = {
-    img: this.defaultImg,
+  public newCharacter: Character = {
+    image: this.defaultImg,
     name: '',
     class: '',
-    level : 1,
+    level: 1,
     race: '',
     gender: '',
-    story : 'Put your description here',
+    story: 'Put your description here',
     itensList: 'Put your description here',
-    spellsList : 'Put your description here',
-    atrib: this.defaultAtribs
+    spellsList: 'Put your description here',
+    atrib: this.defaultAtribs,
   };
 
   public updateImage(e: any) {
     this.currentImageLink = e.target.value || this.defaultImg;
-    this.newCharacter.img = this.currentImageLink;
+    this.newCharacter.image = this.currentImageLink;
   }
 
   public resetImage() {
-    this.newCharacter.img = this.defaultImg;
+    this.newCharacter.image = this.defaultImg;
   }
 
   public async submitCharacter() {
     const characters: Character[] | null = await this.storageService.get(
       'characters'
     );
-    characters.push({
-      image: this.newCharacter.img,
-      name: this.newCharacter.name,
-      class: this.newCharacter.class,
-      level: 1,
-      race: this.newCharacter.race,
-      atrib: this.newCharacter.atrib
-    });
+    characters.push(this.newCharacter);
     await this.storageService.set('characters', characters);
-    this.router.navigate(['/characters'])
+    this.router.navigate(['/characters']);
   }
 }

@@ -3,29 +3,17 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="characters"></ion-back-button>
     </ion-buttons>
-    <ion-title >Create Character</ion-title>
+    <ion-title>Create Character</ion-title>
   </ion-toolbar>
 </ion-header>
- <!--teste-->
 <ion-content class="ion-padding">
-
   <ion-row>
     <ion-col class="ion-text-center">
-      <img [src]="newCharacter.img">
-      
+      <img [src]="newCharacter.image" />
+
       <ion-item>
-        <ion-label>
-          Link
-        </ion-label>
+        <ion-label> Link </ion-label>
         <ion-input (ionChange)="updateImage($event)"></ion-input>
-        <!--
-        <ion-button (click)="refreshImage()">
-          <ion-icon slot="icon-only" name="refresh"></ion-icon>
-        </ion-button>
-        <ion-button (click)="refreshImage()">
-          <ion-icon slot="icon-only" name="arrow-forward-outline"></ion-icon>
-        </ion-button>
-        -->
       </ion-item>
 
       <ion-item>
@@ -39,42 +27,47 @@
       <ion-item>
         <ion-label>Race</ion-label>
         <ion-select placeholder="Select a Race" [(ngModel)]="newCharacter.race">
-          <ion-select-option value="dwarf">Dwarf</ion-select-option>
-          <ion-select-option value="elf">Elf</ion-select-option>
-          <ion-select-option value="halfling">Halfling</ion-select-option>
-          <ion-select-option value="human">Human</ion-select-option>
-          <ion-select-option value="dragonborn">Dragonborn</ion-select-option>
-          <ion-select-option value="gnome">Gnome</ion-select-option>
-          <ion-select-option value="halfelf">Half-elf</ion-select-option>
-          <ion-select-option value="halforc">Half-orc</ion-select-option>
-          <ion-select-option value="tiefling">Tiefling</ion-select-option>
+          <ion-select-option value="Dwarf">Dwarf</ion-select-option>
+          <ion-select-option value="Elf">Elf</ion-select-option>
+          <ion-select-option value="Halfling">Halfling</ion-select-option>
+          <ion-select-option value="Human">Human</ion-select-option>
+          <ion-select-option value="Dragonborn">Dragonborn</ion-select-option>
+          <ion-select-option value="Gnome">Gnome</ion-select-option>
+          <ion-select-option value="Halfelf">Half-elf</ion-select-option>
+          <ion-select-option value="Halforc">Half-orc</ion-select-option>
+          <ion-select-option value="Tiefling">Tiefling</ion-select-option>
         </ion-select>
       </ion-item>
       <ion-item>
         <ion-label>Class</ion-label>
-        <ion-select placeholder="Select a Class" [(ngModel)]="newCharacter.class">
-          <ion-select-option value="barbarian">Barbarian</ion-select-option>
-          <ion-select-option value="bard">Bard</ion-select-option>
-          <ion-select-option value="warlock">Warlock</ion-select-option>
-          <ion-select-option value="cleric">Cleric</ion-select-option>
-          <ion-select-option value="druid">Druid</ion-select-option>
-          <ion-select-option value="sorcerer">Sorcerer</ion-select-option>
-          <ion-select-option value="fighter">Fighter</ion-select-option>
-          <ion-select-option value="rogue">Rogue</ion-select-option>
-          <ion-select-option value="mage">Mage</ion-select-option>
-          <ion-select-option value="monk">Monk</ion-select-option>
-          <ion-select-option value="paladin">Paladin</ion-select-option>
-          <ion-select-option value="ranger">Ranger</ion-select-option>
+        <ion-select
+          placeholder="Select a Class"
+          [(ngModel)]="newCharacter.class"
+        >
+          <ion-select-option value="Barbarian">Barbarian</ion-select-option>
+          <ion-select-option value="Bard">Bard</ion-select-option>
+          <ion-select-option value="Warlock">Warlock</ion-select-option>
+          <ion-select-option value="Cleric">Cleric</ion-select-option>
+          <ion-select-option value="Druid">Druid</ion-select-option>
+          <ion-select-option value="Sorcerer">Sorcerer</ion-select-option>
+          <ion-select-option value="Fighter">Fighter</ion-select-option>
+          <ion-select-option value="Rogue">Rogue</ion-select-option>
+          <ion-select-option value="Mage">Mage</ion-select-option>
+          <ion-select-option value="Monk">Monk</ion-select-option>
+          <ion-select-option value="Paladin">Paladin</ion-select-option>
+          <ion-select-option value="Ranger">Ranger</ion-select-option>
         </ion-select>
       </ion-item>
 
-      <br>
+      <br />
 
-      <ion-button (click)="submitCharacter()" routerLinkActive="router-link-active"  expand="block">
+      <ion-button
+        (click)="submitCharacter()"
+        routerLinkActive="router-link-active"
+        expand="block"
+      >
         Submit
       </ion-button>
-
     </ion-col>
   </ion-row>
-
 </ion-content>
