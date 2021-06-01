@@ -2,7 +2,47 @@
   <ion-toolbar color="primary">
     <ion-title>Search</ion-title>
   </ion-toolbar>
-
+  <ion-item>
+    <ion-label>Option</ion-label>
+    <ion-select interface="popover" [(ngModel)]="type">
+      <ion-select-option value="1">Classes</ion-select-option>
+      <ion-select-option value="2">Races</ion-select-option>
+      <ion-select-option value="3">Equipment</ion-select-option> 
+      <ion-select-option value="4">Spells</ion-select-option>
+      <ion-select-option value="5">Monsters</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <div [ngSwitch]="type">
+    <ion-item *ngSwitchCase="'1'">
+      <ion-label>SubOption</ion-label>
+      <ion-select interface="popover">
+        <ion-select-option value="nes">Classes</ion-select-option>
+        <ion-select-option value="n64">Subclasses</ion-select-option>
+        <ion-select-option value="ps">Features</ion-select-option>
+        <ion-select-option value="genesis">Starting Equipmente</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngSwitchCase="'2'">
+      <ion-label>SubOption</ion-label>
+      <ion-select interface="popover">
+        <ion-select-option value="n64">Races</ion-select-option>
+        <ion-select-option value="ps">Subraces</ion-select-option>
+        <ion-select-option value="genesis">Traits</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngSwitchCase="'3'">
+      <ion-label>SubOption</ion-label>
+      <ion-select interface="popover">
+        <ion-select-option value="nes">Equipment</ion-select-option>
+        <ion-select-option value="n64">Weapons</ion-select-option>
+        <ion-select-option value="ps">Armor</ion-select-option>
+        <ion-select-option value="genesis">Adventuring gear</ion-select-option>
+        <ion-select-option value="saturn">Equipament Packs</ion-select-option>
+        <ion-select-option value="saturn">Magic Items</ion-select-option>
+        <ion-select-option value="saturn">Weapon Properties</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
   <ion-searchbar
     placeholder="Type here to search"
     debounce="500"
