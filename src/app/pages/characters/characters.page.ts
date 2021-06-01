@@ -13,12 +13,15 @@ interface Atrib {
 interface Character {
   image : string;
   name : string;
+  lifePoints : number;
+  armorClass : number;
   class : string;
   level : number;
   race : string;
   gender: string;
   story : string;
   atrib : Atrib;
+  languagesAndProficiencies: string;
   itensList: string;
   spellsList : string;
 }
@@ -41,65 +44,7 @@ export class CharactersPage {
 
   public defaultSpells = 'Put your description here';
 
-  public characterList : Character[] = [
-    {
-      image : 'https://i.imgur.com/ThCwYa1.png',
-      name : 'Hagrid Treehugger',
-      class : 'Druid',
-      level : 7,
-      race : 'High elf',
-      gender: 'Male',
-      story: this.defaultStory,
-      itensList: this.defaultItens,
-      spellsList: this.defaultSpells,
-      atrib : {
-        strength : 9,
-        dexterity : 18,
-        constitution : 12,
-        intelligence : 14,
-        wisdom : 11,
-        charisma : 17
-      }
-    },
-    {
-      image : 'https://i.imgur.com/SpDNgVh.png',
-      name : 'Hael Darkstorm',
-      class : 'Warlock',
-      level : 4,
-      race : 'Tiefling',
-      gender: 'Male',
-      story: this.defaultStory,
-      itensList: this.defaultItens,
-      spellsList: this.defaultSpells,
-      atrib : {
-        strength : 17,
-        dexterity : 10,
-        constitution : 12,
-        intelligence : 8,
-        wisdom : 11,
-        charisma : 3
-      }
-    },
-    {
-      image : 'https://i.imgur.com/KFl2nRN.png',
-      name : 'Hemillion Rustybeard',
-      class : 'Barbarian',
-      level : 10,
-      race : 'Dwarf',
-      gender: 'Male',
-      story: this.defaultStory,
-      itensList: this.defaultItens,
-      spellsList: this.defaultSpells,
-      atrib : {
-        strength : 15,
-        dexterity : 12,
-        constitution : 14,
-        intelligence : 10,
-        wisdom : 8,
-        charisma : 10
-      }
-    }, 
-  ];
+  public characterList : Character[] = [];
 
   async ngOnInit() {
     await this.loadFromStorage();

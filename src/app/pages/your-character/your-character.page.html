@@ -20,6 +20,8 @@
           <ion-col>
             <ion-card-subtitle>
               Level: <b>{{character.level}}°</b><br />
+              Life Points: <b>{{character.lifePoints}}</b><br />
+              Armor Class: <b>{{character.armorClass}}</b><br />
               Class: <b>{{character.class}}</b><br />
               Race: <b>{{character.race}}</b><br />
               Gender: <b>{{character.gender}}</b><br />
@@ -36,28 +38,50 @@
         <h1>Level</h1>
       </ion-col>
       <ion-col class="text-center" size="4">
-        <ion-button (click)="levelUp()"
-          ><ion-icon name="caret-up-outline" slot="icon-only"></ion-icon
+        <ion-button (click)="levelDown()"
+          ><ion-icon name="caret-down-outline" slot="icon-only"></ion-icon
         ></ion-button>
       </ion-col>
       <ion-col class="text-left" size="4">
-        <ion-button (click)="levelDown()"
-          ><ion-icon name="caret-down-outline" slot="icon-only"></ion-icon
+        <ion-button (click)="levelUp()"
+          ><ion-icon name="caret-up-outline" slot="icon-only"></ion-icon
         ></ion-button>
       </ion-col>
     </ion-row>
   </ion-card>
 
   <ion-card>
+    <ion-row class="ion-align-items-center">
+      <ion-item>
+        <ion-label>Life Points: </ion-label>
+        <ion-input type="number" value={{character.lifePoints}} [(ngModel)]="lifePoints"></ion-input>
+        <ion-button (click)="changeLifePoints(lifePoints)" size="small" color="primary">save</ion-button> 
+      </ion-item>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-row class="ion-align-items-center">
+      <ion-item>
+        <ion-label>Armor Class: </ion-label>
+        <ion-input type="number" value={{character.armorClass}} [(ngModel)]="armorClass"></ion-input>
+        <ion-button (click)="changeArmorClass(armorClass)" size="small" color="primary">save</ion-button> 
+      </ion-item>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
     <ion-card-header>
       <ion-col class="ion-no-padding titulos">
-        <ion-card-title>Character Story:</ion-card-title>
+        <ion-card-title>Character Story</ion-card-title>
         <ion-card-subtitle>
-          Put here your character description!
+          <ion-item>
+            <ion-input type="text" value={{character.story}} [(ngModel)]="story"></ion-input>
+            <ion-button (click)="changeCharacterStory(story)" size="small" color="primary">save</ion-button> 
+          </ion-item>
         </ion-card-subtitle>
       </ion-col>
     </ion-card-header>
-    <ion-button class="edit-btn" expand="block">Edit</ion-button>
   </ion-card>
 
   <ion-card>
@@ -68,6 +92,8 @@
         <ion-col size="6">
           {{character.atrib.strength}} ({{
           calculateMod(character.atrib.strength) }})
+          <ion-button (click)="strengthDown()" size="small" color="primary">-</ion-button> 
+          <ion-button (click)="strengthUp()" size="small" color="primary">+</ion-button> 
         </ion-col>
       </ion-row>
       <ion-row>
@@ -75,6 +101,8 @@
         <ion-col size="6">
           {{character.atrib.dexterity}} ({{
           calculateMod(character.atrib.dexterity) }})
+          <ion-button (click)="dexterityDown()" size="small" color="primary">-</ion-button> 
+          <ion-button (click)="dexterityUp()" size="small" color="primary">+</ion-button> 
         </ion-col>
       </ion-row>
       <ion-row>
@@ -82,6 +110,8 @@
         <ion-col size="6">
           {{character.atrib.constitution}} ({{
           calculateMod(character.atrib.constitution) }})
+          <ion-button (click)="constitutionDown()" size="small" color="primary">-</ion-button> 
+          <ion-button (click)="constitutionUp()" size="small" color="primary">+</ion-button> 
         </ion-col>
       </ion-row>
       <ion-row>
@@ -89,13 +119,17 @@
         <ion-col size="6">
           {{character.atrib.intelligence}} ({{
           calculateMod(character.atrib.intelligence) }})
+          <ion-button (click)="intelligenceDown()" size="small" color="primary">-</ion-button> 
+          <ion-button (click)="intelligenceUp()" size="small" color="primary">+</ion-button> 
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col size="6"> Wisdom: </ion-col>
         <ion-col size="6">
-          {{character.atrib.wisdom}} ({{ calculateMod(character.atrib.wisdom)
-          }})
+          {{character.atrib.wisdom}} ({{ 
+          calculateMod(character.atrib.wisdom) }})
+          <ion-button (click)="wisdomDown()" size="small" color="primary">-</ion-button> 
+          <ion-button (click)="wisdomUp()" size="small" color="primary">+</ion-button> 
         </ion-col>
       </ion-row>
       <ion-row>
@@ -103,6 +137,8 @@
         <ion-col size="6">
           {{character.atrib.charisma}} ({{
           calculateMod(character.atrib.charisma) }})
+          <ion-button (click)="charismaDown()" size="small" color="primary">-</ion-button> 
+          <ion-button (click)="charismaUp()" size="small" color="primary">+</ion-button> 
         </ion-col>
       </ion-row>
     </ion-card-header>
@@ -111,20 +147,43 @@
   <ion-card>
     <ion-card-header>
       <ion-col class="ion-no-padding titulos">
-        <ion-card-title>Itens</ion-card-title>
-        <ion-card-subtitle> {{character.itensList}} </ion-card-subtitle>
+        <ion-card-title>Itens List</ion-card-title>
+        <ion-card-subtitle>
+          <ion-item>
+            <ion-input type="text" value={{character.itensList}} [(ngModel)]="itens"></ion-input>
+            <ion-button (click)="changeItens(itens)" size="small" color="primary">save</ion-button> 
+          </ion-item>
+        </ion-card-subtitle>
       </ion-col>
     </ion-card-header>
-    <ion-button class="edit-btn" expand="block">Edit</ion-button>
   </ion-card>
 
   <ion-card>
     <ion-card-header>
       <ion-col class="ion-no-padding titulos">
-        <ion-card-title>Spells</ion-card-title>
-        <ion-card-subtitle>{{character.spellsList}}</ion-card-subtitle>
+        <ion-card-title>Spells List</ion-card-title>
+        <ion-card-subtitle>
+          <ion-item>
+            <ion-input type="text" value={{character.spellsList}} [(ngModel)]="spells"></ion-input>
+            <ion-button (click)="changeSpells(spells)" size="small" color="primary">save</ion-button> 
+          </ion-item>
+        </ion-card-subtitle>
       </ion-col>
     </ion-card-header>
-    <ion-button class="edit-btn" expand="block">Edit</ion-button>
   </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-col class="ion-no-padding titulos">
+        <ion-card-title>Languages And Proficiencies</ion-card-title>
+        <ion-card-subtitle>
+          <ion-item>
+            <ion-input type="text" value={{character.languagesAndProficiencies}} [(ngModel)]="lap"></ion-input>
+            <ion-button (click)="changeLanguagesAndProeficiencies(lap)" size="small" color="primary">save</ion-button> 
+          </ion-item>
+        </ion-card-subtitle>
+      </ion-col>
+    </ion-card-header>
+  </ion-card>
+
 </ion-content>

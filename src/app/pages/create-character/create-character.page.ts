@@ -11,16 +11,19 @@ interface Atrib {
   charisma: number;
 }
 interface Character {
-  image: string;
-  name: string;
-  class: string;
-  level: number;
-  race: string;
+  image : string;
+  name : string;
+  lifePoints : number;
+  armorClass : number;
+  class : string;
+  level : number;
+  race : string;
   gender: string;
-  story: string,
-  itensList: string,
-  spellsList: string,
-  atrib: Atrib,
+  story : string;
+  atrib : Atrib;
+  languagesAndProficiencies: string;
+  itensList: string;
+  spellsList : string;
 }
 
 @Component({
@@ -50,10 +53,13 @@ export class CreateCharacterPage implements OnInit {
   public newCharacter: Character = {
     image: this.defaultImg,
     name: '',
+    lifePoints: 10,
+    armorClass: 10,
     class: '',
     level: 1,
     race: '',
     gender: '',
+    languagesAndProficiencies: 'Put your description here',
     story: 'Put your description here',
     itensList: 'Put your description here',
     spellsList: 'Put your description here',
