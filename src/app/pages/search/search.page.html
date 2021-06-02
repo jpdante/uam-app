@@ -3,7 +3,7 @@
     <ion-title>Search</ion-title>
   </ion-toolbar>
   <ion-item>
-    <ion-label>Option</ion-label>
+    <ion-label>Options</ion-label>
     <ion-select interface="popover" [(ngModel)]="type">
       <ion-select-option value="1">Classes</ion-select-option>
       <ion-select-option value="2">Races</ion-select-option>
@@ -14,7 +14,7 @@
   </ion-item>
   <div [ngSwitch]="type">
     <ion-item *ngSwitchCase="'1'">
-      <ion-label>SubOption</ion-label>
+      <ion-label>Sub Options</ion-label>
       <ion-select interface="popover">
         <ion-select-option value="nes">Classes</ion-select-option>
         <ion-select-option value="n64">Subclasses</ion-select-option>
@@ -23,7 +23,7 @@
       </ion-select>
     </ion-item>
     <ion-item *ngSwitchCase="'2'">
-      <ion-label>SubOption</ion-label>
+      <ion-label>Sub Options</ion-label>
       <ion-select interface="popover">
         <ion-select-option value="n64">Races</ion-select-option>
         <ion-select-option value="ps">Subraces</ion-select-option>
@@ -31,7 +31,7 @@
       </ion-select>
     </ion-item>
     <ion-item *ngSwitchCase="'3'">
-      <ion-label>SubOption</ion-label>
+      <ion-label>Sub Options</ion-label>
       <ion-select interface="popover">
         <ion-select-option value="nes">Equipment</ion-select-option>
         <ion-select-option value="n64">Weapons</ion-select-option>

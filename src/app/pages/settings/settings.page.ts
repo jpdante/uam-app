@@ -27,7 +27,7 @@ export class SettingsPage {
   }
 
   async resetBtn() {
-    await this.storageService.set('characters', null);
+    await this.storageService.set('characters', []);
     this.router.navigate(['/characters']);
   }
 }
