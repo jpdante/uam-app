@@ -59,159 +59,134 @@ export class YourCharacterPage implements OnInit {
   }
 
   public async changeLifePoints (life: number){
-    if(life < 999 && life > 1)
+    if(life < 1000 && life > 0)
     this.character.lifePoints = life;
-    let characters = await this.storageService.get ('characters');
-    characters[this.id] = this.character;
-    await this.storageService.set('characters', characters);
+    this.getSetSave();
   }
 
   public async changeArmorClass (armor: number){
-    if(armor < 99 && armor > 1)
+    if(armor < 100 && armor > 0)
     this.character.armorClass = armor; 
-    let characters = await this.storageService.get ('characters');
-    characters[this.id] = this.character;
-    await this.storageService.set('characters', characters);
+    this.getSetSave();
   }
 
   public async levelUp (){
     if(this.character.level < 20)
     this.character.level += 1; 
-    let characters = await this.storageService.get ('characters');
-    characters[this.id] = this.character;
-    await this.storageService.set('characters', characters);
+    this.getSetSave();
   }
   
   public async levelDown (){
     if(this.character.level > 1)
     this.character.level -= 1;
-    let characters = await this.storageService.get ('characters');
-    characters[this.id] = this.character;
-    await this.storageService.set('characters', characters);
+    this.getSetSave();
   }
 
   public async strengthUp (){
     if(this.character.atrib.strength < 30)
     this.character.atrib.strength += 1; 
-    let characters = await this.storageService.get ('characters');
-    characters[this.id] = this.character;
-    await this.storageService.set('characters', characters);
+    this.getSetSave();
   }
   
   public async strengthDown (){
     if(this.character.atrib.strength > 1)
     this.character.atrib.strength -= 1;
-    let characters = await this.storageService.get ('characters');
-    characters[this.id] = this.character;
-    await this.storageService.set('characters', characters);
+    this.getSetSave();
   }
 
   public async dexterityUp (){
     if(this.character.atrib.dexterity < 30)
     this.character.atrib.dexterity += 1; 
-    let characters = await this.storageService.get ('characters');
-    characters[this.id] = this.character;
-    await this.storageService.set('characters', characters);
+    this.getSetSave();
   }
   
   public async dexterityDown (){
     if(this.character.atrib.dexterity > 1)
     this.character.atrib.dexterity -= 1;
-    let characters = await this.storageService.get ('characters');
-    characters[this.id] = this.character;
-    await this.storageService.set('characters', characters);
+    this.getSetSave();
   }
 
   public async constitutionUp (){
     if(this.character.atrib.constitution < 30)
     this.character.atrib.constitution += 1; 
-    let characters = await this.storageService.get ('characters');
-    characters[this.id] = this.character;
-    await this.storageService.set('characters', characters);
+    this.getSetSave();
   }
   
   public async constitutionDown (){
     if(this.character.atrib.constitution > 1)
     this.character.atrib.constitution -= 1;
-    let characters = await this.storageService.get ('characters');
-    characters[this.id] = this.character;
-    await this.storageService.set('characters', characters);
+    this.getSetSave();
   }
 
   public async intelligenceUp (){
     if(this.character.atrib.intelligence < 30)
     this.character.atrib.intelligence += 1; 
-    let characters = await this.storageService.get ('characters');
-    characters[this.id] = this.character;
-    await this.storageService.set('characters', characters);
+    this.getSetSave();
   }
   
   public async intelligenceDown (){
     if(this.character.atrib.intelligence > 1)
     this.character.atrib.intelligence -= 1;
-    let characters = await this.storageService.get ('characters');
-    characters[this.id] = this.character;
-    await this.storageService.set('characters', characters);
+    this.getSetSave();
   }
 
   public async wisdomUp (){
     if(this.character.atrib.wisdom < 30)
     this.character.atrib.wisdom += 1; 
-    let characters = await this.storageService.get ('characters');
-    characters[this.id] = this.character;
-    await this.storageService.set('characters', characters);
+    this.getSetSave();
   }
   
   public async wisdomDown (){
     if(this.character.atrib.wisdom > 1)
     this.character.atrib.wisdom -= 1;
-    let characters = await this.storageService.get ('characters');
-    characters[this.id] = this.character;
-    await this.storageService.set('characters', characters);
+    this.getSetSave();
   }
 
   public async charismaUp (){
     if(this.character.atrib.charisma < 30)
     this.character.atrib.charisma += 1; 
-    let characters = await this.storageService.get ('characters');
-    characters[this.id] = this.character;
-    await this.storageService.set('characters', characters);
+    this.getSetSave();
   }
   
   public async charismaDown (){
     if(this.character.atrib.charisma > 1)
     this.character.atrib.charisma -= 1;
-    let characters = await this.storageService.get ('characters');
-    characters[this.id] = this.character;
-    await this.storageService.set('characters', characters);
+    this.getSetSave();
   }
 
   public async changeCharacterStory (text: string){
     this.character.story = text; 
-    let characters = await this.storageService.get ('characters');
-    characters[this.id] = this.character;
-    await this.storageService.set('characters', characters);
+    this.getSetSave();
   }
 
   public async changeItens (text: string){
     this.character.itensList = text;
-    let characters = await this.storageService.get ('characters');
-    characters[this.id] = this.character;
-    await this.storageService.set('characters', characters);
+    this.getSetSave();
   }
 
   public async changeSpells (text: string){
     this.character.spellsList = text;
+    this.getSetSave();
+  }
+
+  public async changeLanguagesAndProeficiencies (text: string){
+    this.character.languagesAndProficiencies = text;
+    this.getSetSave();
+  }
+
+  public async getSetSave (){
     let characters = await this.storageService.get ('characters');
     characters[this.id] = this.character;
     await this.storageService.set('characters', characters);
   }
 
-  public async changeLanguagesAndProeficiencies (text: string){
-    this.character.languagesAndProficiencies = text;
-    let characters = await this.storageService.get ('characters');
-    characters[this.id] = this.character;
-    await this.storageService.set('characters', characters);
+  public async savePage (a: number, b: number, c: string, d: string, e: string, f: string){
+    this.changeLifePoints(a);
+    this.changeArmorClass(b);
+    this.changeCharacterStory(c);
+    this.changeSpells(d);
+    this.changeItens(e);
+    this.changeLanguagesAndProeficiencies(f);
   }
 
   public calculateMod (ability: number){

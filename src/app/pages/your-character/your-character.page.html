@@ -55,7 +55,6 @@
       <ion-item>
         <ion-label>Life Points: </ion-label>
         <ion-input type="number" value={{character.lifePoints}} [(ngModel)]="lifePoints"></ion-input>
-        <ion-button (click)="changeLifePoints(lifePoints)" size="small" color="primary">save</ion-button> 
       </ion-item>
     </ion-row>
   </ion-card>
@@ -65,7 +64,6 @@
       <ion-item>
         <ion-label>Armor Class: </ion-label>
         <ion-input type="number" value={{character.armorClass}} [(ngModel)]="armorClass"></ion-input>
-        <ion-button (click)="changeArmorClass(armorClass)" size="small" color="primary">save</ion-button> 
       </ion-item>
     </ion-row>
   </ion-card>
@@ -77,7 +75,6 @@
         <ion-card-subtitle>
           <ion-item>
             <ion-textarea value={{character.story}} [(ngModel)]="story"></ion-textarea>
-            <ion-button (click)="changeCharacterStory(story)" size="small" color="primary">save</ion-button> 
           </ion-item>
         </ion-card-subtitle>
       </ion-col>
@@ -151,7 +148,6 @@
         <ion-card-subtitle>
           <ion-item>
             <ion-textarea value={{character.itensList}} [(ngModel)]="itens"></ion-textarea>
-            <ion-button (click)="changeItens(itens)" size="small" color="primary">save</ion-button> 
           </ion-item>
         </ion-card-subtitle>
       </ion-col>
@@ -164,8 +160,7 @@
         <ion-card-title>Spells List</ion-card-title>
         <ion-card-subtitle>
           <ion-item>
-            <ion-textarea value={{character.spellsList}} [(ngModel)]="spells"></ion-textarea>
-            <ion-button (click)="changeSpells(spells)" size="small" color="primary">save</ion-button> 
+            <ion-textarea value={{character.spellsList}} [(ngModel)]="spells"></ion-textarea> 
           </ion-item>
         </ion-card-subtitle>
       </ion-col>
@@ -179,7 +174,6 @@
         <ion-card-subtitle>
           <ion-item>
             <ion-textarea value={{character.languagesAndProficiencies}} [(ngModel)]="lap"></ion-textarea>
-            <ion-button (click)="changeLanguagesAndProeficiencies(lap)" size="small" color="primary">save</ion-button> 
           </ion-item>
         </ion-card-subtitle>
       </ion-col>
@@ -187,3 +181,5 @@
   </ion-card>
 
 </ion-content>
+
+<ion-button (click)="savePage(lifePoints, armorClass, story, spells, itens, lap)" color="primary">save</ion-button> 
