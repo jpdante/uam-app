@@ -76,7 +76,7 @@
         <ion-card-title>Character Story</ion-card-title>
         <ion-card-subtitle>
           <ion-item>
-            <ion-input type="text" value={{character.story}} [(ngModel)]="story"></ion-input>
+            <ion-textarea value={{character.story}} [(ngModel)]="story"></ion-textarea>
             <ion-button (click)="changeCharacterStory(story)" size="small" color="primary">save</ion-button> 
           </ion-item>
         </ion-card-subtitle>
@@ -150,7 +150,7 @@
         <ion-card-title>Itens List</ion-card-title>
         <ion-card-subtitle>
           <ion-item>
-            <ion-input type="text" value={{character.itensList}} [(ngModel)]="itens"></ion-input>
+            <ion-textarea value={{character.itensList}} [(ngModel)]="itens"></ion-textarea>
             <ion-button (click)="changeItens(itens)" size="small" color="primary">save</ion-button> 
           </ion-item>
         </ion-card-subtitle>
@@ -164,7 +164,7 @@
         <ion-card-title>Spells List</ion-card-title>
         <ion-card-subtitle>
           <ion-item>
-            <ion-input type="text" value={{character.spellsList}} [(ngModel)]="spells"></ion-input>
+            <ion-textarea value={{character.spellsList}} [(ngModel)]="spells"></ion-textarea>
             <ion-button (click)="changeSpells(spells)" size="small" color="primary">save</ion-button> 
           </ion-item>
         </ion-card-subtitle>
@@ -178,7 +178,7 @@
         <ion-card-title>Languages And Proficiencies</ion-card-title>
         <ion-card-subtitle>
           <ion-item>
-            <ion-input type="text" value={{character.languagesAndProficiencies}} [(ngModel)]="lap"></ion-input>
+            <ion-textarea value={{character.languagesAndProficiencies}} [(ngModel)]="lap"></ion-textarea>
             <ion-button (click)="changeLanguagesAndProeficiencies(lap)" size="small" color="primary">save</ion-button> 
           </ion-item>
         </ion-card-subtitle>
