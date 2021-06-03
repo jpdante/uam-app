@@ -5,41 +5,36 @@
   <ion-item>
     <ion-label>Options</ion-label>
     <ion-select interface="popover" [(ngModel)]="type">
-      <ion-select-option value="1">Classes</ion-select-option>
-      <ion-select-option value="2">Races</ion-select-option>
-      <ion-select-option value="3">Equipment</ion-select-option> 
-      <ion-select-option value="4">Spells</ion-select-option>
-      <ion-select-option value="5">Monsters</ion-select-option>
+      <ion-select-option value="classes">Classes</ion-select-option>
+      <ion-select-option value="races">Races</ion-select-option>
+      <ion-select-option value="equipment">Equipment</ion-select-option> 
+      <ion-select-option value="spells">Spells</ion-select-option>
+      <ion-select-option value="monsters">Monsters</ion-select-option>
     </ion-select>
   </ion-item>
   <div [ngSwitch]="type">
-    <ion-item *ngSwitchCase="'1'">
+    <ion-item *ngSwitchCase="'classes'">
       <ion-label>Sub Options</ion-label>
       <ion-select interface="popover" [(ngModel)]="subtype">
-        <ion-select-option value="1">Classes</ion-select-option>
-        <ion-select-option value="2">Subclasses</ion-select-option>
-        <ion-select-option value="3">Features</ion-select-option>
-        <ion-select-option value="4">Starting Equipmente</ion-select-option>
+        <ion-select-option value="classes">Classes</ion-select-option>
+        <ion-select-option value="subclasses">Subclasses</ion-select-option>
+        <ion-select-option value="features">Features</ion-select-option>
+        <ion-select-option value="starting-equipment">Starting Equipmente</ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-item *ngSwitchCase="'2'">
+    <ion-item *ngSwitchCase="'races'">
       <ion-label>Sub Options</ion-label>
-      <ion-select interface="popover">
-        <ion-select-option value="1">Races</ion-select-option>
-        <ion-select-option value="2">Subraces</ion-select-option>
-        <ion-select-option value="3">Traits</ion-select-option>
+      <ion-select interface="popover" [(ngModel)]="subtype">
+        <ion-select-option value="races">Races</ion-select-option>
+        <ion-select-option value="subraces">Subraces</ion-select-option>
+        <ion-select-option value="traits">Traits</ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-item *ngSwitchCase="'3'">
+    <ion-item *ngSwitchCase="'equipment'">
       <ion-label>Sub Options</ion-label>
-      <ion-select interface="popover">
-        <ion-select-option value="nes">Equipment</ion-select-option>
-        <ion-select-option value="n64">Weapons</ion-select-option>
-        <ion-select-option value="ps">Armor</ion-select-option>
-        <ion-select-option value="genesis">Adventuring gear</ion-select-option>
-        <ion-select-option value="saturn">Equipament Packs</ion-select-option>
-        <ion-select-option value="saturn">Magic Items</ion-select-option>
-        <ion-select-option value="saturn">Weapon Properties</ion-select-option>
+      <ion-select interface="popover" [(ngModel)]="subtype">
+        <ion-select-option value="magic-items">Magic Items</ion-select-option>
+        <ion-select-option value="weapon-properties">Weapon Properties</ion-select-option>
       </ion-select>
     </ion-item>
   </div>
