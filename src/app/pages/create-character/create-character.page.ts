@@ -26,7 +26,7 @@ interface Character {
   spellsList : string;
   xp : number;
   alignment : string;
-  displacement : number;
+  speed : number;
   initiative : number;
 }
 
@@ -70,7 +70,7 @@ export class CreateCharacterPage implements OnInit {
     atrib: this.defaultAtribs,
     xp : 0,
     alignment : '',
-    displacement: 9,
+    speed: 9,
     initiative: 10,
   };
 

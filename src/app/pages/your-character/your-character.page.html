@@ -23,7 +23,7 @@
               XP: <b>{{character.xp}}</b><br />
               Life Points: <b>{{character.lifePoints}}</b><br />
               Armor Class: <b>{{character.armorClass}}</b><br />
-              Displacement: <b>{{character.displacement}}</b><br />
+              Speed: <b>{{character.speed}}</b><br />
               Initiative: <b>{{character.initiative}}</b><br />
             </ion-card-subtitle>
           </ion-col>
@@ -211,8 +211,8 @@
   <ion-card>
     <ion-row class="ion-align-items-center">
       <ion-item>
-        <ion-label>Displacement: </ion-label>
-        <ion-input type="number" value={{character.displacement}} [(ngModel)]="displacement "></ion-input>
+        <ion-label>Speed: </ion-label>
+        <ion-input type="number" value={{character.speed}} [(ngModel)]="speed"></ion-input>
       </ion-item>
     </ion-row>
   </ion-card>
@@ -241,4 +241,4 @@
 
 </ion-content>
 
-<ion-button (click)="savePage(lifePoints, armorClass, story, spells, itens, lap, xp, alignment, initiative, displacement)" color="primary">save</ion-button> 
+<ion-button (click)="savePage(lifePoints, armorClass, story, spells, itens, lap, xp, alignment, initiative, speed)" color="primary">save</ion-button> 

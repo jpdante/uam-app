@@ -12,7 +12,7 @@
       <img [src]="newCharacter.image" />
 
       <ion-item>
-        <ion-label> Link </ion-label>
+        <ion-label>Link</ion-label>
         <ion-input (ionChange)="updateImage($event)"></ion-input>
       </ion-item>
 
@@ -20,10 +20,17 @@
         <ion-label>Name</ion-label>
         <ion-input [(ngModel)]="newCharacter.name"></ion-input>
       </ion-item>
+
       <ion-item>
         <ion-label>Gender</ion-label>
-        <ion-input [(ngModel)]="newCharacter.gender"></ion-input>
+        <ion-select placeholder="Select a Gender" [(ngModel)]="newCharacter.gender">
+          <ion-select-option value="Male">Male</ion-select-option>
+          <ion-select-option value="Female">Female</ion-select-option>
+          <ion-select-option value="Non Binary">Non Binary</ion-select-option>
+          <ion-select-option value="I'm not sure...">I'm not sure...</ion-select-option>
+        </ion-select>
       </ion-item>
+
       <ion-item>
         <ion-label>Race</ion-label>
         <ion-select placeholder="Select a Race" [(ngModel)]="newCharacter.race">
@@ -58,6 +65,7 @@
           <ion-select-option value="Ranger">Ranger</ion-select-option>
         </ion-select>
       </ion-item>
+
       <ion-item>
         <ion-label>Alignments</ion-label>
         <ion-select placeholder="Select a Race" [(ngModel)]="newCharacter.alignment">

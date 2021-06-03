@@ -191,9 +191,9 @@ export class YourCharacterPage implements OnInit {
     this.getSetSave();
   }
 
-  public async changeDisplacement (number: number){
+  public async changeSpeed (number: number){
     if(number < 100 && number > 0)
-    this.character.displacement = number;
+    this.character.speed = number;
     this.getSetSave();
   }
 
@@ -213,7 +213,7 @@ export class YourCharacterPage implements OnInit {
     this.changeXp(g);
     this.changeAlignment(h);
     this.changeInitiative(i);
-    this.changeDisplacement(j);
+    this.changeSpeed(j);
   }
 
   public calculateMod (ability: number){
