@@ -15,19 +15,19 @@
   <div [ngSwitch]="type">
     <ion-item *ngSwitchCase="'1'">
       <ion-label>Sub Options</ion-label>
-      <ion-select interface="popover">
-        <ion-select-option value="nes">Classes</ion-select-option>
-        <ion-select-option value="n64">Subclasses</ion-select-option>
-        <ion-select-option value="ps">Features</ion-select-option>
-        <ion-select-option value="genesis">Starting Equipmente</ion-select-option>
+      <ion-select interface="popover" [(ngModel)]="subtype">
+        <ion-select-option value="1">Classes</ion-select-option>
+        <ion-select-option value="2">Subclasses</ion-select-option>
+        <ion-select-option value="3">Features</ion-select-option>
+        <ion-select-option value="4">Starting Equipmente</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item *ngSwitchCase="'2'">
       <ion-label>Sub Options</ion-label>
       <ion-select interface="popover">
-        <ion-select-option value="n64">Races</ion-select-option>
-        <ion-select-option value="ps">Subraces</ion-select-option>
-        <ion-select-option value="genesis">Traits</ion-select-option>
+        <ion-select-option value="1">Races</ion-select-option>
+        <ion-select-option value="2">Subraces</ion-select-option>
+        <ion-select-option value="3">Traits</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item *ngSwitchCase="'3'">
