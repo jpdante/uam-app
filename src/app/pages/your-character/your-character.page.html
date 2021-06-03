@@ -17,44 +17,17 @@
               <img [src]="character.image" />
             </ion-avatar>
           </ion-col>
-          <ion-col>
-            <ion-card-subtitle>
-              Level: <b>{{character.level}}°</b><br />
-              XP: <b>{{character.xp}}</b><br />
-              Life Points: <b>{{character.lifePoints}}</b><br />
-              Armor Class: <b>{{character.armorClass}}</b><br />
-              Speed: <b>{{character.speed}}</b><br />
-              Initiative: <b>{{character.initiative}}</b><br />
-            </ion-card-subtitle>
-          </ion-col>
         </ion-row>
       </ion-grid>
     </ion-card-content>
   </ion-card>
 
-    <ion-card>
-      <ion-card-content>
-        <ion-grid>
-          <ion-row class="ion-align-items-center">
-            <ion-col>
-              <ion-card-subtitle>
-                Alignment: <b>{{character.alignment}}</b><br />
-                Class: <b>{{character.class}}</b><br />
-                Race: <b>{{character.race}}</b><br />
-                Gender: <b>{{character.gender}}</b><br />
-              </ion-card-subtitle>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card-content>
-    </ion-card>
-
   <ion-card>
     <ion-row class="ion-align-items-center">
-      <ion-col class="text-right" size="4">
-        <h1>Level</h1>
+      <ion-col class="text-right" size="5">
+        <h1>Level: {{character.level}}</h1>
       </ion-col>
-      <ion-col class="text-center" size="4">
+      <ion-col class="text-center" size="3">
         <ion-button (click)="levelDown()"
           ><ion-icon name="caret-down-outline" slot="icon-only"></ion-icon
         ></ion-button>
@@ -75,6 +48,40 @@
       </ion-item>
     </ion-row>
   </ion-card>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row class="ion-align-items-center">
+            <ion-col>
+              <ion-card-subtitle>
+                Life Points: <b>{{character.lifePoints}}</b><br />
+                Armor Class: <b>{{character.armorClass}}</b><br />
+                Speed: <b>{{character.speed}}</b><br />
+                Initiative: <b>{{character.initiative}}</b><br />
+              </ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row class="ion-align-items-center">
+            <ion-col>
+              <ion-card-subtitle>
+                Alignment: <b>{{character.alignment}}</b><br />
+                Class: <b>{{character.class}}</b><br />
+                Race: <b>{{character.race}}</b><br />
+                Gender: <b>{{character.gender}}</b><br />
+              </ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
 
   <ion-card>
     <ion-row class="ion-align-items-center">
