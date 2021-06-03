@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { StorageService } from 'src/app/services/storage-service.service';
+import { AlertController } from '@ionic/angular';
 
 interface Atrib {
   strength: number;
@@ -11,23 +12,23 @@ interface Atrib {
   charisma: number;
 }
 interface Character {
-  image : string;
-  name : string;
-  lifePoints : number;
-  armorClass : number;
-  class : string;
-  level : number;
-  race : string;
+  image: string;
+  name: string;
+  lifePoints: number;
+  armorClass: number;
+  class: string;
+  level: number;
+  race: string;
   gender: string;
-  story : string;
-  atrib : Atrib;
+  story: string;
+  atrib: Atrib;
   languagesAndProficiencies: string;
   itensList: string;
-  spellsList : string;
-  xp : number;
-  alignment : string;
-  displacement : number;
-  initiative : number;
+  spellsList: string;
+  xp: number;
+  alignment: string;
+  displacement: number;
+  initiative: number;
 }
 
 @Component({
@@ -39,7 +40,11 @@ export class CreateCharacterPage implements OnInit {
   public defaultImg = 'https://i.imgur.com/svtbHpw.jpg';
   public currentImageLink: string;
 
-  constructor(public storageService: StorageService, private router: Router) {}
+  constructor(
+    public storageService: StorageService,
+    private router: Router,
+    public alertController: AlertController
+  ) {}
 
   ngOnInit() {
     this.currentImageLink = this.defaultImg;
@@ -68,8 +73,8 @@ export class CreateCharacterPage implements OnInit {
     itensList: 'Put your description here',
     spellsList: 'Put your description here',
     atrib: this.defaultAtribs,
-    xp : 0,
-    alignment : '',
+    xp: 0,
+    alignment: '',
     displacement: 9,
     initiative: 10,
   };
@@ -88,15 +93,60 @@ export class CreateCharacterPage implements OnInit {
       'characters'
     );
     characters.push(this.newCharacter);
-    if(this.newCharacter.name == '' ||
+    if (
+      this.newCharacter.name == '' ||
       this.newCharacter.gender == '' ||
       this.newCharacter.race == '' ||
       this.newCharacter.alignment == '' ||
-      this.newCharacter.class == ''){
-
-      } else {
-        await this.storageService.set('characters', characters);
-        this.router.navigate(['/characters']);
-      }
+      this.newCharacter.class == ''
+    ) {
+      const alert = await this.alertController.create({
+        cssClass: 'my-custom-class',
+        header: 'Alert',
+        message: 'You need to fill all the spaces.',
+        buttons: [
+          {
+            text: 'Cancel',
+            role: 'cancel',
+            cssClass: 'secondary',
+            handler: (blah) => {
+              console.log('Confirm Cancel: blah');
+            },
+          }
+        ],
+      });
+  
+      await alert.present();
+  
+      const { role } = await alert.onDidDismiss();
+      console.log('onDidDismiss resolved with role', role);
+    } else {
+      const alert = await this.alertController.create({
+        cssClass: 'my-custom-class',
+        header: 'Do you want to submit you character?',
+        buttons: [
+          {
+            text: 'Cancel',
+            role: 'cancel',
+            cssClass: 'secondary',
+            handler: (blah) => {
+              console.log('Confirm Cancel: blah');
+            },
+          },
+          {
+            text: 'Submit',
+            handler: async() => {
+              await this.storageService.set('characters', characters);
+              this.router.navigate(['/characters']);              
+            },
+          },
+        ],
+      });
+  
+      await alert.present();
+  
+      const { role } = await alert.onDidDismiss();
+      console.log('onDidDismiss resolved with role', role);
+    }
   }
 }
