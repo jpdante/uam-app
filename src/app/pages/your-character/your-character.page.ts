@@ -175,6 +175,7 @@ export class YourCharacterPage implements OnInit {
   }
 
   public async changeXp (number: number){
+    if(number < 1000000000 && number > 0)
     this.character.xp = number;
     this.getSetSave();
   }
@@ -185,11 +186,13 @@ export class YourCharacterPage implements OnInit {
   }
 
   public async changeInitiative (number: number){
+    if(number < 21 && number > 0)
     this.character.initiative = number;
     this.getSetSave();
   }
 
   public async changeDisplacement (number: number){
+    if(number < 100 && number > 0)
     this.character.displacement = number;
     this.getSetSave();
   }

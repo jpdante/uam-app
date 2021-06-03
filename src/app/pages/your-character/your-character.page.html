@@ -193,18 +193,20 @@
     </ion-card-header>
   </ion-card>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-col class="ion-no-padding titulos">
-        <ion-card-title>Languages And Proficiencies</ion-card-title>
-        <ion-card-subtitle>
-          <ion-item>
-            <ion-textarea value={{character.languagesAndProficiencies}} [(ngModel)]="lap"></ion-textarea>
-          </ion-item>
-        </ion-card-subtitle>
-      </ion-col>
-    </ion-card-header>
-  </ion-card>
+  <ion-item>
+    <ion-label>Alignments</ion-label>
+    <ion-select value={{character.alignment}} placeholder="Select a Race" [(ngModel)]="alignment">
+      <ion-select-option value="Lawful good (LG)">Lawful good (LG)</ion-select-option>
+      <ion-select-option value="Neutral good (NG)">Neutral good (NG)</ion-select-option>
+      <ion-select-option value="Chaotic good (CG)">Chaotic good (CG)</ion-select-option>
+      <ion-select-option value="Lawful neutral (LN)">Lawful neutral (LN)</ion-select-option>
+      <ion-select-option value="Neutral (N)">Neutral (N)</ion-select-option>
+      <ion-select-option value="Chaotic neutral (CN)">Chaotic neutral (CN)</ion-select-option>
+      <ion-select-option value="Lawful evil (LE)">Lawful evil (LE)</ion-select-option>
+      <ion-select-option value="Neutral evil (NE)">Neutral evil (NE)</ion-select-option>
+      <ion-select-option value="Chaotic evil (CE)">Chaotic evil (CE)</ion-select-option>
+    </ion-select>
+  </ion-item>
 
   <ion-card>
     <ion-row class="ion-align-items-center">
@@ -224,20 +226,18 @@
     </ion-row>
   </ion-card>
 
-  <ion-item>
-    <ion-label>Alignments</ion-label>
-    <ion-select value={{character.alignment}} placeholder="Select a Race" [(ngModel)]="alignment">
-      <ion-select-option value="Lawful good (LG)">Lawful good (LG)</ion-select-option>
-      <ion-select-option value="Neutral good (NG)">Neutral good (NG)</ion-select-option>
-      <ion-select-option value="Chaotic good (CG)">Chaotic good (CG)</ion-select-option>
-      <ion-select-option value="Lawful neutral (LN)">Lawful neutral (LN)</ion-select-option>
-      <ion-select-option value="Neutral (N)">Neutral (N)</ion-select-option>
-      <ion-select-option value="Chaotic neutral (CN)">Chaotic neutral (CN)</ion-select-option>
-      <ion-select-option value="Lawful evil (LE)">Lawful evil (LE)</ion-select-option>
-      <ion-select-option value="Neutral evil (NE)">Neutral evil (NE)</ion-select-option>
-      <ion-select-option value="Chaotic evil (CE)">Chaotic evil (CE)</ion-select-option>
-    </ion-select>
-  </ion-item>
+  <ion-card>
+    <ion-card-header>
+      <ion-col class="ion-no-padding titulos">
+        <ion-card-title>Languages And Proficiencies</ion-card-title>
+        <ion-card-subtitle>
+          <ion-item>
+            <ion-textarea value={{character.languagesAndProficiencies}} [(ngModel)]="lap"></ion-textarea>
+          </ion-item>
+        </ion-card-subtitle>
+      </ion-col>
+    </ion-card-header>
+  </ion-card>
 
 </ion-content>
 
