@@ -24,6 +24,10 @@ interface Character {
   languagesAndProficiencies: string;
   itensList: string;
   spellsList : string;
+  xp : number;
+  alignment : string;
+  displacement : number;
+  initiative : number;
 }
 
 @Component({
@@ -64,6 +68,10 @@ export class CreateCharacterPage implements OnInit {
     itensList: 'Put your description here',
     spellsList: 'Put your description here',
     atrib: this.defaultAtribs,
+    xp : 0,
+    alignment : '',
+    displacement: 9,
+    initiative: 10,
   };
 
   public updateImage(e: any) {
@@ -80,7 +88,15 @@ export class CreateCharacterPage implements OnInit {
       'characters'
     );
     characters.push(this.newCharacter);
-    await this.storageService.set('characters', characters);
-    this.router.navigate(['/characters']);
+    if(this.newCharacter.name == '' ||
+      this.newCharacter.gender == '' ||
+      this.newCharacter.race == '' ||
+      this.newCharacter.alignment == '' ||
+      this.newCharacter.class == ''){
+
+      } else {
+        await this.storageService.set('characters', characters);
+        this.router.navigate(['/characters']);
+      }
   }
 }

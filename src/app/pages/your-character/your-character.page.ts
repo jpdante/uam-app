@@ -174,19 +174,43 @@ export class YourCharacterPage implements OnInit {
     this.getSetSave();
   }
 
+  public async changeXp (number: number){
+    this.character.xp = number;
+    this.getSetSave();
+  }
+
+  public async changeAlignment  (text: string){
+    this.character.alignment = text;
+    this.getSetSave();
+  }
+
+  public async changeInitiative (number: number){
+    this.character.initiative = number;
+    this.getSetSave();
+  }
+
+  public async changeDisplacement (number: number){
+    this.character.displacement = number;
+    this.getSetSave();
+  }
+
   public async getSetSave (){
     let characters = await this.storageService.get ('characters');
     characters[this.id] = this.character;
     await this.storageService.set('characters', characters);
   }
 
-  public async savePage (a: number, b: number, c: string, d: string, e: string, f: string){
+  public async savePage (a: number, b: number, c: string, d: string, e: string, f: string, g: number, h: string, i: number, j: number){
     this.changeLifePoints(a);
     this.changeArmorClass(b);
     this.changeCharacterStory(c);
     this.changeSpells(d);
     this.changeItens(e);
     this.changeLanguagesAndProeficiencies(f);
+    this.changeXp(g);
+    this.changeAlignment(h);
+    this.changeInitiative(i);
+    this.changeDisplacement(j);
   }
 
   public calculateMod (ability: number){

@@ -20,17 +20,34 @@
           <ion-col>
             <ion-card-subtitle>
               Level: <b>{{character.level}}°</b><br />
+              XP: <b>{{character.xp}}</b><br />
               Life Points: <b>{{character.lifePoints}}</b><br />
               Armor Class: <b>{{character.armorClass}}</b><br />
-              Class: <b>{{character.class}}</b><br />
-              Race: <b>{{character.race}}</b><br />
-              Gender: <b>{{character.gender}}</b><br />
+              Displacement: <b>{{character.displacement}}</b><br />
+              Initiative: <b>{{character.initiative}}</b><br />
             </ion-card-subtitle>
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-card-content>
   </ion-card>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row class="ion-align-items-center">
+            <ion-col>
+              <ion-card-subtitle>
+                Alignment: <b>{{character.alignment}}</b><br />
+                Class: <b>{{character.class}}</b><br />
+                Race: <b>{{character.race}}</b><br />
+                Gender: <b>{{character.gender}}</b><br />
+              </ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
 
   <ion-card>
     <ion-row class="ion-align-items-center">
@@ -47,6 +64,15 @@
           ><ion-icon name="caret-up-outline" slot="icon-only"></ion-icon
         ></ion-button>
       </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-row class="ion-align-items-center">
+      <ion-item>
+        <ion-label>XP: </ion-label>
+        <ion-input type="number" value={{character.xp}} [(ngModel)]="xp"></ion-input>
+      </ion-item>
     </ion-row>
   </ion-card>
 
@@ -180,6 +206,39 @@
     </ion-card-header>
   </ion-card>
 
+  <ion-card>
+    <ion-row class="ion-align-items-center">
+      <ion-item>
+        <ion-label>Displacement: </ion-label>
+        <ion-input type="number" value={{character.displacement}} [(ngModel)]="displacement "></ion-input>
+      </ion-item>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-row class="ion-align-items-center">
+      <ion-item>
+        <ion-label>Initiative: </ion-label>
+        <ion-input type="number" value={{character.initiative}} [(ngModel)]="initiative"></ion-input>
+      </ion-item>
+    </ion-row>
+  </ion-card>
+
+  <ion-item>
+    <ion-label>Alignments</ion-label>
+    <ion-select value={{character.alignment}} placeholder="Select a Race" [(ngModel)]="alignment">
+      <ion-select-option value="Lawful good (LG)">Lawful good (LG)</ion-select-option>
+      <ion-select-option value="Neutral good (NG)">Neutral good (NG)</ion-select-option>
+      <ion-select-option value="Chaotic good (CG)">Chaotic good (CG)</ion-select-option>
+      <ion-select-option value="Lawful neutral (LN)">Lawful neutral (LN)</ion-select-option>
+      <ion-select-option value="Neutral (N)">Neutral (N)</ion-select-option>
+      <ion-select-option value="Chaotic neutral (CN)">Chaotic neutral (CN)</ion-select-option>
+      <ion-select-option value="Lawful evil (LE)">Lawful evil (LE)</ion-select-option>
+      <ion-select-option value="Neutral evil (NE)">Neutral evil (NE)</ion-select-option>
+      <ion-select-option value="Chaotic evil (CE)">Chaotic evil (CE)</ion-select-option>
+    </ion-select>
+  </ion-item>
+
 </ion-content>
 
-<ion-button (click)="savePage(lifePoints, armorClass, story, spells, itens, lap)" color="primary">save</ion-button> 
+<ion-button (click)="savePage(lifePoints, armorClass, story, spells, itens, lap, xp, alignment, initiative, displacement)" color="primary">save</ion-button> 

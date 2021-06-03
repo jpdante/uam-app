@@ -22,8 +22,12 @@ interface Character {
   story : string;
   atrib : Atrib;
   languagesAndProficiencies: string;
-  itensList: string;
+  itensList : string;
   spellsList : string;
+  xp : number;
+  alignment : string;
+  displacement : number;
+  initiative : number;
 }
 
 
@@ -37,12 +41,6 @@ export class CharactersPage {
   constructor(public storageService: StorageService, private router: Router) {
 
   }
-
-  public defaultStory = 'Put your description here';
-
-  public defaultItens = 'Put your description here';
-
-  public defaultSpells = 'Put your description here';
 
   public characterList : Character[] = [];
 
