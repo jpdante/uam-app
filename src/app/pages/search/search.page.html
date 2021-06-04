@@ -3,7 +3,7 @@
     <ion-title>Search</ion-title>
   </ion-toolbar>
   <ion-item>
-    <ion-label>Options</ion-label>
+    <ion-label>Topic</ion-label>
     <ion-select interface="popover" [(ngModel)]="type">
       <ion-select-option value="classes">Classes</ion-select-option>
       <ion-select-option value="races">Races</ion-select-option>
@@ -14,12 +14,12 @@
   </ion-item>
   <div [ngSwitch]="type">
     <ion-item *ngSwitchCase="'classes'">
-      <ion-label>Sub Options</ion-label>
+      <ion-label>Sub Topic</ion-label>
       <ion-select interface="popover" [(ngModel)]="subtype">
         <ion-select-option value="classes">Classes</ion-select-option>
         <ion-select-option value="subclasses">Subclasses</ion-select-option>
         <ion-select-option value="features">Features</ion-select-option>
-        <ion-select-option value="starting-equipment">Starting Equipmente</ion-select-option>
+        <ion-select-option value="starting-equipment">Starting Equipment</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item *ngSwitchCase="'races'">
