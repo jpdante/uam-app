@@ -47,7 +47,7 @@ export class SettingsPage {
         },
         {
           text: 'Okay',
-          handler: async() => {
+          handler: async () => {
             await this.storageService.set('characters', []);
             this.router.navigate(['/characters']);
           },
@@ -59,6 +59,5 @@ export class SettingsPage {
 
     const { role } = await alert.onDidDismiss();
     console.log('onDidDismiss resolved with role', role);
-    }
-
- }
+  }
+}
