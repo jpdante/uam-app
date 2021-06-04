@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { StorageService } from 'src/app/services/storage-service.service';
 import { AlertController } from '@ionic/angular';
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 
 interface Atrib {
   strength: number;
@@ -38,7 +39,6 @@ interface Character {
 })
 export class CreateCharacterPage implements OnInit {
   public defaultImg = 'https://i.imgur.com/svtbHpw.jpg';
-  public currentImageLink: string;
 
   constructor(
     public storageService: StorageService,
@@ -47,7 +47,6 @@ export class CreateCharacterPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.currentImageLink = this.defaultImg;
   }
 
   public defaultAtribs: Atrib = {
@@ -79,9 +78,19 @@ export class CreateCharacterPage implements OnInit {
     initiative: 10,
   };
 
-  public updateImage(e: any) {
-    this.currentImageLink = e.target.value || this.defaultImg;
-    this.newCharacter.image = this.currentImageLink;
+  public async updateImage(e: any) {
+    const capturedPhoto = await Camera.getPhoto({
+      resultType: CameraResultType.DataUrl,
+      source: CameraSource.Photos,
+      quality: 100,
+      
+    });
+    console.log(capturedPhoto);
+    if (capturedPhoto.dataUrl) {
+      this.newCharacter.image = capturedPhoto.dataUrl;
+    } else {
+      this.newCharacter.image = this.defaultImg;
+    }
   }
 
   public resetImage() {
