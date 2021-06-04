@@ -6,7 +6,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-router-link *ngFor="let element of rules" href="/text-rule">
+    <ion-router-link *ngFor="let element of rules" [routerLink]="['/text-rule']">
       <ion-card>
         <ion-card-header>
           <ion-card-title>{{element.name}}</ion-card-title>
