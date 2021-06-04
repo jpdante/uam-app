@@ -1,5 +1,7 @@
 {
   "name": "uam-app",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

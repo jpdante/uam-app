@@ -1,0 +1,6 @@
+{
+	"appId": "com.uam.app",
+	"appName": "uam-app",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
