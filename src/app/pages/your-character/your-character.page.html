@@ -17,6 +17,14 @@
               <img [src]="character.image" />
             </ion-avatar>
           </ion-col>
+          <ion-col class="text-center">
+            <ion-card-subtitle>
+              Alignment: <b>{{character.alignment}}</b><br />
+              Class: <b>{{character.class}}</b><br />
+              Race: <b>{{character.race}}</b><br />
+              Gender: <b>{{character.gender}}</b><br />
+            </ion-card-subtitle>
+          </ion-col>
         </ion-row>
       </ion-grid>
     </ion-card-content>
@@ -24,15 +32,15 @@
 
   <ion-card>
     <ion-row class="ion-align-items-center">
-      <ion-col class="text-right" size="5">
-        <h1>Level: {{character.level}}</h1>
+      <ion-col class="text-center" size="5">
+        <h2>Level: {{character.level}}</h2>
       </ion-col>
       <ion-col class="text-center" size="3">
         <ion-button (click)="levelDown()"
           ><ion-icon name="caret-down-outline" slot="icon-only"></ion-icon
         ></ion-button>
       </ion-col>
-      <ion-col class="text-left" size="4">
+      <ion-col class="text-center" size="4">
         <ion-button (click)="levelUp()"
           ><ion-icon name="caret-up-outline" slot="icon-only"></ion-icon
         ></ion-button>
@@ -43,60 +51,24 @@
   <ion-card>
     <ion-row class="ion-align-items-center">
       <ion-item>
-        <ion-label>XP: </ion-label>
+        <ion-label style="font-weight: bold; font-size: 17px;">XP:</ion-label>
         <ion-input type="number" value={{character.xp}} [(ngModel)]="xp"></ion-input>
       </ion-item>
-    </ion-row>
-  </ion-card>
-
-    <ion-card>
-      <ion-card-content>
-        <ion-grid>
-          <ion-row class="ion-align-items-center">
-            <ion-col>
-              <ion-card-subtitle>
-                Life Points: <b>{{character.lifePoints}}</b><br />
-                Armor Class: <b>{{character.armorClass}}</b><br />
-                Speed: <b>{{character.speed}}</b><br />
-                Initiative: <b>{{character.initiative}}</b><br />
-              </ion-card-subtitle>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-card-content>
-        <ion-grid>
-          <ion-row class="ion-align-items-center">
-            <ion-col>
-              <ion-card-subtitle>
-                Alignment: <b>{{character.alignment}}</b><br />
-                Class: <b>{{character.class}}</b><br />
-                Race: <b>{{character.race}}</b><br />
-                Gender: <b>{{character.gender}}</b><br />
-              </ion-card-subtitle>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card-content>
-    </ion-card>
-
-  <ion-card>
-    <ion-row class="ion-align-items-center">
       <ion-item>
-        <ion-label>Life Points: </ion-label>
+        <ion-label style="font-weight: bold; font-size: 17px;">Life Points: </ion-label>
         <ion-input type="number" value={{character.lifePoints}} [(ngModel)]="lifePoints"></ion-input>
       </ion-item>
-    </ion-row>
-  </ion-card>
-
-  <ion-card>
-    <ion-row class="ion-align-items-center">
       <ion-item>
-        <ion-label>Armor Class: </ion-label>
+        <ion-label style="font-weight: bold; font-size: 17px;">Armor Class: </ion-label>
         <ion-input type="number" value={{character.armorClass}} [(ngModel)]="armorClass"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label style="font-weight: bold; font-size: 17px;">Speed: </ion-label>
+        <ion-input type="number" value={{character.speed}} [(ngModel)]="speed"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label style="font-weight: bold; font-size: 17px;">Initiative: </ion-label>
+        <ion-input type="number" value={{character.initiative}} [(ngModel)]="initiative"></ion-input>
       </ion-item>
     </ion-row>
   </ion-card>
@@ -104,7 +76,7 @@
   <ion-card>
     <ion-card-header>
       <ion-col class="ion-no-padding titulos">
-        <ion-card-title>Character Story</ion-card-title>
+        <ion-card-title class="text-center">Character Story</ion-card-title>
         <ion-card-subtitle>
           <ion-item>
             <ion-textarea value={{character.story}} [(ngModel)]="story"></ion-textarea>
@@ -116,7 +88,7 @@
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Abilities</ion-card-title>
+      <ion-card-title class="text-center">Abilities</ion-card-title>
       <ion-row>
         <ion-col size="6"> Strength: </ion-col>
         <ion-col size="6">
@@ -177,7 +149,7 @@
   <ion-card>
     <ion-card-header>
       <ion-col class="ion-no-padding titulos">
-        <ion-card-title>Itens List</ion-card-title>
+        <ion-card-title class="text-center">Itens List</ion-card-title>
         <ion-card-subtitle>
           <ion-item>
             <ion-textarea value={{character.itensList}} [(ngModel)]="itens"></ion-textarea>
@@ -190,10 +162,23 @@
   <ion-card>
     <ion-card-header>
       <ion-col class="ion-no-padding titulos">
-        <ion-card-title>Spells List</ion-card-title>
+        <ion-card-title class="text-center">Spells List</ion-card-title>
         <ion-card-subtitle>
           <ion-item>
             <ion-textarea value={{character.spellsList}} [(ngModel)]="spells"></ion-textarea> 
+          </ion-item>
+        </ion-card-subtitle>
+      </ion-col>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-col class="ion-no-padding titulos">
+        <ion-card-title class="text-center">Languages And Proficiencies</ion-card-title>
+        <ion-card-subtitle>
+          <ion-item>
+            <ion-textarea value={{character.languagesAndProficiencies}} [(ngModel)]="lap"></ion-textarea>
           </ion-item>
         </ion-card-subtitle>
       </ion-col>
@@ -214,37 +199,6 @@
       <ion-select-option value="Chaotic evil (CE)">Chaotic evil (CE)</ion-select-option>
     </ion-select>
   </ion-item>
-
-  <ion-card>
-    <ion-row class="ion-align-items-center">
-      <ion-item>
-        <ion-label>Speed: </ion-label>
-        <ion-input type="number" value={{character.speed}} [(ngModel)]="speed"></ion-input>
-      </ion-item>
-    </ion-row>
-  </ion-card>
-
-  <ion-card>
-    <ion-row class="ion-align-items-center">
-      <ion-item>
-        <ion-label>Initiative: </ion-label>
-        <ion-input type="number" value={{character.initiative}} [(ngModel)]="initiative"></ion-input>
-      </ion-item>
-    </ion-row>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-col class="ion-no-padding titulos">
-        <ion-card-title>Languages And Proficiencies</ion-card-title>
-        <ion-card-subtitle>
-          <ion-item>
-            <ion-textarea value={{character.languagesAndProficiencies}} [(ngModel)]="lap"></ion-textarea>
-          </ion-item>
-        </ion-card-subtitle>
-      </ion-col>
-    </ion-card-header>
-  </ion-card>
 
 </ion-content>
 

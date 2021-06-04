@@ -26,7 +26,7 @@ interface Character {
   spellsList : string;
   xp : number;
   alignment : string;
-  displacement : number;
+  speed : number;
   initiative : number;
 }
 
