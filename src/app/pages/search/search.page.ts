@@ -22,6 +22,10 @@ export class SearchPage implements OnInit {
 
   ngOnInit() {}
 
+  public forceSearch() {
+    this.search(this.type, this.subtype, " ");
+  }
+
   onSearch(e: any) {
     this.search(this.type, this.subtype, e.target.value);
   }

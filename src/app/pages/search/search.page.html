@@ -4,7 +4,7 @@
   </ion-toolbar>
   <ion-item>
     <ion-label>Topic</ion-label>
-    <ion-select interface="popover" [(ngModel)]="type">
+    <ion-select interface="popover" [(ngModel)]="type" (ionChange)="forceSearch()">
       <ion-select-option value="classes">Classes</ion-select-option>
       <ion-select-option value="races">Races</ion-select-option>
       <ion-select-option value="equipment">Equipment</ion-select-option> 
@@ -15,7 +15,7 @@
   <div [ngSwitch]="type">
     <ion-item *ngSwitchCase="'classes'">
       <ion-label>Sub Topic</ion-label>
-      <ion-select interface="popover" [(ngModel)]="subtype">
+      <ion-select interface="popover" [(ngModel)]="subtype" (ionChange)="forceSearch()">
         <ion-select-option value="classes">Classes</ion-select-option>
         <ion-select-option value="subclasses">Subclasses</ion-select-option>
         <ion-select-option value="features">Features</ion-select-option>
@@ -23,16 +23,16 @@
       </ion-select>
     </ion-item>
     <ion-item *ngSwitchCase="'races'">
-      <ion-label>Sub Options</ion-label>
-      <ion-select interface="popover" [(ngModel)]="subtype">
+      <ion-label>Sub Topic</ion-label>
+      <ion-select interface="popover" [(ngModel)]="subtype" (ionChange)="forceSearch()">
         <ion-select-option value="races">Races</ion-select-option>
         <ion-select-option value="subraces">Subraces</ion-select-option>
         <ion-select-option value="traits">Traits</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item *ngSwitchCase="'equipment'">
-      <ion-label>Sub Options</ion-label>
-      <ion-select interface="popover" [(ngModel)]="subtype">
+      <ion-label>Sub Topic</ion-label>
+      <ion-select interface="popover" [(ngModel)]="subtype" (ionChange)="forceSearch()">
         <ion-select-option value="magic-items">Magic Items</ion-select-option>
         <ion-select-option value="weapon-properties">Weapon Properties</ion-select-option>
       </ion-select>
