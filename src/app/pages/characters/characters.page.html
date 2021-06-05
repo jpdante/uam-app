@@ -22,14 +22,14 @@
               <ion-card-title class="text-fix"
                 >{{character.value.name}}</ion-card-title
               >
-              <ion-card-subtitle class="text-fix"
-                >{{character.value.class}} {{character.value.level}}º
-                Level</ion-card-subtitle
-              >
-            
-              <ion-card-subtitle class="text-fix"
-                >{{character.value.race}}</ion-card-subtitle
-              >
+              <ion-card-subtitle class="text-fix">
+                Level:{{character.value.level}} ({{character.value.xp}}xp)
+              </ion-card-subtitle>
+
+              <ion-card-subtitle class="text-fix">
+                {{character.value.race}} {{character.value.class}}
+              </ion-card-subtitle>
+
             </ion-card-header>
           </ion-col>
         </ion-row>
