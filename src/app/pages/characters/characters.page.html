@@ -1,6 +1,12 @@
 <ion-header>
   <ion-toolbar color="primary">
+    <ion-buttons slot="start" *ngIf="showCheckBoxes">
+      <ion-button (click)="disableDelete()"><ion-icon name="arrow-back"></ion-icon></ion-button>
+    </ion-buttons>
     <ion-title>Characters</ion-title>
+    <ion-buttons slot="end" *ngIf="showCheckBoxes">
+      <ion-button (click)="deleteCharacters()"><ion-icon name="trash"></ion-icon></ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -8,30 +14,63 @@
   <ion-list>
     <a
       *ngFor="let character of characterList | keyvalue"
-      (click)="redirectToCharacter(character.key)"
+      (touchstart)="startPressingCharacter(character.key)"
+      (touchend)="stopPressingCharacter(character.key)"
     >
-      <ion-card>
+      <ion-card class="character" [ngClass]="{'delete': characterDeleteList[character.key]}" (click)="toggleDelete(character.key)">
         <ion-row class="ion-align-items-center">
-          <ion-col size="3">
-            <ion-avatar class="avatar"
-              ><img [src]="character.value.image"
-            /></ion-avatar>
-          </ion-col>
-          <ion-col class="ion-no-padding titulos" size="9">
-            <ion-card-header>
-              <ion-card-title class="text-fix"
-                >{{character.value.name}}</ion-card-title
-              >
-              <ion-card-subtitle class="text-fix">
-                Level:{{character.value.level}} ({{character.value.xp}}xp)
-              </ion-card-subtitle>
+          <div *ngIf="showCheckBoxes; then thenBlock else elseBlock"></div>
+          <ng-template #thenBlock>
+            <ion-col size="1">
+              <ion-checkbox
+                [checked]="characterDeleteList[character.key]"
+              ></ion-checkbox>
+            </ion-col>
+            <ion-col size="3">
+              <ion-avatar class="avatar"
+                ><img [src]="character.value.image"
+              /></ion-avatar>
+            </ion-col>
+            <ion-col class="ion-no-padding titulos" size="8">
+              <ion-card-header>
+                <ion-card-title class="text-fix"
+                  >{{character.value.name}}</ion-card-title
+                >
+                <ion-card-subtitle class="text-fix">
+                  Level:{{character.value.level}} ({{character.value.xp}}xp)
+                </ion-card-subtitle>
 
-              <ion-card-subtitle class="text-fix">
-                {{character.value.race}} {{character.value.class}}
-              </ion-card-subtitle>
+                <ion-card-subtitle class="text-fix">
+                  {{character.value.race}} {{character.value.class}}
+                </ion-card-subtitle>
+              </ion-card-header>
+            </ion-col>
+          </ng-template>
+          <ng-template #elseBlock>
+            <ion-col size="3" (click)="redirectToCharacter(character.key)">
+              <ion-avatar class="avatar"
+                ><img [src]="character.value.image"
+              /></ion-avatar>
+            </ion-col>
+            <ion-col
+              class="ion-no-padding titulos"
+              size="9"
+              (click)="redirectToCharacter(character.key)"
+            >
+              <ion-card-header>
+                <ion-card-title class="text-fix"
+                  >{{character.value.name}}</ion-card-title
+                >
+                <ion-card-subtitle class="text-fix">
+                  Level:{{character.value.level}} ({{character.value.xp}}xp)
+                </ion-card-subtitle>
 
-            </ion-card-header>
-          </ion-col>
+                <ion-card-subtitle class="text-fix">
+                  {{character.value.race}} {{character.value.class}}
+                </ion-card-subtitle>
+              </ion-card-header>
+            </ion-col>
+          </ng-template>
         </ion-row>
       </ion-card>
     </a>

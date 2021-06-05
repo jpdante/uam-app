@@ -17,3 +17,11 @@ ion-list {
   overflow: hidden;
   width: 100%;
 }
+
+.character {
+  transition: background-color 0.1s linear;
+}
+
+.delete {
+  background-color: rgba(163, 24, 24, 0.533) !important;
+}
