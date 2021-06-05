@@ -26,6 +26,7 @@
     "@ionic/pwa-elements": "^3.0.2",
     "@ionic/storage-angular": "^3.0.6",
     "axios": "^0.21.1",
+    "remarkable": "^2.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

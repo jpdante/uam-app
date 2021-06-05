@@ -36,7 +36,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/element/element.module').then( m => m.ElementPageModule)
   },
   {
-    path: 'text-rule',
+    path: 'text-rule/:id',
     loadChildren: () => import('./pages/text-rule/text-rule.module').then( m => m.TextRulePageModule)
   },
 

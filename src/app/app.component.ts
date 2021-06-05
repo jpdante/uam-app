@@ -8,14 +8,14 @@ import { StorageService } from './services/storage-service.service';
 })
 export class AppComponent implements OnInit {
   constructor(public storageService: StorageService) {
-    if(localStorage.getItem("isDark") === "1"){
-      document.body.setAttribute('color-theme','dark');
-    } else {
-      document.body.setAttribute('color-theme','light');
-    }
   }
 
   async ngOnInit() {
     await this.storageService.init();
+    if(await this.storageService.get("isDark") === '1') {
+      document.body.setAttribute('color-theme','dark');
+    } else {
+      document.body.setAttribute('color-theme','light');
+    }
   }
 }

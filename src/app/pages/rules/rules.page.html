@@ -6,10 +6,10 @@
 
 <ion-content>
   <ion-list>
-    <ion-router-link *ngFor="let element of rules" [routerLink]="['/text-rule']">
+    <ion-router-link *ngFor="let rule of rules | keyvalue" (click)="redirectToTopic(rule.key)">
       <ion-card>
         <ion-card-header>
-          <ion-card-title>{{element.name}}</ion-card-title>
+          <ion-card-title>{{rule.value.name}}</ion-card-title>
         </ion-card-header>
       </ion-card>
     </ion-router-link>

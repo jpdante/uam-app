@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Net from 'axios';
 
 interface Rule {
@@ -14,7 +15,9 @@ interface Rule {
 })
 export class RulesPage implements OnInit {
 
-  constructor() { }
+  public rules: Rule[] = [];
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
     Net.get('https://www.dnd5eapi.co/api/rules/')
@@ -36,6 +39,8 @@ export class RulesPage implements OnInit {
     });
   }
 
-  public rules: Rule[] = [];
+  public redirectToTopic(id: any) {
+    this.router.navigate(['/text-rule', JSON.stringify(this.rules[id])]);
+  }
 
 }

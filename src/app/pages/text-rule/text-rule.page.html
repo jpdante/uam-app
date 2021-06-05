@@ -3,49 +3,25 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="rules"></ion-back-button>
     </ion-buttons>
-    <ion-title>How to Play</ion-title>
+    <ion-title>{{ruleTopic.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-row class="ion-align-items-center">
-      <ion-col size="auto">
-      </ion-col>
-      <ion-card-header>
-        <ion-col class="ion-no-padding titulos">
-          <ion-card-title>1. THE DM DESCRIBES THE ENVIRONMENT.</ion-card-title>
-          <ion-card-subtitle>The DM tells the players where their characters are and what's around them, presenting the options that present themselves (how many doors lead out of a room, what's on a table, who's in the tavern, and so on).</ion-card-subtitle>
-        </ion-col>
-      </ion-card-header>
-    </ion-row>
-  </ion-card>
-
-  <ion-card>
-    <ion-row class="ion-align-items-center">
-      <ion-col size="auto">
-      </ion-col>
-      <ion-card-header>
-        <ion-col class="ion-no-padding titulos">
-          <ion-card-title>2. THE PLAYERS DESCRIBE WHAT THEY WANT TO DO.</ion-card-title>
-          <ion-card-subtitle>Sometimes one player speaks for the whole party, saying, "We'll take the east door," for example. Other times, different adventurers do different things: one adventurer might search a treasure chest while a second examines a symbol engraved on a wall and a third keeps watch for monsters.</ion-card-subtitle>
-        </ion-col>
-      </ion-card-header>
-    </ion-row>
-  </ion-card>
-
-  <ion-card>
-    <ion-row class="ion-align-items-center">
-      <ion-col size="auto">
-      </ion-col>
-      <ion-card-header>
-        <ion-col class="ion-no-padding titulos">
-          <ion-card-title>3. THE DM NARRATES THE RESULTS OF THE ADVENTURERS' ACTIONS.</ion-card-title>
-          <ion-card-subtitle>Sometimes, resolving a task is easy. If an adventurer wants to walk across a room and open a door, the DM might just say that the door opens and describe what lies beyond. But the door might be locked, the floor might hide a deadly trap, or some other circumstance might make it challenging for an adventurer to complete a task. In those cases, the DM decides what happens, often relying on the roll of a die to determine the results of an action.
-          <div></div>
-            Describing the results often leads to another decision point, which brings the flow of the game right back to step 1. This pattern holds whether the adventurers are exploring a ruin, talking to a devious prince, or locked in combat against a mighty dragon. In certain situations, particularly combat, the action is more structured and the players (and DM) do take turns choosing and resolving actions. But most of the time, play is fluid and flexible, adapting to the circumstances of the adventure.</ion-card-subtitle>
-        </ion-col>
-      </ion-card-header>
-    </ion-row>
-  </ion-card>
+  <div *ngIf="topicData.desc" class="desc">
+    <p [innerHTML]="topicData.desc"></p>
+  </div>
+  <ion-router-link *ngFor="let topic of topicList | keyvalue" (click)="redirectToTopic(topic.key)">
+    <ion-card>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="auto"> </ion-col>
+        <ion-card-header>
+          <ion-col class="ion-no-padding titulos">
+            <ion-card-title>{{topic.value.name}}</ion-card-title>
+            <ion-card-subtitle></ion-card-subtitle>
+          </ion-col>
+        </ion-card-header>
+      </ion-row>
+    </ion-card>
+  </ion-router-link>
 </ion-content>
