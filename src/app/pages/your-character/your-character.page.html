@@ -14,7 +14,7 @@
         <ion-row class="ion-align-items-center">
           <ion-col>
             <ion-avatar class="avatar">
-              <img [src]="character.image" />
+              <img [src]="character.image" (click)="updateImage()"/>
             </ion-avatar>
           </ion-col>
           <ion-col class="text-center">
@@ -188,15 +188,15 @@
   <ion-item>
     <ion-label>Alignment</ion-label>
     <ion-select value={{character.alignment}} placeholder="Alignment" [(ngModel)]="alignment">
-      <ion-select-option value="Lawful good">(LG)</ion-select-option>
-      <ion-select-option value="Neutral good">(NG)</ion-select-option>
-      <ion-select-option value="Chaotic good">(CG)</ion-select-option>
-      <ion-select-option value="Lawful neutral">(LN)</ion-select-option>
-      <ion-select-option value="Neutral">(N)</ion-select-option>
-      <ion-select-option value="Chaotic neutral">(CN)</ion-select-option>
-      <ion-select-option value="Lawful evil">(LE)</ion-select-option>
-      <ion-select-option value="Neutral evil">(NE)</ion-select-option>
-      <ion-select-option value="Chaotic evil">(CE)</ion-select-option>
+      <ion-select-option value="Lawful good">Lawful good (LG)</ion-select-option>
+      <ion-select-option value="Neutral good">Neutral good (NG)</ion-select-option>
+      <ion-select-option value="Chaotic good">Chaotic good (CG)</ion-select-option>
+      <ion-select-option value="Lawful neutral">Lawful neutral (LN)</ion-select-option>
+      <ion-select-option value="Neutral">Neutral (N)</ion-select-option>
+      <ion-select-option value="Chaotic neutral">Chaotic neutral (CN)</ion-select-option>
+      <ion-select-option value="Lawful evil">Lawful evil (LE)</ion-select-option>
+      <ion-select-option value="Neutral evil">Neutral evil (NE)</ion-select-option>
+      <ion-select-option value="Chaotic evil">Chaotic evil (CE)</ion-select-option>
     </ion-select>
   </ion-item>
 

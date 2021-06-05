@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { StorageService } from 'src/app/services/storage-service.service';
-
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 interface Atrib {
   strength : number;
   dexterity : number;
@@ -57,6 +57,20 @@ export class YourCharacterPage implements OnInit {
     let characters = await this.storageService.get('characters');
     this.character = characters[parseInt(this.id)];
   }
+
+  public async updateImage(e: any) {
+    const capturedPhoto = await Camera.getPhoto({
+      resultType: CameraResultType.DataUrl,
+      source: CameraSource.Photos,
+      quality: 100,
+      
+    });
+    console.log(capturedPhoto);
+    if (capturedPhoto.dataUrl) {
+      this.character.image = capturedPhoto.dataUrl;
+    } 
+  }
+
 
   public async changeLifePoints (life: number){
     if(life < 1000 && life > 0)
