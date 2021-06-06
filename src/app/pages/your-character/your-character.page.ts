@@ -211,13 +211,37 @@ export class YourCharacterPage implements OnInit {
     this.getSetSave();
   }
 
+  public async changeName (string: string){
+    if(string != '') 
+    this.character.name = string;
+    this.getSetSave();
+  }
+
+  public async changeGender (string: string){
+    if(string != '') 
+    this.character.gender = string;
+    this.getSetSave();
+  }
+  
+  public async changeRace (string: string){
+    if(string != '') 
+    this.character.race = string;
+    this.getSetSave();
+  }
+
+  public async changeClass (string: string){
+    if(string != '') 
+    this.character.class = string;
+    this.getSetSave();
+  }
+
   public async getSetSave (){
     let characters = await this.storageService.get ('characters');
     characters[this.id] = this.character;
     await this.storageService.set('characters', characters);
   }
 
-  public async savePage (a: number, b: number, c: string, d: string, e: string, f: string, g: number, h: string, i: number, j: number){
+  public async savePage (a: number, b: number, c: string, d: string, e: string, f: string, g: number, h: string, i: number, j: number, k: string,  l: string,  m: string,  n: string,){
     this.changeLifePoints(a);
     this.changeArmorClass(b);
     this.changeCharacterStory(c);
@@ -228,6 +252,10 @@ export class YourCharacterPage implements OnInit {
     this.changeAlignment(h);
     this.changeInitiative(i);
     this.changeSpeed(j);
+    this.changeName(k);
+    this.changeGender(l);
+    this.changeRace(m);
+    this.changeClass(n);
   }
 
   public calculateMod (ability: number){

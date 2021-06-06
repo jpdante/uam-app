@@ -8,6 +8,27 @@
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col>
+            <ion-avatar class="avatar">
+              <img [src]="character.image" (click)="updateImage()" />
+            </ion-avatar>
+          </ion-col>
+          <ion-col>
+            <ion-card-title style="font-size: 15px; opacity: 0.85">
+              <b>Alignment:</b><br> {{character.alignment}}<br />
+              <b>Class:</b><br> {{character.class}}<br />
+              <b>Race:</b><br> {{character.race}}<br />
+              <b>Gender:</b><br> {{character.gender}}<br />
+            </ion-card-title>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
 
   <ion-card>
     <ion-row class="ion-align-items-center">
@@ -17,7 +38,9 @@
         ></ion-button>
       </ion-col>
       <ion-col class="text-center" size="5">
-        <ion-card-title style="font-weight: bold;">Level: {{character.level}}</ion-card-title>
+        <ion-card-title style="font-weight: bold"
+          >Level: {{character.level}}</ion-card-title
+        >
       </ion-col>
       <ion-col class="text-center">
         <ion-button (click)="levelUp()"
@@ -28,48 +51,61 @@
   </ion-card>
 
   <ion-card>
-    <ion-card-content>
-      <ion-grid>
-        <ion-row class="ion-align-items-center">
-          <ion-col>
-            <ion-avatar class="avatar">
-              <img [src]="character.image" (click)="updateImage()"/>
-            </ion-avatar>
-          </ion-col>
-          <ion-col class="text-center">
-            <ion-card-title style="font-size: 15px; opacity: 0.85;">
-              Alignment: <b>{{character.alignment}}</b><br />
-              Class: <b>{{character.class}}</b><br />
-              Race: <b>{{character.race}}</b><br />
-              Gender: <b>{{character.gender}}</b><br />
-            </ion-card-title>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
     <ion-row class="ion-align-items-center">
       <ion-item>
-        <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75;">XP:</ion-label>
-        <ion-input style="opacity: 0.75;" type="number" value={{character.xp}} [(ngModel)]="xp"></ion-input>
+        <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75"
+          >XP:</ion-label
+        >
+        <ion-input
+          style="opacity: 0.75"
+          type="number"
+          value="{{character.xp}}"
+          [(ngModel)]="xp"
+        ></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75;">Life Points: </ion-label>
-        <ion-input style="opacity: 0.75;" type="number" value={{character.lifePoints}} [(ngModel)]="lifePoints"></ion-input>
+        <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75"
+          >Life Points:
+        </ion-label>
+        <ion-input
+          style="opacity: 0.75"
+          type="number"
+          value="{{character.lifePoints}}"
+          [(ngModel)]="lifePoints"
+        ></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75;">Armor Class: </ion-label>
-        <ion-input style="opacity: 0.75;" type="number" value={{character.armorClass}} [(ngModel)]="armorClass"></ion-input>
+        <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75"
+          >Armor Class:
+        </ion-label>
+        <ion-input
+          style="opacity: 0.75"
+          type="number"
+          value="{{character.armorClass}}"
+          [(ngModel)]="armorClass"
+        ></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75;">Speed: </ion-label>
-        <ion-input style="opacity: 0.75;" type="number" value={{character.speed}} [(ngModel)]="speed"></ion-input>
+        <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75"
+          >Speed:
+        </ion-label>
+        <ion-input
+          style="opacity: 0.75"
+          type="number"
+          value="{{character.speed}}"
+          [(ngModel)]="speed"
+        ></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75;">Initiative: </ion-label>
-        <ion-input style="opacity: 0.75;" type="number" value={{character.initiative}} [(ngModel)]="initiative"></ion-input>
+        <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75"
+          >Initiative:
+        </ion-label>
+        <ion-input
+          style="opacity: 0.75"
+          type="number"
+          value="{{character.initiative}}"
+          [(ngModel)]="initiative"
+        ></ion-input>
       </ion-item>
     </ion-row>
   </ion-card>
@@ -78,129 +114,278 @@
     <ion-card-header color="primary">
       <ion-card-title class="text-center">Character Story</ion-card-title>
     </ion-card-header>
-      <ion-col class="ion-no-padding titulos">
-        <ion-card-subtitle>
-          <ion-item>
-            <ion-textarea style="opacity: 0.75;" rows="10" value={{character.story}} [(ngModel)]="story"></ion-textarea>
-          </ion-item>
-        </ion-card-subtitle>
-      </ion-col>
+    <ion-col class="ion-no-padding titulos">
+      <ion-card-subtitle>
+        <ion-item>
+          <ion-textarea
+            style="opacity: 0.75"
+            rows="10"
+            value="{{character.story}}"
+            [(ngModel)]="story"
+          ></ion-textarea>
+        </ion-item>
+      </ion-card-subtitle>
+    </ion-col>
   </ion-card>
- 
+
   <ion-card>
     <ion-card-header color="primary">
       <ion-card-title class="text-center">Abilities</ion-card-title>
     </ion-card-header>
-      <ion-row>
-        <ion-col size="6"> Strength: </ion-col>
-        <ion-col size="6">
-          {{character.atrib.strength}} ({{
-          calculateMod(character.atrib.strength) }})
-          <ion-button (click)="strengthDown()" size="small" color="primary">-</ion-button> 
-          <ion-button (click)="strengthUp()" size="small" color="primary">+</ion-button> 
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="6">Dexterity:</ion-col>
-        <ion-col size="6">
-          {{character.atrib.dexterity}} ({{
-          calculateMod(character.atrib.dexterity) }})
-          <ion-button (click)="dexterityDown()" size="small" color="primary">-</ion-button> 
-          <ion-button (click)="dexterityUp()" size="small" color="primary">+</ion-button> 
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="6"> Constitution: </ion-col>
-        <ion-col size="6">
-          {{character.atrib.constitution}} ({{
-          calculateMod(character.atrib.constitution) }})
-          <ion-button (click)="constitutionDown()" size="small" color="primary">-</ion-button> 
-          <ion-button (click)="constitutionUp()" size="small" color="primary">+</ion-button> 
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="6"> Intelligence: </ion-col>
-        <ion-col size="6">
-          {{character.atrib.intelligence}} ({{
-          calculateMod(character.atrib.intelligence) }})
-          <ion-button (click)="intelligenceDown()" size="small" color="primary">-</ion-button> 
-          <ion-button (click)="intelligenceUp()" size="small" color="primary">+</ion-button> 
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="6"> Wisdom: </ion-col>
-        <ion-col size="6">
-          {{character.atrib.wisdom}} ({{ 
-          calculateMod(character.atrib.wisdom) }})
-          <ion-button (click)="wisdomDown()" size="small" color="primary">-</ion-button> 
-          <ion-button (click)="wisdomUp()" size="small" color="primary">+</ion-button> 
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="6"> Charisma: </ion-col>
-        <ion-col size="6">
-          {{character.atrib.charisma}} ({{
-          calculateMod(character.atrib.charisma) }})
-          <ion-button (click)="charismaDown()" size="small" color="primary">-</ion-button> 
-          <ion-button (click)="charismaUp()" size="small" color="primary">+</ion-button> 
-        </ion-col>
-      </ion-row>
+    <ion-row>
+      <ion-col size="6"> Strength: </ion-col>
+      <ion-col size="6">
+        {{character.atrib.strength}} ({{ calculateMod(character.atrib.strength)
+        }})
+        <ion-button (click)="strengthDown()" size="small" color="primary"
+          >-</ion-button
+        >
+        <ion-button (click)="strengthUp()" size="small" color="primary"
+          >+</ion-button
+        >
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">Dexterity:</ion-col>
+      <ion-col size="6">
+        {{character.atrib.dexterity}} ({{
+        calculateMod(character.atrib.dexterity) }})
+        <ion-button (click)="dexterityDown()" size="small" color="primary"
+          >-</ion-button
+        >
+        <ion-button (click)="dexterityUp()" size="small" color="primary"
+          >+</ion-button
+        >
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6"> Constitution: </ion-col>
+      <ion-col size="6">
+        {{character.atrib.constitution}} ({{
+        calculateMod(character.atrib.constitution) }})
+        <ion-button (click)="constitutionDown()" size="small" color="primary"
+          >-</ion-button
+        >
+        <ion-button (click)="constitutionUp()" size="small" color="primary"
+          >+</ion-button
+        >
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6"> Intelligence: </ion-col>
+      <ion-col size="6">
+        {{character.atrib.intelligence}} ({{
+        calculateMod(character.atrib.intelligence) }})
+        <ion-button (click)="intelligenceDown()" size="small" color="primary"
+          >-</ion-button
+        >
+        <ion-button (click)="intelligenceUp()" size="small" color="primary"
+          >+</ion-button
+        >
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6"> Wisdom: </ion-col>
+      <ion-col size="6">
+        {{character.atrib.wisdom}} ({{ calculateMod(character.atrib.wisdom) }})
+        <ion-button (click)="wisdomDown()" size="small" color="primary"
+          >-</ion-button
+        >
+        <ion-button (click)="wisdomUp()" size="small" color="primary"
+          >+</ion-button
+        >
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6"> Charisma: </ion-col>
+      <ion-col size="6">
+        {{character.atrib.charisma}} ({{ calculateMod(character.atrib.charisma)
+        }})
+        <ion-button (click)="charismaDown()" size="small" color="primary"
+          >-</ion-button
+        >
+        <ion-button (click)="charismaUp()" size="small" color="primary"
+          >+</ion-button
+        >
+      </ion-col>
+    </ion-row>
   </ion-card>
 
   <ion-card>
     <ion-card-header color="primary">
       <ion-card-title class="text-center">Itens List</ion-card-title>
     </ion-card-header>
-      <ion-col class="ion-no-padding titulos">
-        <ion-card-subtitle>
-          <ion-item>
-            <ion-textarea style="opacity: 0.75;" rows="10" value={{character.itensList}} [(ngModel)]="itens"></ion-textarea>
-          </ion-item>
-        </ion-card-subtitle>
-      </ion-col>
+    <ion-col class="ion-no-padding titulos">
+      <ion-card-subtitle>
+        <ion-item>
+          <ion-textarea
+            style="opacity: 0.75"
+            rows="10"
+            value="{{character.itensList}}"
+            [(ngModel)]="itens"
+          ></ion-textarea>
+        </ion-item>
+      </ion-card-subtitle>
+    </ion-col>
   </ion-card>
 
   <ion-card>
     <ion-card-header color="primary">
       <ion-card-title class="text-center">Spells List</ion-card-title>
     </ion-card-header>
-      <ion-col class="ion-no-padding titulos">
-        <ion-card-subtitle>
-          <ion-item>
-            <ion-textarea style="opacity: 0.75;" rows="10" value={{character.spellsList}} [(ngModel)]="spells"></ion-textarea> 
-          </ion-item>
-        </ion-card-subtitle>
-      </ion-col>
+    <ion-col class="ion-no-padding titulos">
+      <ion-card-subtitle>
+        <ion-item>
+          <ion-textarea
+            style="opacity: 0.75"
+            rows="10"
+            value="{{character.spellsList}}"
+            [(ngModel)]="spells"
+          ></ion-textarea>
+        </ion-item>
+      </ion-card-subtitle>
+    </ion-col>
   </ion-card>
 
   <ion-card>
     <ion-card-header color="primary">
-      <ion-card-title class="text-center">Languages And Proficiencies</ion-card-title>
+      <ion-card-title class="text-center"
+        >Languages And Proficiencies</ion-card-title
+      >
     </ion-card-header>
-      <ion-col class="ion-no-padding titulos">
-        <ion-card-subtitle>
-          <ion-item>
-            <ion-textarea style="opacity: 0.75;"rows="10" value={{character.languagesAndProficiencies}} [(ngModel)]="lap"></ion-textarea>
-          </ion-item>
-        </ion-card-subtitle>
-      </ion-col>
+    <ion-col class="ion-no-padding titulos">
+      <ion-card-subtitle>
+        <ion-item>
+          <ion-textarea
+            style="opacity: 0.75"
+            rows="10"
+            value="{{character.languagesAndProficiencies}}"
+            [(ngModel)]="lap"
+          ></ion-textarea>
+        </ion-item>
+      </ion-card-subtitle>
+    </ion-col>
   </ion-card>
 
-  <ion-item>
-    <ion-label>Alignment</ion-label>
-    <ion-select value={{character.alignment}} placeholder="Alignment" [(ngModel)]="alignment">
-      <ion-select-option value="Lawful good">Lawful good (LG)</ion-select-option>
-      <ion-select-option value="Neutral good">Neutral good (NG)</ion-select-option>
-      <ion-select-option value="Chaotic good">Chaotic good (CG)</ion-select-option>
-      <ion-select-option value="Lawful neutral">Lawful neutral (LN)</ion-select-option>
-      <ion-select-option value="Neutral">Neutral (N)</ion-select-option>
-      <ion-select-option value="Chaotic neutral">Chaotic neutral (CN)</ion-select-option>
-      <ion-select-option value="Lawful evil">Lawful evil (LE)</ion-select-option>
-      <ion-select-option value="Neutral evil">Neutral evil (NE)</ion-select-option>
-      <ion-select-option value="Chaotic evil">Chaotic evil (CE)</ion-select-option>
-    </ion-select>
-  </ion-item>
-
+  <ion-card>
+    <ion-card-header color="primary">
+      <ion-card-title class="text-center">Change Profile</ion-card-title>
+    </ion-card-header>
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input [(ngModel)]="name" value="{{character.name}}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      <ion-select
+        placeholder="Gender"
+        [(ngModel)]="gender"
+        value="{{character.gender}}"
+      >
+        <ion-select-option value="Male">Male</ion-select-option>
+        <ion-select-option value="Female">Female</ion-select-option>
+        <ion-select-option value="Non Binary">Non Binary</ion-select-option>
+        <ion-select-option value="I'm not sure..."
+          >I'm not sure...</ion-select-option
+        >
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Race</ion-label>
+      <ion-select
+        placeholder="Race"
+        [(ngModel)]="race"
+        value="{{character.race}}"
+      >
+        <ion-select-option value="Dwarf">Dwarf</ion-select-option>
+        <ion-select-option value="Elf">Elf</ion-select-option>
+        <ion-select-option value="Halfling">Halfling</ion-select-option>
+        <ion-select-option value="Human">Human</ion-select-option>
+        <ion-select-option value="Dragonborn">Dragonborn</ion-select-option>
+        <ion-select-option value="Gnome">Gnome</ion-select-option>
+        <ion-select-option value="Halfelf">Half-elf</ion-select-option>
+        <ion-select-option value="Halforc">Half-orc</ion-select-option>
+        <ion-select-option value="Tiefling">Tiefling</ion-select-option>
+        <ion-select-option value="High Elf">High Elf</ion-select-option>
+        <ion-select-option value="Hill Dwarf">Hill Dwarf</ion-select-option>
+        <ion-select-option value="Lightfoot Halfling"
+          >Lightfoot Halfling</ion-select-option
+        >
+        <ion-select-option value="Rock Gnome">Rock Gnome</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Class</ion-label>
+      <ion-select
+        placeholder="Class"
+        [(ngModel)]="class"
+        value="{{character.class}}"
+      >
+        <ion-select-option value="Barbarian">Barbarian</ion-select-option>
+        <ion-select-option value="Bard">Bard</ion-select-option>
+        <ion-select-option value="Warlock">Warlock</ion-select-option>
+        <ion-select-option value="Cleric">Cleric</ion-select-option>
+        <ion-select-option value="Druid">Druid</ion-select-option>
+        <ion-select-option value="Sorcerer">Sorcerer</ion-select-option>
+        <ion-select-option value="Fighter">Fighter</ion-select-option>
+        <ion-select-option value="Rogue">Rogue</ion-select-option>
+        <ion-select-option value="Wizard">Wizard</ion-select-option>
+        <ion-select-option value="Monk">Monk</ion-select-option>
+        <ion-select-option value="Paladin">Paladin</ion-select-option>
+        <ion-select-option value="Ranger">Ranger</ion-select-option>
+        <ion-select-option value="Berserker">Berserker</ion-select-option>
+        <ion-select-option value="Champion">Champion</ion-select-option>
+        <ion-select-option value="Devotion">Devotion</ion-select-option>
+        <ion-select-option value="Draconic">Draconic</ion-select-option>
+        <ion-select-option value="Evocation">Evocation</ion-select-option>
+        <ion-select-option value="Fiend">Fiend</ion-select-option>
+        <ion-select-option value="Hunter">Hunter</ion-select-option>
+        <ion-select-option value="Land">Land</ion-select-option>
+        <ion-select-option value="Life">Life</ion-select-option>
+        <ion-select-option value="Lore">Lore</ion-select-option>
+        <ion-select-option value="Open Hand">Open Hand</ion-select-option>
+        <ion-select-option value="Thief">Thief</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Alignment</ion-label>
+      <ion-select
+        value="{{character.alignment}}"
+        placeholder="Alignment"
+        [(ngModel)]="alignment"
+      >
+        <ion-select-option value="Lawful good"
+          >Lawful good (LG)</ion-select-option
+        >
+        <ion-select-option value="Neutral good"
+          >Neutral good (NG)</ion-select-option
+        >
+        <ion-select-option value="Chaotic good"
+          >Chaotic good (CG)</ion-select-option
+        >
+        <ion-select-option value="Lawful neutral"
+          >Lawful neutral (LN)</ion-select-option
+        >
+        <ion-select-option value="Neutral">Neutral (N)</ion-select-option>
+        <ion-select-option value="Chaotic neutral"
+          >Chaotic neutral (CN)</ion-select-option
+        >
+        <ion-select-option value="Lawful evil"
+          >Lawful evil (LE)</ion-select-option
+        >
+        <ion-select-option value="Neutral evil"
+          >Neutral evil (NE)</ion-select-option
+        >
+        <ion-select-option value="Chaotic evil"
+          >Chaotic evil (CE)</ion-select-option
+        >
+      </ion-select>
+    </ion-item>
+  </ion-card>
 </ion-content>
 
-<ion-button (click)="savePage(lifePoints, armorClass, story, spells, itens, lap, xp, alignment, initiative, speed)" color="primary">save</ion-button> 
+<ion-button
+  (click)="savePage(lifePoints, armorClass, story, spells, itens, lap, xp, alignment, initiative, speed, name, gender, race, class)"
+  color="primary"
+  >save</ion-button
+>

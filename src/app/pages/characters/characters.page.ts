@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { StorageService } from '../../services/storage-service.service';
+import { AlertController } from '@ionic/angular';
 
 interface Atrib {
   strength: number;
@@ -41,8 +42,11 @@ export class CharactersPage {
   public characterHoldingList: boolean[] = [];
   public characterDeleteList: boolean[] = [];
 
-  constructor(public storageService: StorageService, private router: Router) {
-  }
+  constructor(
+    public storageService: StorageService,
+    private router: Router,
+    public alertController: AlertController
+  ) {}
 
   async ngOnInit() {
     await this.loadFromStorage();
@@ -78,14 +82,39 @@ export class CharactersPage {
   }
 
   public async deleteCharacters() {
-    this.showCheckBoxes = false;
-    let deleteChars: Character[] = [];
-    this.characterDeleteList.forEach((v, k) => {
-      if (v) deleteChars.push(this.characterList[k]);
+      const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Do you want to delete this/these character(s)?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          },
+        },
+        {
+          text: 'Delete',
+          handler: async () => {
+            this.showCheckBoxes = false;
+            let deleteChars: Character[] = [];
+            this.characterDeleteList.forEach((v, k) => {
+              if (v) deleteChars.push(this.characterList[k]);
+            });
+            this.characterList = this.characterList.filter(
+              (el) => !deleteChars.includes(el)
+            );
+            await this.saveAtStorage();
+            await this.loadFromStorage();
+          },
+        },
+      ],
     });
-    this.characterList = this.characterList.filter((el) => !deleteChars.includes(el));
-    await this.saveAtStorage();
-    await this.loadFromStorage();
+
+    await alert.present();
+    const { role } = await alert.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
   }
 
   public toggleDelete(id: number) {
