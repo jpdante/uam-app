@@ -17,7 +17,7 @@
         ></ion-button>
       </ion-col>
       <ion-col class="text-center" size="5">
-        <h2>Level: {{character.level}}</h2>
+        <ion-card-title style="font-weight: bold;">Level: {{character.level}}</ion-card-title>
       </ion-col>
       <ion-col class="text-center">
         <ion-button (click)="levelUp()"
@@ -37,12 +37,12 @@
             </ion-avatar>
           </ion-col>
           <ion-col class="text-center">
-            <ion-card-subtitle>
+            <ion-card-title style="font-size: 15px; opacity: 0.85;">
               Alignment: <b>{{character.alignment}}</b><br />
               Class: <b>{{character.class}}</b><br />
               Race: <b>{{character.race}}</b><br />
               Gender: <b>{{character.gender}}</b><br />
-            </ion-card-subtitle>
+            </ion-card-title>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -52,24 +52,24 @@
   <ion-card>
     <ion-row class="ion-align-items-center">
       <ion-item>
-        <ion-label style="font-weight: bold; font-size: 17px;">XP:</ion-label>
-        <ion-input type="number" value={{character.xp}} [(ngModel)]="xp"></ion-input>
+        <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75;">XP:</ion-label>
+        <ion-input style="opacity: 0.75;" type="number" value={{character.xp}} [(ngModel)]="xp"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label style="font-weight: bold; font-size: 17px;">Life Points: </ion-label>
-        <ion-input type="number" value={{character.lifePoints}} [(ngModel)]="lifePoints"></ion-input>
+        <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75;">Life Points: </ion-label>
+        <ion-input style="opacity: 0.75;" type="number" value={{character.lifePoints}} [(ngModel)]="lifePoints"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label style="font-weight: bold; font-size: 17px;">Armor Class: </ion-label>
-        <ion-input type="number" value={{character.armorClass}} [(ngModel)]="armorClass"></ion-input>
+        <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75;">Armor Class: </ion-label>
+        <ion-input style="opacity: 0.75;" type="number" value={{character.armorClass}} [(ngModel)]="armorClass"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label style="font-weight: bold; font-size: 17px;">Speed: </ion-label>
-        <ion-input type="number" value={{character.speed}} [(ngModel)]="speed"></ion-input>
+        <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75;">Speed: </ion-label>
+        <ion-input style="opacity: 0.75;" type="number" value={{character.speed}} [(ngModel)]="speed"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label style="font-weight: bold; font-size: 17px;">Initiative: </ion-label>
-        <ion-input type="number" value={{character.initiative}} [(ngModel)]="initiative"></ion-input>
+        <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75;">Initiative: </ion-label>
+        <ion-input style="opacity: 0.75;" type="number" value={{character.initiative}} [(ngModel)]="initiative"></ion-input>
       </ion-item>
     </ion-row>
   </ion-card>
@@ -81,7 +81,7 @@
       <ion-col class="ion-no-padding titulos">
         <ion-card-subtitle>
           <ion-item>
-            <ion-textarea rows="10" value={{character.story}} [(ngModel)]="story"></ion-textarea>
+            <ion-textarea style="opacity: 0.75;" rows="10" value={{character.story}} [(ngModel)]="story"></ion-textarea>
           </ion-item>
         </ion-card-subtitle>
       </ion-col>
@@ -154,7 +154,7 @@
       <ion-col class="ion-no-padding titulos">
         <ion-card-subtitle>
           <ion-item>
-            <ion-textarea rows="10" value={{character.itensList}} [(ngModel)]="itens"></ion-textarea>
+            <ion-textarea style="opacity: 0.75;" rows="10" value={{character.itensList}} [(ngModel)]="itens"></ion-textarea>
           </ion-item>
         </ion-card-subtitle>
       </ion-col>
@@ -167,7 +167,7 @@
       <ion-col class="ion-no-padding titulos">
         <ion-card-subtitle>
           <ion-item>
-            <ion-textarea rows="10" value={{character.spellsList}} [(ngModel)]="spells"></ion-textarea> 
+            <ion-textarea style="opacity: 0.75;" rows="10" value={{character.spellsList}} [(ngModel)]="spells"></ion-textarea> 
           </ion-item>
         </ion-card-subtitle>
       </ion-col>
@@ -180,7 +180,7 @@
       <ion-col class="ion-no-padding titulos">
         <ion-card-subtitle>
           <ion-item>
-            <ion-textarea rows="10" value={{character.languagesAndProficiencies}} [(ngModel)]="lap"></ion-textarea>
+            <ion-textarea style="opacity: 0.75;"rows="10" value={{character.languagesAndProficiencies}} [(ngModel)]="lap"></ion-textarea>
           </ion-item>
         </ion-card-subtitle>
       </ion-col>

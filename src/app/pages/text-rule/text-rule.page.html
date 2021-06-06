@@ -8,9 +8,13 @@
 </ion-header>
 
 <ion-content>
-  <div *ngIf="topicData.desc" class="desc">
-    <p [innerHTML]="topicData.desc"></p>
-  </div>
+  <ion-card>
+  <ion-card-title style="font-size: 17px;">
+    <div *ngIf="topicData.desc" class="desc">
+      <p [innerHTML]="topicData.desc"></p>
+    </div>
+  </ion-card-title>
+  </ion-card>
   <ion-router-link *ngFor="let topic of topicList | keyvalue" (click)="redirectToTopic(topic.key)">
     <ion-card>
       <ion-row class="ion-align-items-center">
