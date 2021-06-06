@@ -8,6 +8,51 @@
 </ion-header>
 
 <ion-content>
+
+  <!--Ability Scores-->
+  <ng-template [ngIf]="element.type === 'ability-scores'">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          {{element.data.full_name}}
+        </ion-card-title>
+        <ion-card-content>
+          {{element.data.desc}}
+        </ion-card-content>
+      </ion-card-header>
+    </ion-card>
+  </ng-template>
+  <!--Ability Scores - End-->
+
+  <!--Skills-->
+  <ng-template [ngIf]="element.type === 'skills'">
+
+    <ion-router-link (click)="redirectToElement(element.data.ability_score)">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+            Ability Score
+          </ion-card-title>
+          <ion-card-content>
+            {{element.data.ability_score.name}}
+          </ion-card-content>
+        </ion-card-header>
+      </ion-card>
+    </ion-router-link>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          Description
+        </ion-card-title>
+        <ion-card-content>
+          {{element.data.desc}}
+        </ion-card-content>
+      </ion-card-header>
+    </ion-card>
+  </ng-template>
+  <!--Skills - End-->
+
   <!--Classes-->
 
   <ng-template [ngIf]="element.type === 'classes'">
@@ -175,6 +220,18 @@
   <!--Proficiencies-->
 
   <ng-template [ngIf]="element.type === 'proficiencies'">
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          Type
+        </ion-card-title>
+        <ion-card-subtitle>
+          {{element.data.type}}
+        </ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+
     <ng-template [ngIf]="element.data.classes.length > 0">
       <h1 class="text-center">Classes</h1>
       <ion-router-link *ngFor="let class of element.data.classes">
@@ -323,7 +380,56 @@
 
   <!--Equipment-->
 
-  <ng-template [ngIf]="element.type === 'equipment'"> </ng-template>
+  <ng-template [ngIf]="element.type === 'equipment'"> 
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+            Cost
+          </ion-card-title>
+          <ion-card-subtitle>
+            {{element.data.cost.quantity}}{{element.data.cost.unit}}
+          </ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+
+      <ng-template [ngIf]="element.data.desc != null">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              Description
+            </ion-card-title>
+            <ion-card-content>
+              {{element.data.desc}}
+            </ion-card-content>
+          </ion-card-header>
+        </ion-card>
+      </ng-template>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+            Equipment Category
+          </ion-card-title>
+          <ion-card-subtitle>
+            {{element.data.equipment_category.name}}
+          </ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+
+      <ng-template [ngIf]="element.data.equipment_category.name === 'Weapon'">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              Category Range
+            </ion-card-title>
+            <ion-card-subtitle>
+              {{element.data.category_range}}
+            </ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ng-template>
+
+  </ng-template>
 
   <!--Equipment -  End-->
 
@@ -355,7 +461,7 @@
     </ion-card>
   </ng-template>
 
-  <!--Spells - End-->
+  <!--Spells - End--> 
 
   <!--Monsters-->
 
