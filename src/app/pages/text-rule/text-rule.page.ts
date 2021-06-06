@@ -47,7 +47,7 @@ export class TextRulePage implements OnInit {
 
   public async loadTopics() {
     var md = new Remarkable();
-    await Net.get(`http://www.dnd5eapi.co${this.ruleTopic.url}`)
+    await Net.get(`https://www.dnd5eapi.co${this.ruleTopic.url}`)
       .then((e: any) => {
         console.log(e.data);
         this.topicList = [];
