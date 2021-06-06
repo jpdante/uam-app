@@ -1,10 +1,12 @@
+import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Net from 'axios';
 
 interface Elements {
   index: string;
-  type: string;
   name: string;
+  url: string;
 }
 
 @Component({
@@ -17,8 +19,9 @@ export class SearchPage implements OnInit {
   public subtype: string;
   public verifyType = "classes"
 
+  public elementsList: Elements[] = [];
 
-  constructor() {}
+  constructor(private router: Router) { }
 
   ngOnInit() {}
 
@@ -49,8 +52,8 @@ export class SearchPage implements OnInit {
             e.data.results.forEach((element) => {
               this.elementsList.push({
                 index: element.index,
-                type: type,
                 name: element.name,
+                url: element.url
               });
             });
           }
@@ -60,5 +63,7 @@ export class SearchPage implements OnInit {
         });
   }
 
-  public elementsList: Elements[] = [];
+  public redirectToElement(id: any) {
+    this.router.navigate(['/element', JSON.stringify(this.elementsList[id])]);
+  }
 }

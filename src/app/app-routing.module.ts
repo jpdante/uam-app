@@ -32,7 +32,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'element',
+    path: 'element/:id',
     loadChildren: () => import('./pages/element/element.module').then( m => m.ElementPageModule)
   },
   {
