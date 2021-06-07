@@ -14,7 +14,7 @@
       <ion-select-option value="languages">Languages</ion-select-option> 
       <ion-select-option value="equipment">Equipment</ion-select-option> 
       <ion-select-option value="spells">Spells</ion-select-option>
-      <ion-select-option value="backgrounds">Backgrounds</ion-select-option>
+      <!--<ion-select-option value="backgrounds">Backgrounds</ion-select-option>-->
 
     </ion-select>
   </ion-item>
@@ -33,15 +33,15 @@
       <ion-select interface="popover" [(ngModel)]="subtype" (ionChange)="forceSearchSubType()">
         <ion-select-option value="races">Races</ion-select-option>
         <ion-select-option value="subraces">Subraces</ion-select-option>
-        <ion-select-option value="traits">Traits</ion-select-option>
+        <!--<ion-select-option value="traits">Traits</ion-select-option>-->
       </ion-select>
     </ion-item>
     <ion-item *ngSwitchCase="'equipment'">
       <ion-label>Sub Topic</ion-label>
       <ion-select interface="popover" [(ngModel)]="subtype" (ionChange)="forceSearchSubType()">
         <ion-select-option value="equipment">Equipment</ion-select-option>
-        <ion-select-option value="magic-items">Magic Items</ion-select-option>
-        <ion-select-option value="weapon-properties">Weapon Properties</ion-select-option>
+        <!--<ion-select-option value="magic-items">Magic Items</ion-select-option>-->
+        <!--<ion-select-option value="weapon-properties">Weapon Properties</ion-select-option>-->
       </ion-select>
     </ion-item>
   </div>
