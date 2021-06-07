@@ -393,16 +393,77 @@
       </ion-card-header>
     </ion-card>
 
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title> Gear Category </ion-card-title>
+        <ion-card-subtitle>
+          {{element.data.gear_category.name}}
+        </ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+
     <ng-template [ngIf]="element.data.equipment_category.name === 'Weapon'">
       <ion-card>
         <ion-card-header>
-          <ion-card-title> Category Range </ion-card-title>
+          <ion-card-title> Damage </ion-card-title>
           <ion-card-subtitle>
-            {{element.data.category_range}}
+            {{element.data.damage.damage_dice}}
+            {{element.data.damage.damage_type.name}} Damage
+          </ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title> Weapon Range </ion-card-title>
+          <ion-card-subtitle>
+            {{element.data.weapon_range}} | {{element.data.range.normal}} ft |
+            Throw
+            {{element.data.throw_range.normal}}/{{element.data.throw_range.long}}
+            ft
+          </ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title> Weapon Category </ion-card-title>
+          <ion-card-subtitle>
+            {{element.data.weapon_category}}
           </ion-card-subtitle>
         </ion-card-header>
       </ion-card>
     </ng-template>
+
+    <ng-template [ngIf]="element.data.equipment_category.name === 'Armor'">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title> Armor Category </ion-card-title>
+          <ion-card-subtitle>
+            {{element.data.armor_category}}
+          </ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title> Armor Class </ion-card-title>
+          <ion-card-subtitle>
+            {{element.data.armor_class.base}}
+            <ng-template [ngIf]="element.data.armor_class.dex_bonus"
+              >+ Dex</ng-template
+            >
+            <ng-template [ngIf]="element.data.armor_class.max_bonus"
+              > (Max : {{element.data.armor_class.max_bonus}})</ng-template
+            >
+          </ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </ng-template>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title> Weight </ion-card-title>
+        <ion-card-subtitle> {{element.data.weight}} kg </ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
   </ng-template>
 
   <!--Equipment -  End-->
