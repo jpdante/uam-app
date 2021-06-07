@@ -45,7 +45,7 @@ export class ElementPage implements OnInit {
 
   public async loadElement() {
     var md = new Remarkable();
-    await Net.get(`http://www.dnd5eapi.co${this.elementBase.url}`)
+    await Net.get(`https://www.dnd5eapi.co${this.elementBase.url}`)
       .then((e: any) => {
         console.log(e.data);
         if (e.data) {
