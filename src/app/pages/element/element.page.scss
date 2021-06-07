@@ -19,12 +19,7 @@
     font-size: 17px;
 }
 
-.item {
-    display: block !important;
-    width: 100% !important;
-    color: white;
-    padding: 15px;
-    margin: 5px 0 5px 0;
-    border: white 1px solid;
-    border-radius: 5px;
+ion-icon {
+    display: inline-block;
+    vertical-align: middle;
 }

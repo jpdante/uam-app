@@ -19,10 +19,10 @@
           </ion-col>
           <ion-col>
             <ion-card-title style="font-size: 15px; opacity: 0.85">
-              <b>Alignment:</b><br> {{character.alignment}}<br />
-              <b>Class:</b><br> {{character.class}}<br />
-              <b>Race:</b><br> {{character.race}}<br />
-              <b>Gender:</b><br> {{character.gender}}<br />
+              <b>Alignment:</b> {{character.alignment}}<br />
+              <b>Class:</b> {{character.class}}<br />
+              <b>Race:</b> {{character.race}}<br />
+              <b>Gender:</b> {{character.gender}}<br />
             </ion-card-title>
           </ion-col>
         </ion-row>
@@ -65,7 +65,7 @@
       </ion-item>
       <ion-item>
         <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75"
-          >Life Points:
+          >HP:
         </ion-label>
         <ion-input
           style="opacity: 0.75"
@@ -272,15 +272,16 @@
       <ion-card-title class="text-center">Change Profile</ion-card-title>
     </ion-card-header>
     <ion-item>
-      <ion-label>Name</ion-label>
-      <ion-input [(ngModel)]="name" value="{{character.name}}"></ion-input>
+      <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75">Name: </ion-label>
+      <ion-input style="font-size: 17px; opacity: 0.75" [(ngModel)]="name" value="{{character.name}}"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Gender</ion-label>
+      <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75">Gender</ion-label>
       <ion-select
         placeholder="Gender"
         [(ngModel)]="gender"
         value="{{character.gender}}"
+        style="font-size: 17px; opacity: 0.75"
       >
         <ion-select-option value="Male">Male</ion-select-option>
         <ion-select-option value="Female">Female</ion-select-option>
@@ -291,11 +292,12 @@
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label>Race</ion-label>
+      <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75">Race</ion-label>
       <ion-select
         placeholder="Race"
         [(ngModel)]="race"
         value="{{character.race}}"
+        style="font-size: 17px; opacity: 0.75"
       >
         <ion-select-option value="Dwarf">Dwarf</ion-select-option>
         <ion-select-option value="Elf">Elf</ion-select-option>
@@ -315,11 +317,12 @@
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label>Class</ion-label>
+      <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75">Class</ion-label>
       <ion-select
         placeholder="Class"
         [(ngModel)]="class"
         value="{{character.class}}"
+        style="font-size: 17px; opacity: 0.75"
       >
         <ion-select-option value="Barbarian">Barbarian</ion-select-option>
         <ion-select-option value="Bard">Bard</ion-select-option>
@@ -348,11 +351,12 @@
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label>Alignment</ion-label>
+      <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75">Alignment</ion-label>
       <ion-select
         value="{{character.alignment}}"
         placeholder="Alignment"
         [(ngModel)]="alignment"
+        style="font-size: 17px; opacity: 0.75"
       >
         <ion-select-option value="Lawful good"
           >Lawful good (LG)</ion-select-option
