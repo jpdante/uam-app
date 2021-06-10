@@ -18,11 +18,6 @@ interface Atrib {
 export class YourCharacterPage implements OnInit {
   public id: '';
   public character;
-  public editCharacterStory: boolean = false;
-  public editCharactersList: boolean = false;
-  public editCharactersSpells: boolean = false;
-  public editLanguagesAndProeficiencies: boolean = false;
-
 
   public defaultAtribs = {
     strength : 17,
@@ -100,7 +95,6 @@ export class YourCharacterPage implements OnInit {
   public async strengthDown (){
     if(this.character.atrib.strength > 1)
     this.character.atrib.strength -= 1;
-
   }
 
   public async dexterityUp (){
@@ -232,3 +226,4 @@ export class YourCharacterPage implements OnInit {
     return Math.floor((ability - 10)/2)
   }
 }
+

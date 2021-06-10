@@ -26,7 +26,8 @@
         <ion-card-header>
           <ion-card-title> Ability Score </ion-card-title>
           <ion-card-content>
-            {{element.data.ability_score.name}}
+            <b>{{element.data.ability_score.name}}</b>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
           </ion-card-content>
         </ion-card-header>
       </ion-card>
@@ -170,14 +171,10 @@
   <!--Subclasses-->
 
   <ng-template [ngIf]="element.type === 'subclasses'">
-    <h2 class="text-center">
-      {{element.data.class.name}} {{element.data.name}}
-    </h2>
-
     <ion-card class="description-layout">
-      <ion-card-subtitle class="description">
+      <ion-card-content class="description">
         {{element.data.desc}}
-      </ion-card-subtitle>
+      </ion-card-content>
     </ion-card>
   </ng-template>
 
@@ -613,33 +610,33 @@
           </ion-card-title>
         </ng-template>
 
-        <ion-card-title> Languages: {{element.data.languages}} </ion-card-title>
+        <ion-card-title> <b>Languages:</b> {{element.data.languages}} </ion-card-title>
 
         <ng-template [ngIf]="element.data.proficiencies.length > 0">
           <ion-card-title class="mt-1">
-            Proficiencies:
+            <b>Proficiencies:</b> <br/> 
             <span *ngFor="let prof of element.data.proficiencies"
-              >{{prof.proficiency.name}}
+              >{{prof.proficiency.name}} <br/>
             </span>
           </ion-card-title>
         </ng-template>
 
         <ion-card-title class="mt-1">
-          Senses:
+          <b>Senses:</b>
           <ng-template [ngIf]="element.data.senses.darkvision != null">
             Darkvision {{element.data.senses.darkvision}}
           </ng-template>
           <ng-template [ngIf]="element.data.senses.blindsight != null">
             Blindsight {{element.data.senses.blindsight}}
           </ng-template>
-          Passive Perception {{element.data.senses.passive_perception}}
+            Passive Perception {{element.data.senses.passive_perception}}
         </ion-card-title>
 
         <ion-card-title *ngIf="element.data.special_abilities != 0" class="mt-1">
           <ng-template [ngIf]="element.data.special_abilities.length > 0">
             <div *ngFor="let special_ab of element.data.special_abilities" class="mt-1">
-              <ion-card-title> {{special_ab.name}} </ion-card-title>
-              <ion-card-subtitle> {{special_ab.desc}} </ion-card-subtitle>
+              <ion-card-title> <b>{{special_ab.name}}</b> <br/> </ion-card-title>
+              <ion-card-content style="opacity: 0.75;"> {{special_ab.desc}} </ion-card-content>
             </div>
           </ng-template>
         </ion-card-title>
