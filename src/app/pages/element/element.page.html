@@ -109,27 +109,33 @@
     </span>
 
     <h1 class="text-center">Starting Equipment Options</h1>
-    <h3 class="text-center">Choose {{element.data.starting_equipment_options[0].choose}} from </h3>
+    <h3 class="text-center">
+      Choose {{element.data.starting_equipment_options[0].choose}} from
+    </h3>
     <ion-router-link *ngFor="let starting_equip_opt of element.data.starting_equipment_options[0].from"
       (click)="redirectToElement(starting_equip_opt)">
       <ion-card>
         <ion-row class="ion-align-items-center">
           <ion-card-header>
             <ion-col class="ion-no-padding titulos">
-              <ion-card-title>{{starting_equip_opt.quantity}} - {{starting_equip_opt.equipment.name}}</ion-card-title>
+              <ion-card-title>{{starting_equip_opt.quantity}} -
+                {{starting_equip_opt.equipment.name}}</ion-card-title>
             </ion-col>
           </ion-card-header>
         </ion-row>
       </ion-card>
     </ion-router-link>
-    <h3 class="text-center">Choose {{element.data.starting_equipment_options[1].choose}} from </h3>
+    <h3 class="text-center">
+      Choose {{element.data.starting_equipment_options[1].choose}} from
+    </h3>
     <ion-router-link *ngFor="let starting_equip_opt of element.data.starting_equipment_options[1].from"
       (click)="redirectToElement(starting_equip_opt)">
       <ion-card>
         <ion-row class="ion-align-items-center">
           <ion-card-header>
             <ion-col class="ion-no-padding titulos">
-              <ion-card-title>{{starting_equip_opt.quantity}} - {{starting_equip_opt.equipment.name}}</ion-card-title>
+              <ion-card-title>{{starting_equip_opt.quantity}} -
+                {{starting_equip_opt.equipment.name}}</ion-card-title>
             </ion-col>
           </ion-card-header>
         </ion-row>
@@ -274,7 +280,9 @@
     <ion-router-link *ngFor="let language of element.data.languages" (click)="redirectToElement(language)">
       <ion-card>
         <ion-card-header>
-          <ion-card-title> {{language.name}} <ion-icon name="chevron-forward-outline"></ion-icon>
+          <ion-card-title>
+            {{language.name}}
+            <ion-icon name="chevron-forward-outline"></ion-icon>
           </ion-card-title>
         </ion-card-header>
       </ion-card>
@@ -421,7 +429,8 @@
           <ion-card-subtitle>
             {{element.data.armor_class.base}}
             <ng-template [ngIf]="element.data.armor_class.dex_bonus">+ Dex</ng-template>
-            <ng-template [ngIf]="element.data.armor_class.max_bonus"> (Max : {{element.data.armor_class.max_bonus}})
+            <ng-template [ngIf]="element.data.armor_class.max_bonus">
+              (Max : {{element.data.armor_class.max_bonus}})
             </ng-template>
           </ion-card-subtitle>
         </ion-card-header>
@@ -442,8 +451,52 @@
 
   <ng-template [ngIf]="element.type === 'spells'">
     <ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title class="title">{{element.data.name}}</ion-card-title>
+          <ng-template [ngIf]="element.data.level > 0">
+            <ion-card-subtitle class="title">{{element.data.level}} level
+              {{element.data.school.name}}</ion-card-subtitle>
+          </ng-template>
+          <ng-template [ngIf]="element.data.level === 0">
+            <ion-card-subtitle class="title">Cantrip
+              {{element.data.school.name}}</ion-card-subtitle>
+          </ng-template>
+          <ion-card-subtitle class="title">Classes:
+            <span *ngFor="let class of element.data.classes">{{class.name}}<ng-template
+                [ngIf]="element.data.classes[element.data.classes.length - 1] != class">, </ng-template>
+            </span>.
+          </ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+      <ion-card>
+        <ion-card-content>
+          <strong>Casting Time:</strong> {{element.data.casting_time}}. <br>
+          <strong>Range:</strong> {{element.data.range}}. <br>
+          <strong>Components:</strong> <span *ngFor="let component of element.data.components"> {{component}}<ng-template 
+            [ngIf]="element.data.components[element.data.components.length - 1] != component">,
+            </ng-template>
+          </span>. <br>
+          <strong>Duration:</strong> {{element.data.duration}} <br>
+          <p *ngFor="let description of element.data.desc">
+            {{description}}
+          </p>
+          
+        </ion-card-content>
+      </ion-card>
+    </ion-card>
+
+    <!-- Old Code
+    <ion-card>
       <ion-card-header>
         <ion-card-title class="title"> School </ion-card-title>
+        <ion-card-subtitle> {{element.data.school.name}} </ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="title"> Components </ion-card-title>
         <ion-card-subtitle> {{element.data.school.name}} </ion-card-subtitle>
       </ion-card-header>
     </ion-card>
@@ -463,7 +516,7 @@
       <ion-card-subtitle class="description">
         {{element.data.material}}
       </ion-card-subtitle>
-    </ion-card>
+    </ion-card>-->
   </ng-template>
 
   <!--Spells - End-->
@@ -574,7 +627,9 @@
           </ion-card-title>
         </ng-template>
 
-        <ion-card-title> <b>Languages:</b> {{element.data.languages}} </ion-card-title>
+        <ion-card-title>
+          <b>Languages:</b> {{element.data.languages}}
+        </ion-card-title>
 
         <ng-template [ngIf]="element.data.proficiencies.length > 0">
           <ion-card-title class="mt-1">
@@ -598,8 +653,12 @@
         <ion-card-title *ngIf="element.data.special_abilities != 0" class="mt-1">
           <ng-template [ngIf]="element.data.special_abilities.length > 0">
             <div *ngFor="let special_ab of element.data.special_abilities" class="mt-1">
-              <ion-card-title> <b>{{special_ab.name}}</b> <br /> </ion-card-title>
-              <ion-card-content style="opacity: 0.75;"> {{special_ab.desc}} </ion-card-content>
+              <ion-card-title>
+                <b>{{special_ab.name}}</b> <br />
+              </ion-card-title>
+              <ion-card-content style="opacity: 0.75">
+                {{special_ab.desc}}
+              </ion-card-content>
             </div>
           </ng-template>
         </ion-card-title>
