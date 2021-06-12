@@ -474,14 +474,15 @@
           <strong>Casting Time:</strong> {{element.data.casting_time}}. <br>
           <strong>Range:</strong> {{element.data.range}}. <br>
           <strong>Components:</strong> <span *ngFor="let component of element.data.components"> {{component}}<ng-template 
-            [ngIf]="element.data.components[element.data.components.length - 1] != component">,
+            [ngIf]="component === 'M'"> ({{element.data.material}})</ng-template>
+            <ng-template [ngIf]="element.data.components[element.data.components.length - 1] != component">,
             </ng-template>
           </span>. <br>
           <strong>Duration:</strong> {{element.data.duration}} <br>
           <p *ngFor="let description of element.data.desc">
             {{description}}
           </p>
-          
+
         </ion-card-content>
       </ion-card>
     </ion-card>
