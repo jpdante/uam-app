@@ -46,10 +46,7 @@
 
   <ng-template [ngIf]="element.type === 'classes'">
     <h2 class="text-center">Proficiencies</h2>
-    <ion-router-link
-      *ngFor="let proficiency of element.data.proficiencies"
-      (click)="redirectToElement(proficiency)"
-    >
+    <ion-router-link *ngFor="let proficiency of element.data.proficiencies" (click)="redirectToElement(proficiency)">
       <ion-card>
         <ion-row class="ion-align-items-center">
           <ion-card-header>
@@ -65,10 +62,8 @@
     <h3 class="text-center">
       Choose {{element.data.proficiency_choices[0].choose}} from
     </h3>
-    <ion-router-link
-      *ngFor="let proficiency of element.data.proficiency_choices[0].from"
-      (click)="redirectToElement(proficiency)"
-    >
+    <ion-router-link *ngFor="let proficiency of element.data.proficiency_choices[0].from"
+      (click)="redirectToElement(proficiency)">
       <ion-card>
         <ion-row class="ion-align-items-center">
           <ion-card-header>
@@ -82,10 +77,8 @@
 
     <h2 class="text-center">Saving Throws</h2>
     <span>
-      <ion-router-link
-        *ngFor="let saving_throw of element.data.saving_throws"
-        (click)="redirectToElement(saving_throw)"
-      >
+      <ion-router-link *ngFor="let saving_throw of element.data.saving_throws"
+        (click)="redirectToElement(saving_throw)">
         <ion-card>
           <ion-row class="ion-align-items-center">
             <ion-card-header>
@@ -100,18 +93,14 @@
 
     <h2 class="text-center">Starting Equipment</h2>
     <span>
-      <ion-router-link
-        *ngFor="let starting_equip of element.data.starting_equipment"
-        (click)="redirectToElement(starting_equip.equipment)"
-      >
+      <ion-router-link *ngFor="let starting_equip of element.data.starting_equipment"
+        (click)="redirectToElement(starting_equip.equipment)">
         <ion-card>
           <ion-row class="ion-align-items-center">
             <ion-card-header>
               <ion-col class="ion-no-padding titulos">
-                <ion-card-title
-                  >{{starting_equip.quantity}} -
-                  {{starting_equip.equipment.name}}</ion-card-title
-                >
+                <ion-card-title>{{starting_equip.quantity}} -
+                  {{starting_equip.equipment.name}}</ion-card-title>
               </ion-col>
             </ion-card-header>
           </ion-row>
@@ -119,10 +108,10 @@
       </ion-router-link>
     </span>
 
-    <!--
     <h1 class="text-center">Starting Equipment Options</h1>
     <h3 class="text-center">Choose {{element.data.starting_equipment_options[0].choose}} from </h3>
-    <ion-router-link *ngFor="let starting_equip_opt of element.data.starting_equipment_options[0].from" (click)="redirectToElement(starting_equip_opt)">
+    <ion-router-link *ngFor="let starting_equip_opt of element.data.starting_equipment_options[0].from"
+      (click)="redirectToElement(starting_equip_opt)">
       <ion-card>
         <ion-row class="ion-align-items-center">
           <ion-card-header>
@@ -134,7 +123,8 @@
       </ion-card>
     </ion-router-link>
     <h3 class="text-center">Choose {{element.data.starting_equipment_options[1].choose}} from </h3>
-    <ion-router-link *ngFor="let starting_equip_opt of element.data.starting_equipment_options[1].from" (click)="redirectToElement(starting_equip_opt)">
+    <ion-router-link *ngFor="let starting_equip_opt of element.data.starting_equipment_options[1].from"
+      (click)="redirectToElement(starting_equip_opt)">
       <ion-card>
         <ion-row class="ion-align-items-center">
           <ion-card-header>
@@ -145,14 +135,10 @@
         </ion-row>
       </ion-card>
     </ion-router-link>
-    -->
 
     <h2 class="text-center">Subclass</h2>
     <span>
-      <ion-router-link
-        *ngFor="let subclass of element.data.subclasses"
-        (click)="redirectToElement(subclass)"
-      >
+      <ion-router-link *ngFor="let subclass of element.data.subclasses" (click)="redirectToElement(subclass)">
         <ion-card>
           <ion-row class="ion-align-items-center">
             <ion-card-header>
@@ -209,10 +195,7 @@
     </ion-card>
 
     <ng-template [ngIf]="element.data.classes.length > 0">
-      <h1
-        class="text-center"
-        style="font-weight: bold; font-size: 20px; opacity: 0.75"
-      >
+      <h1 class="text-center" style="font-weight: bold; font-size: 20px; opacity: 0.75">
         Classes
       </h1>
       <ion-router-link *ngFor="let class of element.data.classes">
@@ -259,11 +242,10 @@
       <ion-card-content>
         <h2 *ngFor="let ability_bonus of element.data.ability_bonuses">
           {{ability_bonus.bonus}} in
-          <span
-            (click)="redirectToElement(ability_bonus.ability_score)"
-            style="font-weight: bolder"
-            >{{ability_bonus.ability_score.name}}</span
-          >
+          <span (click)="redirectToElement(ability_bonus.ability_score)"
+            style="font-weight: bolder">{{ability_bonus.ability_score.name}}
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </span>
         </h2>
       </ion-card-content>
     </ion-card>
@@ -289,21 +271,18 @@
       <ion-card-content> {{element.data.language_desc}} </ion-card-content>
     </ion-card>
 
-    <!--
-    <ion-router-link
-      *ngFor="let language of element.data.languages"
-      (click)="redirectToElement(language)"
-    >
+    <ion-router-link *ngFor="let language of element.data.languages" (click)="redirectToElement(language)">
       <ion-card>
         <ion-card-header>
-          <ion-card-title> {{language.name}} <ion-icon name="chevron-forward-outline"></ion-icon> </ion-card-title>
+          <ion-card-title> {{language.name}} <ion-icon name="chevron-forward-outline"></ion-icon>
+          </ion-card-title>
         </ion-card-header>
       </ion-card>
-    </ion-router-link> -->
+    </ion-router-link>
 
     <ion-card>
       <ion-card-header>
-        <ion-card-title> Size </ion-card-title>
+        <ion-card-title> <b>Size</b> </ion-card-title>
         <ion-card-subtitle> {{element.data.size}}</ion-card-subtitle>
       </ion-card-header>
     </ion-card>
@@ -327,11 +306,8 @@
       <ion-card-content>
         <h2 *ngFor="let ability_bonus of element.data.ability_bonuses">
           {{ability_bonus.bonus}} in
-          <span
-            (click)="redirectToElement(ability_bonus.ability_score)"
-            style="font-weight: bolder"
-            >{{ability_bonus.ability_score.name}}</span
-          >
+          <span (click)="redirectToElement(ability_bonus.ability_score)"
+            style="font-weight: bolder">{{ability_bonus.ability_score.name}}</span>
         </h2>
       </ion-card-content>
     </ion-card>
@@ -444,12 +420,9 @@
           <ion-card-title> Armor Class </ion-card-title>
           <ion-card-subtitle>
             {{element.data.armor_class.base}}
-            <ng-template [ngIf]="element.data.armor_class.dex_bonus"
-              >+ Dex</ng-template
-            >
-            <ng-template [ngIf]="element.data.armor_class.max_bonus"
-              > (Max : {{element.data.armor_class.max_bonus}})</ng-template
-            >
+            <ng-template [ngIf]="element.data.armor_class.dex_bonus">+ Dex</ng-template>
+            <ng-template [ngIf]="element.data.armor_class.max_bonus"> (Max : {{element.data.armor_class.max_bonus}})
+            </ng-template>
           </ion-card-subtitle>
         </ion-card-header>
       </ion-card>
@@ -528,11 +501,9 @@
       <ion-item>
         <ion-card-title>
           <b>Speed: </b> Walk {{element.data.speed.walk}}
-          <ng-template [ngIf]="element.data.speed.swim != null"
-            ><br />Swim {{element.data.speed.swim}}
+          <ng-template [ngIf]="element.data.speed.swim != null"><br />Swim {{element.data.speed.swim}}
           </ng-template>
-          <ng-template [ngIf]="element.data.speed.fly != null"
-            ><br />Fly {{element.data.speed.fly}}
+          <ng-template [ngIf]="element.data.speed.fly != null"><br />Fly {{element.data.speed.fly}}
           </ng-template>
         </ion-card-title>
       </ion-item>
@@ -548,20 +519,17 @@
       </ion-item>
 
       <ion-item>
-        <ion-card-title
-          ><b> DEX: </b>{{element.data.dexterity}}
+        <ion-card-title><b> DEX: </b>{{element.data.dexterity}}
         </ion-card-title>
       </ion-item>
 
       <ion-item>
-        <ion-card-title
-          ><b> CON: </b>{{element.data.constitution}}
+        <ion-card-title><b> CON: </b>{{element.data.constitution}}
         </ion-card-title>
       </ion-item>
 
       <ion-item>
-        <ion-card-title
-          ><b> INT: </b>{{element.data.intelligence}}
+        <ion-card-title><b> INT: </b>{{element.data.intelligence}}
         </ion-card-title>
       </ion-item>
 
@@ -577,8 +545,7 @@
         <ng-template [ngIf]="element.data.condition_immunities.length > 0">
           <ion-card-title class="mt-1">
             Condition Immunities:
-            <span *ngFor="let info of element.data.condition_immunities"
-              >{{info.name}}
+            <span *ngFor="let info of element.data.condition_immunities">{{info.name}}
             </span>
           </ion-card-title>
         </ng-template>
@@ -586,8 +553,7 @@
         <ng-template [ngIf]="element.data.damage_immunities.length > 0">
           <ion-card-title class="mt-1">
             Damage Immunities:
-            <span *ngFor="let info of element.data.damage_immunities"
-              >{{info}}
+            <span *ngFor="let info of element.data.damage_immunities">{{info}}
             </span>
           </ion-card-title>
         </ng-template>
@@ -595,8 +561,7 @@
         <ng-template [ngIf]="element.data.damage_resistances.length > 0">
           <ion-card-title class="mt-1">
             Damage Resistances:
-            <span *ngFor="let info of element.data.damage_resistances"
-              >{{info}}
+            <span *ngFor="let info of element.data.damage_resistances">{{info}}
             </span>
           </ion-card-title>
         </ng-template>
@@ -604,8 +569,7 @@
         <ng-template [ngIf]="element.data.damage_vulnerabilities.length > 0">
           <ion-card-title class="mt-1">
             Damage Vulnerabilities:
-            <span *ngFor="let info of element.data.damage_vulnerabilities"
-              >{{info}}
+            <span *ngFor="let info of element.data.damage_vulnerabilities">{{info}}
             </span>
           </ion-card-title>
         </ng-template>
@@ -614,9 +578,8 @@
 
         <ng-template [ngIf]="element.data.proficiencies.length > 0">
           <ion-card-title class="mt-1">
-            <b>Proficiencies:</b> <br/> 
-            <span *ngFor="let prof of element.data.proficiencies"
-              >{{prof.proficiency.name}} <br/>
+            <b>Proficiencies:</b> <br />
+            <span *ngFor="let prof of element.data.proficiencies">{{prof.proficiency.name}} <br />
             </span>
           </ion-card-title>
         </ng-template>
@@ -629,13 +592,13 @@
           <ng-template [ngIf]="element.data.senses.blindsight != null">
             Blindsight {{element.data.senses.blindsight}}
           </ng-template>
-            Passive Perception {{element.data.senses.passive_perception}}
+          Passive Perception {{element.data.senses.passive_perception}}
         </ion-card-title>
 
         <ion-card-title *ngIf="element.data.special_abilities != 0" class="mt-1">
           <ng-template [ngIf]="element.data.special_abilities.length > 0">
             <div *ngFor="let special_ab of element.data.special_abilities" class="mt-1">
-              <ion-card-title> <b>{{special_ab.name}}</b> <br/> </ion-card-title>
+              <ion-card-title> <b>{{special_ab.name}}</b> <br /> </ion-card-title>
               <ion-card-content style="opacity: 0.75;"> {{special_ab.desc}} </ion-card-content>
             </div>
           </ng-template>
