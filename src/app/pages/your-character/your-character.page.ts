@@ -170,7 +170,7 @@ export class YourCharacterPage implements OnInit {
     switch (string) {
       case 'Bolsonaro':
         this.character.name = string;
-        this.character.image = 'https://i.imgur.com/ZiTZ1zO.gifv';
+        this.character.image = 'https://media1.tenor.com/images/44ba1d5c480bd4b5db0fd103e7ff1d31/tenor.gif';
         break;
       case 'Lula':
         this.character.name = string;
