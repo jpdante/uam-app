@@ -147,22 +147,6 @@ export class YourCharacterPage implements OnInit {
     this.character.atrib.charisma -= 1;
   }
 
-  public async changeCharacterStory (text: string){
-    this.character.story = text; 
-  }
-
-  public async changeItens (text: string){
-    this.character.itensList = text;
-  }
-
-  public async changeSpells (text: string){
-    this.character.spellsList = text;
-  }
-
-  public async changeLanguagesAndProeficiencies (text: string){
-    this.character.languagesAndProficiencies = text;
-  }
-
   public async changeXp (number: number){
     if(number < 1000000000 && number > 0)
     this.character.xp = number;
@@ -182,41 +166,36 @@ export class YourCharacterPage implements OnInit {
     this.character.speed = number;
   }
 
-  public async changeName (string: string){
-    if(string != '') 
-    this.character.name = string;
-  }
-
-  public async changeGender (string: string){
-    if(string != '') 
-    this.character.gender = string;
-  }
-  
-  public async changeRace (string: string){
-    if(string != '') 
-    this.character.race = string;
-  }
-
-  public async changeClass (string: string){
-    if(string != '') 
-    this.character.class = string;
+  public async changeName (string: string){  
+    switch (string) {
+      case 'Bolsonaro':
+        this.character.name = string;
+        this.character.image = 'https://media1.tenor.com/images/44ba1d5c480bd4b5db0fd103e7ff1d31/tenor.gif';
+        break;
+      case 'Lula':
+        this.character.name = string;
+        this.character.image = 'https://i1.wp.com/www.conexaopolitica.com.br/wp-content/uploads/2018/01/600x500_lula_preso.jpg?w=600&ssl=1';
+        break;
+      default:
+        this.character.name = string;
+    }
   }
 
   public async savePage (a: number, b: number, c: string, d: string, e: string, f: string, g: number, h: string, i: number, j: number, k: string,  l: string,  m: string,  n: string,){
     this.changeLifePoints(a);
     this.changeArmorClass(b);
-    this.changeCharacterStory(c);
-    this.changeSpells(d);
-    this.changeItens(e);
-    this.changeLanguagesAndProeficiencies(f);
+    this.character.story = c;    
+    this.character.spellsList = d;
+    this.character.itensList = e;
+    this.character.languagesAndProficiencies = f;
     this.changeXp(g);
     this.changeAlignment(h);
     this.changeInitiative(i);
     this.changeSpeed(j);
     this.changeName(k);
-    this.changeGender(l);
-    this.changeRace(m);
-    this.changeClass(n);
+    this.character.gender = l;
+    this.character.race = m;
+    this.character.class = n;
     let characters = await this.storageService.get ('characters');
     characters[this.id] = this.character;
     await this.storageService.set('characters', characters);
