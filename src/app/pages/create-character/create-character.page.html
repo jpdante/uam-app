@@ -10,7 +10,7 @@
   <ion-row>
     <ion-col>
       <ion-avatar class="avatar">
-      <img [src]="newCharacter.image" (click)="updateImage()"/>
+        <img [src]="newCharacter.image" (click)="updateImage()" />
       </ion-avatar>
 
       <ion-item>
@@ -38,18 +38,44 @@
           <ion-select-option value="Halfelf">Half-elf</ion-select-option>
           <ion-select-option value="Halforc">Half-orc</ion-select-option>
           <ion-select-option value="Tiefling">Tiefling</ion-select-option>
-          <ion-select-option value="High Elf">High Elf</ion-select-option>
-          <ion-select-option value="Hill Dwarf">Hill Dwarf</ion-select-option>
-          <ion-select-option value="Lightfoot Halfling">Lightfoot Halfling</ion-select-option>
-          <ion-select-option value="Rock Gnome">Rock Gnome</ion-select-option>
         </ion-select>
       </ion-item>
+      <ng-template [ngIf]="newCharacter.race === 'Dwarf'">
+        <ion-item>
+          <ion-label>Sub Race</ion-label>
+          <ion-select placeholder="Sub Race" [(ngModel)]="newCharacter.subRace">
+            <ion-select-option value="Hill Dwarf">Hill Dwarf</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ng-template>
+      <ng-template [ngIf]="newCharacter.race === 'Elf'">
+        <ion-item>
+          <ion-label>Sub Race</ion-label>
+          <ion-select placeholder="Sub Race" [(ngModel)]="newCharacter.subRace">
+            <ion-select-option value="High Elf">High Elf</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ng-template>
+      <ng-template [ngIf]="newCharacter.race === 'Halfling'">
+        <ion-item>
+          <ion-label>Sub Race</ion-label>
+          <ion-select placeholder="Sub Race" [(ngModel)]="newCharacter.subRace">
+            <ion-select-option value="Lightfoot Halfling">Lightfoot Halfling</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ng-template>
+      <ng-template [ngIf]="newCharacter.race === 'Gnome'">
+        <ion-item>
+          <ion-label>Sub Race</ion-label>
+          <ion-select placeholder="Sub Race" [(ngModel)]="newCharacter.subRace">
+            <ion-select-option value="Rock Gnome">Rock Gnome</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ng-template>
+
       <ion-item>
         <ion-label>Class</ion-label>
-        <ion-select
-          placeholder="Class"
-          [(ngModel)]="newCharacter.class"
-        >
+        <ion-select placeholder="Class" [(ngModel)]="newCharacter.class">
           <ion-select-option value="Barbarian">Barbarian</ion-select-option>
           <ion-select-option value="Bard">Bard</ion-select-option>
           <ion-select-option value="Warlock">Warlock</ion-select-option>
@@ -62,61 +88,69 @@
           <ion-select-option value="Monk">Monk</ion-select-option>
           <ion-select-option value="Paladin">Paladin</ion-select-option>
           <ion-select-option value="Ranger">Ranger</ion-select-option>
-          <ion-select-option value="Berserker">Berserker</ion-select-option>
-          <ion-select-option value="Champion">Champion</ion-select-option>
-          <ion-select-option value="Devotion">Devotion</ion-select-option>
-          <ion-select-option value="Draconic">Draconic</ion-select-option>
-          <ion-select-option value="Evocation">Evocation</ion-select-option>
-          <ion-select-option value="Fiend">Fiend</ion-select-option>
-          <ion-select-option value="Hunter">Hunter</ion-select-option>
-          <ion-select-option value="Land">Land</ion-select-option>
-          <ion-select-option value="Life">Life</ion-select-option>
-          <ion-select-option value="Lore">Lore</ion-select-option>
-          <ion-select-option value="Open Hand">Open Hand</ion-select-option>
-          <ion-select-option value="Thief">Thief</ion-select-option>
         </ion-select>
       </ion-item>
+      <ng-template [ngIf]="newCharacter.class != ''">
+        <ion-item>
+          <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75">Sub Class</ion-label>
+          <ion-select placeholder="Subclass" [(ngModel)]="newCharacter.subClass">
+            <ng-template [ngIf]="newCharacter.class === 'Barbarian'">
+              <ion-select-option value="Berserker">Berserker</ion-select-option>
+            </ng-template>
+            <ng-template [ngIf]="newCharacter.class === 'Fighter'">
+              <ion-select-option value="Champion">Champion</ion-select-option>
+            </ng-template>
+            <ng-template [ngIf]="newCharacter.class === 'Paladin'">
+              <ion-select-option value="Devotion">Devotion</ion-select-option>
+            </ng-template>
+            <ng-template [ngIf]="newCharacter.class === 'Sorcerer'">
+              <ion-select-option value="Draconic">Draconic</ion-select-option>
+            </ng-template>
+            <ng-template [ngIf]="newCharacter.class === 'Wizard'">
+              <ion-select-option value="Evocation">Evocation</ion-select-option>
+            </ng-template>
+            <ng-template [ngIf]="newCharacter.class === 'Warlock'">
+              <ion-select-option value="Fiend">Fiend</ion-select-option>
+            </ng-template>
+            <ng-template [ngIf]="newCharacter.class === 'Ranger'">
+              <ion-select-option value="Hunter">Hunter</ion-select-option>
+            </ng-template>
+            <ng-template [ngIf]="newCharacter.class === 'Druid'">
+              <ion-select-option value="Land">Land</ion-select-option>
+            </ng-template>
+            <ng-template [ngIf]="newCharacter.class === 'Cleric'">
+              <ion-select-option value="Life">Life</ion-select-option>
+            </ng-template>
+            <ng-template [ngIf]="newCharacter.class === 'Bard'">
+              <ion-select-option value="Lore">Lore</ion-select-option>
+            </ng-template>
+            <ng-template [ngIf]="newCharacter.class === 'Monk'">
+              <ion-select-option value="Open Hand">Open Hand</ion-select-option>
+            </ng-template>
+            <ng-template [ngIf]="newCharacter.class === 'Rogue'">
+              <ion-select-option value="Thief">Thief</ion-select-option>
+            </ng-template>
+          </ion-select>
+        </ion-item>
+      </ng-template>
       <ion-item>
         <ion-label>Alignment</ion-label>
-        <ion-select
-          placeholder="Alignment"
-          [(ngModel)]="newCharacter.alignment"
-        >
-          <ion-select-option value="Lawful good"
-            >Lawful good (LG)</ion-select-option
-          >
-          <ion-select-option value="Neutral good"
-            >Neutral good (NG)</ion-select-option
-          >
-          <ion-select-option value="Chaotic good"
-            >Chaotic good (CG)</ion-select-option
-          >
-          <ion-select-option value="Lawful neutral"
-            >Lawful neutral (LN)</ion-select-option
-          >
+        <ion-select placeholder="Alignment" [(ngModel)]="newCharacter.alignment">
+          <ion-select-option value="Lawful good">Lawful good (LG)</ion-select-option>
+          <ion-select-option value="Neutral good">Neutral good (NG)</ion-select-option>
+          <ion-select-option value="Chaotic good">Chaotic good (CG)</ion-select-option>
+          <ion-select-option value="Lawful neutral">Lawful neutral (LN)</ion-select-option>
           <ion-select-option value="Neutral">Neutral (N)</ion-select-option>
-          <ion-select-option value="Chaotic neutral"
-            >Chaotic neutral (CN)</ion-select-option
-          >
-          <ion-select-option value="Lawful evil"
-            >Lawful evil (LE)</ion-select-option
-          >
-          <ion-select-option value="Neutral evil"
-            >Neutral evil (NE)</ion-select-option
-          >
-          <ion-select-option value="Chaotic evil"
-            >Chaotic evil (CE)</ion-select-option
-          >
+          <ion-select-option value="Chaotic neutral">Chaotic neutral (CN)</ion-select-option>
+          <ion-select-option value="Lawful evil">Lawful evil (LE)</ion-select-option>
+          <ion-select-option value="Neutral evil">Neutral evil (NE)</ion-select-option>
+          <ion-select-option value="Chaotic evil">Chaotic evil (CE)</ion-select-option>
         </ion-select>
       </ion-item>
 
       <br />
 
-      <ion-button
-        (click)="submitCharacter()"
-        routerLinkActive="router-link-active"
-        expand="block"
-      >
+      <ion-button (click)="submitCharacter()" routerLinkActive="router-link-active" expand="block">
         Submit
       </ion-button>
     </ion-col>

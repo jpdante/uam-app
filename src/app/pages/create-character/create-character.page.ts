@@ -18,8 +18,10 @@ interface Character {
   lifePoints: number;
   armorClass: number;
   class: string;
+  subClass: string;
   level: number;
   race: string;
+  subRace: string;
   gender: string;
   story: string;
   atrib: Atrib;
@@ -64,8 +66,10 @@ export class CreateCharacterPage implements OnInit {
     lifePoints: 10,
     armorClass: 10,
     class: '',
+    subClass: '',
     level: 1,
     race: '',
+    subRace: '',
     gender: '',
     languagesAndProficiencies: 'Put your description here',
     story: 'Put your description here',
