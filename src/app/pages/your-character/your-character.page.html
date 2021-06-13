@@ -173,20 +173,6 @@
 
   <ion-card>
     <ion-card-header color="primary">
-      <ion-card-title class="text-center">Spells List</ion-card-title>
-    </ion-card-header>
-    <ion-col class="ion-no-padding titulos">
-      <ion-card-subtitle>
-        <ion-item>
-          <ion-textarea style="opacity: 0.75" rows="10" value="{{character.spellsList}}" [(ngModel)]="spells">
-          </ion-textarea>
-        </ion-item>
-      </ion-card-subtitle>
-    </ion-col>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header color="primary">
       <ion-card-title class="text-center">Languages And Proficiencies</ion-card-title>
     </ion-card-header>
     <ion-col class="ion-no-padding titulos">
@@ -194,6 +180,21 @@
         <ion-item>
           <ion-textarea style="opacity: 0.75" rows="10" value="{{character.languagesAndProficiencies}}"
             [(ngModel)]="lap"></ion-textarea>
+        </ion-item>
+      </ion-card-subtitle>
+    </ion-col>
+  </ion-card>
+
+  
+  <ion-card>
+    <ion-card-header color="primary">
+      <ion-card-title class="text-center">Spells List</ion-card-title>
+    </ion-card-header>
+    <ion-col class="ion-no-padding titulos">
+      <ion-card-subtitle>
+        <ion-item>
+          <ion-textarea style="opacity: 0.75" rows="10" value="{{character.spellsList}}" [(ngModel)]="spells">
+          </ion-textarea>
         </ion-item>
       </ion-card-subtitle>
     </ion-col>
