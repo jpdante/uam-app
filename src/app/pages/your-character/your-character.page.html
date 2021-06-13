@@ -22,8 +22,8 @@
               <b>Alignment:</b> {{character.alignment}}<br />
               <b>Class:</b> {{character.class}} {{character.subClass}}<br />
               <b>Race:</b>
-              <ng-template [ngIf]="character.subRace === ''"> {{character.race}}</ng-template>
-              <ng-template [ngIf]="character.subRace != ''"> {{character.subRace}}</ng-template> <br />
+              {{character.race}}
+              {{character.subRace}} <br />
               <b>Gender:</b> {{character.gender}}<br />
             </ion-card-title>
           </ion-col>
@@ -228,8 +228,8 @@
         <ion-select-option value="Human">Human</ion-select-option>
         <ion-select-option value="Dragonborn">Dragonborn</ion-select-option>
         <ion-select-option value="Gnome">Gnome</ion-select-option>
-        <ion-select-option value="Halfelf">Half-elf</ion-select-option>
-        <ion-select-option value="Halforc">Half-orc</ion-select-option>
+        <ion-select-option value="Half-elf">Half-elf</ion-select-option>
+        <ion-select-option value="Half-orc">Half-orc</ion-select-option>
         <ion-select-option value="Tiefling">Tiefling</ion-select-option>
       </ion-select>
     </ion-item>
@@ -239,6 +239,7 @@
         <ion-select placeholder="Sub Race" [(ngModel)]="subRace" value="{{character.subRace}}"
           style="font-size: 17px; opacity: 0.75">
           <ion-select-option value="Hill Dwarf">Hill Dwarf</ion-select-option>
+          <ion-select-option value="">None</ion-select-option>
         </ion-select>
       </ion-item>
     </ng-template>
@@ -248,6 +249,7 @@
         <ion-select placeholder="Sub Race" [(ngModel)]="subRace" value="{{character.subRace}}"
           style="font-size: 17px; opacity: 0.75">
           <ion-select-option value="High Elf">High Elf</ion-select-option>
+          <ion-select-option value="">None</ion-select-option>
         </ion-select>
       </ion-item>
     </ng-template>
@@ -257,6 +259,7 @@
         <ion-select placeholder="Sub Race" [(ngModel)]="subRace" value="{{character.subRace}}"
           style="font-size: 17px; opacity: 0.75">
           <ion-select-option value="Lightfoot Halfling">Lightfoot Halfling</ion-select-option>
+          <ion-select-option value="">None</ion-select-option>
         </ion-select>
       </ion-item>
     </ng-template>
@@ -266,6 +269,7 @@
         <ion-select placeholder="Sub Race" [(ngModel)]="subRace" value="{{character.subRace}}"
           style="font-size: 17px; opacity: 0.75">
           <ion-select-option value="Rock Gnome">Rock Gnome</ion-select-option>
+          <ion-select-option value="">None</ion-select-option>
         </ion-select>
       </ion-item>
     </ng-template>
@@ -294,39 +298,54 @@
         style="font-size: 17px; opacity: 0.75">
         <ng-template [ngIf]="class === 'Barbarian'">
           <ion-select-option value="Berserker">Berserker</ion-select-option>
+          <ion-select-option value="">None</ion-select-option>
         </ng-template>
         <ng-template [ngIf]="class === 'Fighter'">
           <ion-select-option value="Champion">Champion</ion-select-option>
+          <ion-select-option value="">None</ion-select-option>
         </ng-template>
         <ng-template [ngIf]="class === 'Paladin'">
           <ion-select-option value="Devotion">Devotion</ion-select-option>
+          <ion-select-option value="">None</ion-select-option>
         </ng-template>
         <ng-template [ngIf]="class === 'Sorcerer'">
           <ion-select-option value="Draconic">Draconic</ion-select-option>
+          <ion-select-option value="">None</ion-select-option>
         </ng-template>
         <ng-template [ngIf]="class === 'Wizard'">
           <ion-select-option value="Evocation">Evocation</ion-select-option>
+          <ion-select-option value="">None</ion-select-option>
         </ng-template>
         <ng-template [ngIf]="class === 'Warlock'">
           <ion-select-option value="Fiend">Fiend</ion-select-option>
+          <ion-select-option value="">None</ion-select-option>
         </ng-template>
         <ng-template [ngIf]="class === 'Ranger'">
           <ion-select-option value="Hunter">Hunter</ion-select-option>
+          <ion-select-option value="">None</ion-select-option>
         </ng-template>
         <ng-template [ngIf]="class === 'Druid'">
           <ion-select-option value="Land">Land</ion-select-option>
+          <ion-select-option value="">None</ion-select-option>
         </ng-template>
         <ng-template [ngIf]="class === 'Cleric'">
           <ion-select-option value="Life">Life</ion-select-option>
+          <ion-select-option value="">None</ion-select-option>
         </ng-template>
         <ng-template [ngIf]="class === 'Bard'">
           <ion-select-option value="Lore">Lore</ion-select-option>
+          <ion-select-option value="">None</ion-select-option>
         </ng-template>
         <ng-template [ngIf]="class === 'Monk'">
           <ion-select-option value="Open Hand">Open Hand</ion-select-option>
+          <ion-select-option value="">None</ion-select-option>
         </ng-template>
         <ng-template [ngIf]="class === 'Rogue'">
           <ion-select-option value="Thief">Thief</ion-select-option>
+          <ion-select-option value="">None</ion-select-option>
+        </ng-template>
+        <ng-template>
+          <ion-select-option value="">None</ion-select-option>
         </ng-template>
       </ion-select>
     </ion-item>
@@ -349,5 +368,5 @@
 </ion-content>
 
 <ion-button
-  (click)="savePage(lifePoints, armorClass, story, spells, itens, lap, xp, alignment, initiative, speed, name, gender, race, class)"
+  (click)="savePage(lifePoints, armorClass, story, spells, itens, lap, xp, alignment, initiative, speed, name, gender, race, subRace, class, subClass)"
   color="primary">save</ion-button>
