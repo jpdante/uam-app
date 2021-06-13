@@ -96,42 +96,54 @@
       </ion-item>
       <ng-template [ngIf]="newCharacter.class != ''">
         <ion-item>
-          <ion-label style="font-weight: bold; font-size: 17px; opacity: 0.75">Sub Class</ion-label>
+          <ion-label style="font-weight: bold; font-size: 17px;">Sub Class</ion-label>
           <ion-select placeholder="Subclass" [(ngModel)]="newCharacter.subClass">
             <ng-template [ngIf]="newCharacter.class === 'Barbarian'">
               <ion-select-option value="Berserker">Berserker</ion-select-option>
+              <ion-select-option value="">None</ion-select-option>
             </ng-template>
             <ng-template [ngIf]="newCharacter.class === 'Fighter'">
               <ion-select-option value="Champion">Champion</ion-select-option>
+              <ion-select-option value="">None</ion-select-option>
             </ng-template>
             <ng-template [ngIf]="newCharacter.class === 'Paladin'">
               <ion-select-option value="Devotion">Devotion</ion-select-option>
+              <ion-select-option value="">None</ion-select-option>
             </ng-template>
             <ng-template [ngIf]="newCharacter.class === 'Sorcerer'">
               <ion-select-option value="Draconic">Draconic</ion-select-option>
+              <ion-select-option value="">None</ion-select-option>
             </ng-template>
             <ng-template [ngIf]="newCharacter.class === 'Wizard'">
               <ion-select-option value="Evocation">Evocation</ion-select-option>
+              <ion-select-option value="">None</ion-select-option>
             </ng-template>
             <ng-template [ngIf]="newCharacter.class === 'Warlock'">
               <ion-select-option value="Fiend">Fiend</ion-select-option>
+              <ion-select-option value="">None</ion-select-option>
             </ng-template>
             <ng-template [ngIf]="newCharacter.class === 'Ranger'">
               <ion-select-option value="Hunter">Hunter</ion-select-option>
+              <ion-select-option value="">None</ion-select-option>
             </ng-template>
             <ng-template [ngIf]="newCharacter.class === 'Druid'">
               <ion-select-option value="Land">Land</ion-select-option>
+              <ion-select-option value="">None</ion-select-option>
             </ng-template>
             <ng-template [ngIf]="newCharacter.class === 'Cleric'">
+              <ion-select-option value="">None</ion-select-option>
               <ion-select-option value="Life">Life</ion-select-option>
             </ng-template>
             <ng-template [ngIf]="newCharacter.class === 'Bard'">
+              <ion-select-option value="">None</ion-select-option>
               <ion-select-option value="Lore">Lore</ion-select-option>
             </ng-template>
             <ng-template [ngIf]="newCharacter.class === 'Monk'">
+              <ion-select-option value="">None</ion-select-option>
               <ion-select-option value="Open Hand">Open Hand</ion-select-option>
             </ng-template>
             <ng-template [ngIf]="newCharacter.class === 'Rogue'">
+              <ion-select-option value="">None</ion-select-option>
               <ion-select-option value="Thief">Thief</ion-select-option>
             </ng-template>
           </ion-select>
