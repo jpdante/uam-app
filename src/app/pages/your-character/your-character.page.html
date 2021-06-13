@@ -99,59 +99,62 @@
     <ion-card-header color="primary">
       <ion-card-title class="text-center">Abilities</ion-card-title>
     </ion-card-header>
-    <ion-row>
-      <ion-col size="6"> Strength: </ion-col>
-      <ion-col size="6">
-        {{character.atrib.strength}} ({{ calculateMod(character.atrib.strength)
-        }})
-        <ion-button (click)="strengthDown()" size="small" color="primary">-</ion-button>
-        <ion-button (click)="strengthUp()" size="small" color="primary">+</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="6">Dexterity:</ion-col>
-      <ion-col size="6">
-        {{character.atrib.dexterity}} ({{
-        calculateMod(character.atrib.dexterity) }})
-        <ion-button (click)="dexterityDown()" size="small" color="primary">-</ion-button>
-        <ion-button (click)="dexterityUp()" size="small" color="primary">+</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="6"> Constitution: </ion-col>
-      <ion-col size="6">
-        {{character.atrib.constitution}} ({{
-        calculateMod(character.atrib.constitution) }})
-        <ion-button (click)="constitutionDown()" size="small" color="primary">-</ion-button>
-        <ion-button (click)="constitutionUp()" size="small" color="primary">+</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="6"> Intelligence: </ion-col>
-      <ion-col size="6">
-        {{character.atrib.intelligence}} ({{
-        calculateMod(character.atrib.intelligence) }})
-        <ion-button (click)="intelligenceDown()" size="small" color="primary">-</ion-button>
-        <ion-button (click)="intelligenceUp()" size="small" color="primary">+</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="6"> Wisdom: </ion-col>
-      <ion-col size="6">
-        {{character.atrib.wisdom}} ({{ calculateMod(character.atrib.wisdom) }})
-        <ion-button (click)="wisdomDown()" size="small" color="primary">-</ion-button>
-        <ion-button (click)="wisdomUp()" size="small" color="primary">+</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="6"> Charisma: </ion-col>
-      <ion-col size="6">
-        {{character.atrib.charisma}} ({{ calculateMod(character.atrib.charisma)
-        }})
-        <ion-button (click)="charismaDown()" size="small" color="primary">-</ion-button>
-        <ion-button (click)="charismaUp()" size="small" color="primary">+</ion-button>
-      </ion-col>
-    </ion-row>
+    <br>
+    <ion-card-content>
+      <ion-row>
+        <ion-col size="6"> Strength: </ion-col>
+        <ion-col size="6">
+          {{character.atrib.strength}} ({{ calculateMod(character.atrib.strength)
+          }})
+          <ion-button (click)="strengthDown()" size="small" color="primary">-</ion-button>
+          <ion-button (click)="strengthUp()" size="small" color="primary">+</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">Dexterity:</ion-col>
+        <ion-col size="6">
+          {{character.atrib.dexterity}} ({{
+          calculateMod(character.atrib.dexterity) }})
+          <ion-button (click)="dexterityDown()" size="small" color="primary">-</ion-button>
+          <ion-button (click)="dexterityUp()" size="small" color="primary">+</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"> Constitution: </ion-col>
+        <ion-col size="6">
+          {{character.atrib.constitution}} ({{
+          calculateMod(character.atrib.constitution) }})
+          <ion-button (click)="constitutionDown()" size="small" color="primary">-</ion-button>
+          <ion-button (click)="constitutionUp()" size="small" color="primary">+</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"> Intelligence: </ion-col>
+        <ion-col size="6">
+          {{character.atrib.intelligence}} ({{
+          calculateMod(character.atrib.intelligence) }})
+          <ion-button (click)="intelligenceDown()" size="small" color="primary">-</ion-button>
+          <ion-button (click)="intelligenceUp()" size="small" color="primary">+</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"> Wisdom: </ion-col>
+        <ion-col size="6">
+          {{character.atrib.wisdom}} ({{ calculateMod(character.atrib.wisdom) }})
+          <ion-button (click)="wisdomDown()" size="small" color="primary">-</ion-button>
+          <ion-button (click)="wisdomUp()" size="small" color="primary">+</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"> Charisma: </ion-col>
+        <ion-col size="6">
+          {{character.atrib.charisma}} ({{ calculateMod(character.atrib.charisma)
+          }})
+          <ion-button (click)="charismaDown()" size="small" color="primary">-</ion-button>
+          <ion-button (click)="charismaUp()" size="small" color="primary">+</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
   </ion-card>
 
   <ion-card>
