@@ -170,11 +170,15 @@ export class YourCharacterPage implements OnInit {
     switch (string) {
       case 'Bolsonaro':
         this.character.name = string;
-        this.character.image = 'https://media1.tenor.com/images/44ba1d5c480bd4b5db0fd103e7ff1d31/tenor.gif';
+        this.character.image = 'https://i.imgur.com/ZiTZ1zO.gifv';
         break;
       case 'Lula':
         this.character.name = string;
-        this.character.image = 'https://i1.wp.com/www.conexaopolitica.com.br/wp-content/uploads/2018/01/600x500_lula_preso.jpg?w=600&ssl=1';
+        this.character.image = 'https://i.imgur.com/73Rk6HV.jpg';
+        break;
+      case 'Furry':
+        this.character.name = string;
+        this.character.image = 'https://i.imgur.com/8n39m85.png';
         break;
       default:
         this.character.name = string;
